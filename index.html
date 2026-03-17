@@ -10,8 +10,8 @@ body {
 
 /* NAV */
 .nav {
-  background: #111;
-  padding: 15px;
+  background:#111;
+  padding:15px;
   text-align:center;
   position:sticky;
   top:0;
@@ -34,7 +34,6 @@ body {
 .hero h1 {
   font-size:50px;
   font-weight:900;
-  text-shadow:3px 3px 12px rgba(0,0,0,0.7);
 }
 
 .section {
@@ -44,7 +43,6 @@ body {
   border-radius:15px;
   border:3px solid;
   border-image: linear-gradient(45deg,#ff0000,#1e90ff,#28a745) 1;
-  box-shadow:0 5px 15px rgba(0,0,0,0.1);
 }
 
 /* BUTTONS */
@@ -54,51 +52,31 @@ button {
   border:none;
   cursor:pointer;
   font-weight:bold;
-  transition:0.3s;
+  margin-top:8px;
 }
-button:hover { transform:scale(1.05); }
+.btn { color:white; width:100%; }
+.btn-10{background:#28a745;}
+.btn-50{background:#17a2b8;}
+.btn-100{background:#ffc107;color:black;}
+.btn-200{background:#fd7e14;}
+.btn-500{background:#6f42c1;}
+.btn-1000{background:#dc3545;}
+.btn-paypal{background:black;}
+.btn-girl{background:#ff69b4;}
+.btn-boy{background:#007bff;}
+.btn-academic{background:#20c997;}
 
-.btn { color:white; width:100%; margin-top:8px; }
-.btn-paypal { background:black; }
-.btn-green { background:#28a745; }
-.btn-blue { background:#007bff; }
-.btn-pink { background:#ff69b4; }
-.btn-purple { background:#6f42c1; }
+/* GRID */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px;}
+.card{background:white;padding:15px;border-radius:12px;border:2px solid #ddd;}
 
-/* CARDS */
-.grid {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:15px;
-}
-.card {
-  background:white;
-  padding:15px;
-  border-radius:12px;
-  border:2px solid #ddd;
-}
-
-.badge {
-  padding:5px 10px;
-  border-radius:20px;
-  color:white;
-  font-size:12px;
-}
-.sponsored { background:green; }
-.not-sponsored { background:red; }
+/* BADGES */
+.badge{padding:5px 10px;border-radius:20px;color:white;font-size:12px;}
+.sponsored{background:green;}
+.not-sponsored{background:red;}
 
 /* FLOAT */
-.float {
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  background:red;
-  color:white;
-  padding:15px 20px;
-  border-radius:50px;
-  text-decoration:none;
-}
-
+.float{position:fixed;bottom:20px;right:20px;background:red;color:white;padding:15px 20px;border-radius:50px;text-decoration:none;}
 </style></head><body><div class="nav">
 <a href="#">Home</a>
 <a href="#donate">Donate</a>
@@ -108,32 +86,31 @@ button:hover { transform:scale(1.05); }
 <p><b>Bonded in Love ♥️, Humanity, and By God</b></p>
 </div><div class="section">
 <h2>Introduction</h2>
-<p><b>Founded in 2016 by Reverend JoeFaye (Joseph Nyaga Gachoki)</b>, we support vulnerable children, GBV survivors and families in Nairobi.</p>
+<p><b>Heart of Passion Foundation</b> is a nonprofit organization founded in 2016 by Reverend JoeFaye (Joseph Nyaga Gachoki), supporting vulnerable children, GBV survivors and families in Nairobi.</p>
+<p>We provide shelter, education, food, and emotional care because every life matters.</p>
 </div><div id="donate" class="section">
 <h2>Donate</h2>
-<button class="btn btn-green" onclick="donate(10)">$10</button>
-<button class="btn btn-blue" onclick="donate(50)">$50</button>
-<button class="btn btn-purple" onclick="donate(100)">$100</button>
-<input type="number" id="amount" placeholder="Other amount">
-<button class="btn btn-paypal" onclick="donateCustom()">Donate via PayPal</button>
+<button class="btn btn-10" onclick="donate(10)">$10</button>
+<button class="btn btn-50" onclick="donate(50)">$50</button>
+<button class="btn btn-100" onclick="donate(100)">$100</button>
+<button class="btn btn-200" onclick="donate(200)">$200</button>
+<button class="btn btn-500" onclick="donate(500)">$500</button>
+<button class="btn btn-1000" onclick="donate(1000)">$1000</button><input type="number" id="amount" placeholder="Other amount">
+<button class="btn btn-paypal" onclick="donateCustom()">Donate via PayPal</button><h3>👧 Sponsor a Girl</h3>
+<ul><li>Sanitary Towels</li><li>Innerwears</li><li>Skin Care</li></ul>
+<button class="btn btn-girl" onclick="donate(60)">Sponsor Girl</button><h3>👦 Sponsor a Boy</h3>
+<ul><li>Clothes</li><li>Playing Items</li></ul>
+<button class="btn btn-boy" onclick="donate(60)">Sponsor Boy</button><h3>🎓 Academic Sponsorship</h3>
+<ul><li>Books, Uniforms, Shoes, Stationery</li></ul>
+<button class="btn btn-academic" onclick="donate(100)">Support Education</button>
 </div><div id="children" class="section">
 <h2>👶 Sponsor a Child ($60/month)</h2>
-<div class="grid"><div class="card">
-<span class="badge not-sponsored">Not Sponsored</span>
-<h3>Faith Wanjiku</h3>
-<p>Age: 8</p>
-<button class="btn btn-blue" onclick="donate(60)">Sponsor</button>
-</div><div class="card">
-<span class="badge sponsored">Sponsored</span>
-<h3>Mercy John</h3>
-<p>Age: 11</p>
-<button class="btn btn-green" onclick="donate(60)">Sponsor</button>
-</div></div>
+<div class="grid"><div class="card"><span class="badge not-sponsored">Not Sponsored</span><h3>Faith Wanjiku</h3><p>Age 8</p><button class="btn btn-boy" onclick="donate(60)">Sponsor</button></div><div class="card"><span class="badge sponsored">Sponsored</span><h3>Mercy John</h3><p>Age 11</p><button class="btn btn-girl" onclick="donate(60)">Sponsor</button></div><div class="card"><span class="badge not-sponsored">Not Sponsored</span><h3>Brian Mwangi</h3><p>Age 10</p><button class="btn btn-boy" onclick="donate(60)">Sponsor</button></div><div class="card"><span class="badge not-sponsored">Not Sponsored</span><h3>Daniel Kararani</h3><p>Age 14</p><button class="btn btn-academic" onclick="donate(60)">Sponsor</button></div></div>
 </div><div class="section">
 <h2>📍 Location</h2>
 <p>Kenya, Nairobi, Roysambu, Zimmerman Ward</p>
 <iframe src="https://maps.google.com/maps?q=Zimmerman%20Nairobi&output=embed" width="100%" height="300"></iframe>
-</div><a href="https://www.paypal.me/joefayeekenya" class="float">Donate</a>
+</div><a href="https://www.paypal.me/joefayeekenya" class="float">💖 Donate</a>
 
 <script>
 function donate(amount){ window.open("https://www.paypal.me/joefayeekenya/"+amount); }
