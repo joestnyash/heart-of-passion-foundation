@@ -25,14 +25,24 @@
     <img src="IMG_20251112_WA0002.jpg" style="width:100%; border-radius:10px;">
     <img src="IMG_20251112_WA0003.jpg" style="width:100%; border-radius:10px;">
   </div>  <!-- DONATE -->  <h2>Support Our Mission</h2>
-  <p>Your support helps us provide food, shelter, education, and hope.</p>  <p><strong>M-Pesa:</strong> +254725768628</p>
-  <a href="tel:+254725768628">
-    <button style="padding:10px; background:green; color:white; border:none;">Pay via M-Pesa (Call)</button>
-  </a>  <p><strong>Paybill:</strong> 162180 | Acc: 0300327</p>  <div style="margin-top:10px;">
-    <a href="https://www.paypal.com/paypalme/joefayeekenya" target="_blank">
-      <button style="padding:12px; background:#0070ba; color:white; border:none;">Donate with PayPal</button>
-    </a>
-  </div>  <div style="margin-top:15px; background:#fff; padding:15px; border-radius:10px;">
+  <p>Select an amount and your giving plan:</p>  <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(120px,1fr)); gap:10px; margin-bottom:15px;">
+    <button onclick="selectAmount(10)">$10</button>
+    <button onclick="selectAmount(50)">$50</button>
+    <button onclick="selectAmount(100)">$100</button>
+    <button onclick="selectAmount(200)">$200</button>
+    <button onclick="selectAmount(500)">$500</button>
+    <button onclick="selectAmount(1000)">$1,000</button>
+  </div>  <p><strong>Other Amount (above $1,000)</strong></p>
+  <input type="number" id="customAmount" placeholder="Enter amount" style="width:100%; padding:10px; margin-bottom:10px;">  <p><strong>Donation Frequency</strong></p>
+  <select id="frequency" style="width:100%; padding:10px; margin-bottom:15px;">
+    <option value="one-time">One-Time</option>
+    <option value="weekly">Weekly</option>
+    <option value="monthly">Monthly</option>
+    <option value="yearly">Yearly</option>
+  </select>  <button onclick="donateNow()" style="padding:12px; background:#0070ba; color:white; border:none; width:100%;">
+    Proceed to Donate (PayPal)
+  </button>  <p style="margin-top:10px;"><strong>M-Pesa:</strong> +254725768628</p>
+  <p><strong>Paybill:</strong> 162180 | Acc: 0300327</p>  <div style="margin-top:15px; background:#fff; padding:15px; border-radius:10px;">
     <h3>Send via Western Union / MoneyGram</h3>
     <p><strong>Name:</strong> Joe Nyagah</p>
     <p><strong>Location:</strong> Nairobi, Kenya</p>
