@@ -4,99 +4,111 @@
   <title>Heart of Passion Foundation</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body {
-      font-family: Arial;
-      margin: 0;
-      background: linear-gradient(135deg,#fdfbfb,#ebedee,#e0c3fc,#8ec5fc);
-    }
+<style>
+body {
+  font-family: Arial;
+  margin:0;
+  background: linear-gradient(135deg,#fdfbfb,#ebedee,#e0c3fc,#8ec5fc);
+}
 
-    .nav {
-      background: black;
-      padding: 12px;
-      text-align: center;
-      position: sticky;
-      top: 0;
-    }
+/* NAV */
+.nav {
+  background:black;
+  padding:12px;
+  text-align:center;
+}
+.nav a {
+  color:white;
+  margin:10px;
+  text-decoration:none;
+  font-weight:bold;
+}
 
-    .nav a {
-      color: white;
-      margin: 10px;
-      text-decoration: none;
-      font-weight: bold;
-    }
+/* HEADER */
+.hero {
+  background: linear-gradient(135deg,#ff0000,#ff8c00,#1e90ff,#6a11cb);
+  color:white;
+  text-align:center;
+  padding:70px 20px;
+}
 
-    .hero {
-      background: linear-gradient(135deg,#ff0000,#ff8c00,#1e90ff,#6a11cb);
-      color: white;
-      text-align: center;
-      padding: 70px 20px;
-    }
+/* SECTIONS */
+.section {
+  background:white;
+  margin:20px;
+  padding:20px;
+  border-radius:12px;
+  border:3px solid #ddd;
+  box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
 
-    .hero h1 {
-      font-size: 42px;
-      font-weight: 900;
-    }
+/* TABS */
+.tabs { text-align:center; }
+.tab {
+  display:inline-block;
+  padding:10px;
+  margin:5px;
+  background:#ddd;
+  cursor:pointer;
+  border-radius:6px;
+}
+.tab-content {
+  display:none;
+  margin:20px;
+  padding:20px;
+  background:white;
+  border-radius:10px;
+}
+.show { display:block; }
 
-    .section {
-      background: white;
-      margin: 20px;
-      padding: 20px;
-      border-radius: 12px;
-      border: 3px solid #ddd;
-    }
+/* BUTTONS */
+button {
+  padding:10px;
+  margin-top:8px;
+  border:none;
+  border-radius:8px;
+  font-weight:bold;
+  cursor:pointer;
+}
+.donate-btn {
+  width:100%;
+  background:black;
+  color:white;
+}
 
-    button {
-      padding: 10px;
-      margin: 5px;
-      border-radius: 8px;
-      border: none;
-      cursor: pointer;
-      font-weight: bold;
-    }
+/* CHILD CARDS */
+.card {
+  background:white;
+  padding:15px;
+  border-radius:10px;
+  border:2px solid #ddd;
+  box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
 
-    .donate-btn {
-      width: 100%;
-      background: black;
-      color: white;
-    }
+/* BADGES */
+.badge {
+  padding:5px 10px;
+  border-radius:20px;
+  font-size:12px;
+  color:white;
+  display:inline-block;
+}
+.sponsored { background:green; }
+.not-sponsored { background:red; }
 
-    .tabs {
-      text-align: center;
-    }
-
-    .tab {
-      display: inline-block;
-      padding: 10px;
-      margin: 5px;
-      background: #ddd;
-      cursor: pointer;
-      border-radius: 6px;
-    }
-
-    .tab-content {
-      display: none;
-      margin: 20px;
-      padding: 20px;
-      background: white;
-      border-radius: 10px;
-    }
-
-    .show {
-      display: block;
-    }
-
-    .floating-btn {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: red;
-      color: white;
-      padding: 15px;
-      border-radius: 50px;
-      text-decoration: none;
-    }
-  </style>
+/* FLOAT BUTTON */
+.floating-btn {
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:red;
+  color:white;
+  padding:15px 20px;
+  border-radius:50px;
+  text-decoration:none;
+  font-weight:bold;
+}
+</style>
 </head>
 
 <body>
@@ -105,40 +117,43 @@
 <div class="nav">
   <a href="#">Home</a>
   <a href="#donate">Donate</a>
-  <a href="gallery.html">Gallery</a>
+  <a href="#">Gallery</a>
 </div>
 
 <!-- HEADER -->
 <div class="hero">
   <h1>HEART OF PASSION FOUNDATION</h1>
-  <p>Bonded in Love ♥️, Humanity, and By God</p>
+  <p><strong>Bonded in Love ♥️, Humanity, and By God</strong></p>
 </div>
 
 <!-- INTRO -->
 <div class="section">
-  <h2>Introduction</h2>
-  <p><strong>
-  Founded in 2016 by Reverend JoeFaye (Joseph Nyaga Gachoki), Heart of Passion Foundation supports vulnerable communities and children in Nairobi.
-  </strong></p>
+<h2>Introduction</h2>
+<p><strong>
+Founded in 2016 by Reverend JoeFaye (Joseph Nyaga Gachoki), Heart of Passion Foundation supports vulnerable children and communities in Nairobi.
+</strong></p>
+<p>
+We provide shelter, education, food, and emotional care to children while empowering families and GBV survivors.
+</p>
 </div>
 
 <!-- TABS -->
 <div class="tabs">
-  <div class="tab" onclick="showTab('mission')">Mission</div>
-  <div class="tab" onclick="showTab('vision')">Vision</div>
-  <div class="tab" onclick="showTab('values')">Values</div>
+<div class="tab" onclick="showTab('mission')">Mission</div>
+<div class="tab" onclick="showTab('vision')">Vision</div>
+<div class="tab" onclick="showTab('values')">Values</div>
 </div>
 
 <div id="mission" class="tab-content show">
-<p>Restoring hope and dignity.</p>
+<p><strong>Restoring hope and dignity through compassion.</strong></p>
 </div>
 
 <div id="vision" class="tab-content">
-<p>A society where every child thrives.</p>
+<p><strong>A society where every child thrives.</strong></p>
 </div>
 
 <div id="values" class="tab-content">
-<p>Compassion, Integrity, Dignity.</p>
+<p><strong>Compassion, Integrity, Dignity, Empowerment.</strong></p>
 </div>
 
 <!-- DONATION -->
@@ -149,56 +164,83 @@
 <button onclick="donate(10)">$10</button>
 <button onclick="donate(50)">$50</button>
 <button onclick="donate(100)">$100</button>
+<button onclick="donate(200)">$200</button>
+<button onclick="donate(500)">$500</button>
+<button onclick="donate(1000)">$1000</button>
 
 <input type="number" id="amount" placeholder="Other amount">
 
 <button class="donate-btn" onclick="donateCustom()">Donate via PayPal</button>
 
-<h3>👧 Support a Girl</h3>
+<h3>🎓 Sponsorship</h3>
+
+<h4>👧 Sponsor a Girl</h4>
 <ul>
 <li>Sanitary Towels</li>
 <li>Innerwears</li>
-<li>Skin Care</li>
+<li>Skin Care Products</li>
 </ul>
-<button onclick="donate(50)">Support Girl</button>
 
-<h3>👦 Support a Boy</h3>
+<h4>👦 Sponsor a Boy</h4>
 <ul>
 <li>Clothes</li>
 <li>Playing Items</li>
 </ul>
-<button onclick="donate(50)">Support Boy</button>
 
-<h3>🎓 Academic Sponsorship</h3>
+<h4>📚 Academic Sponsorship</h4>
 <ul>
-<li>Books, Uniforms, Shoes</li>
+<li>Books, Uniforms, Shoes, Stationery</li>
 </ul>
-<button onclick="donate(100)">Support Education</button>
 
 </div>
 
 <!-- CHILD PROFILES -->
 <div class="section">
-<h2>👶 Sponsor a Child</h2>
+<h2>👶 Sponsor a Child ($60/month)</h2>
 
-<div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:15px;">
+<div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:15px;">
 
-<div>
-<img src="child1.jpg" width="100%">
+<div class="card">
+<span class="badge not-sponsored">Not Sponsored</span>
 <h3>Faith Wanjiku</h3>
-<p>Age 8</p>
-<button onclick="donate(100)">Sponsor</button>
+<p>Age: 8</p>
+<p>Needs: School supplies, uniform</p>
+<button onclick="donate(60)">Sponsor</button>
 </div>
 
-<div>
-<img src="child2.jpg" width="100%">
+<div class="card">
+<span class="badge sponsored">Sponsored</span>
+<h3>Mercy John</h3>
+<p>Age: 11</p>
+<p>Needs: School fees, books</p>
+<button onclick="donate(60)">Sponsor</button>
+</div>
+
+<div class="card">
+<span class="badge not-sponsored">Not Sponsored</span>
+<h3>Anne Kimani</h3>
+<p>Age: 5</p>
+<p>Needs: Food, clothing</p>
+<button onclick="donate(60)">Sponsor</button>
+</div>
+
+<div class="card">
+<span class="badge not-sponsored">Not Sponsored</span>
 <h3>Brian Mwangi</h3>
-<p>Age 10</p>
-<button onclick="donate(100)">Sponsor</button>
+<p>Age: 10</p>
+<p>Needs: Clothing, education</p>
+<button onclick="donate(60)">Sponsor</button>
+</div>
+
+<div class="card">
+<span class="badge not-sponsored">Not Sponsored</span>
+<h3>Daniel Kararani</h3>
+<p>Age: 14</p>
+<p>Needs: High school fees</p>
+<button onclick="donate(60)">Sponsor</button>
 </div>
 
 </div>
-
 </div>
 
 <!-- LOCATION -->
@@ -212,23 +254,23 @@ width="100%" height="300"></iframe>
 
 <!-- FLOATING BUTTON -->
 <a href="https://www.paypal.me/joefayeekenya" class="floating-btn">
-Donate
+💖 Donate Now
 </a>
 
 <script>
 function donate(amount){
-  window.open("https://www.paypal.me/joefayeekenya/"+amount);
+window.open("https://www.paypal.me/joefayeekenya/"+amount);
 }
 
 function donateCustom(){
-  let a=document.getElementById("amount").value;
-  if(!a){alert("Enter amount"); return;}
-  window.open("https://www.paypal.me/joefayeekenya/"+a);
+let a=document.getElementById("amount").value;
+if(!a){alert("Enter amount"); return;}
+window.open("https://www.paypal.me/joefayeekenya/"+a);
 }
 
 function showTab(id){
-  document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('show'));
-  document.getElementById(id).classList.add('show');
+document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('show'));
+document.getElementById(id).classList.add('show');
 }
 </script>
 
