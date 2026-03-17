@@ -11,7 +11,6 @@
       background: #f4f6f9;
     }
 
-    /* HEADER */
     .hero {
       background: linear-gradient(135deg,#ff0000,#ff8c00,#1e90ff,#6a11cb);
       color: white;
@@ -22,17 +21,14 @@
     .hero h1 {
       font-size: 42px;
       font-weight: 900;
-      letter-spacing: 2px;
       text-shadow: 3px 3px 12px rgba(0,0,0,0.7);
     }
 
     .tagline {
       font-size: 18px;
       font-weight: bold;
-      margin-top: 10px;
     }
 
-    /* INTRO */
     .intro {
       background: white;
       margin: 20px;
@@ -41,7 +37,6 @@
       border-left: 6px solid #ff416c;
     }
 
-    /* TABS */
     .tabs {
       display: flex;
       justify-content: center;
@@ -49,12 +44,12 @@
     }
 
     .tab {
-      padding: 12px 20px;
+      padding: 12px;
       margin: 5px;
+      background: #ddd;
       cursor: pointer;
       border-radius: 8px;
       font-weight: bold;
-      background: #ddd;
     }
 
     .tab.active {
@@ -64,12 +59,12 @@
 
     .tab-content {
       display: none;
-      padding: 20px;
       margin: 20px;
+      padding: 20px;
       border-radius: 12px;
       opacity: 0;
       transform: translateY(20px);
-      transition: all 0.5s ease;
+      transition: 0.4s;
     }
 
     .show {
@@ -82,11 +77,10 @@
     #vision { background:#e6ffe6; border-left:6px solid green; }
     #values { background:#f0e6ff; border-left:6px solid purple; }
 
-    /* DONATION */
     .donation {
       background: #e6f2ff;
-      padding: 20px;
       margin: 20px;
+      padding: 20px;
       border-radius: 12px;
       border-left: 6px solid #0070ba;
     }
@@ -94,11 +88,11 @@
     .amount-btn {
       padding: 10px;
       margin: 5px;
-      border-radius: 8px;
       background: #0070ba;
       color: white;
-      font-weight: bold;
       border: none;
+      border-radius: 8px;
+      font-weight: bold;
     }
 
     input, select {
@@ -119,6 +113,7 @@
 
     table {
       width: 100%;
+      margin-top: 10px;
       border-collapse: collapse;
     }
 
@@ -139,6 +134,7 @@
       border-radius: 8px;
       color: white;
       border: none;
+      font-weight: bold;
     }
 
   </style>
@@ -161,14 +157,10 @@
   </strong></p>
 
   <p>
-  We are committed to transforming lives by supporting the needy, empowering GBV survivors, and caring for children through our children's home. We provide food, shelter, education, and emotional care—because every life matters.
+  We support vulnerable communities, empower GBV survivors, and care for children through our home by providing food, shelter, education, and emotional support.
   </p>
 
-  <div>
-    <a href="https://wa.me/254725768628"><button>WhatsApp +254725768628</button></a>
-    <a href="https://wa.me/254703139012"><button>WhatsApp +254703139012</button></a>
-    <a href="https://www.facebook.com"><button>Facebook Page</button></a>
-  </div>
+  <a href="https://wa.me/254725768628"><button>Contact WhatsApp</button></a>
 </div>
 
 <!-- TABS -->
@@ -179,97 +171,91 @@
 </div>
 
 <div id="mission" class="tab-content show">
-  <h2>Mission</h2>
-  <p><strong>Restoring hope, dignity, and purpose to vulnerable individuals through compassionate care.</strong></p>
+<h2>Mission</h2>
+<p><strong>Restoring hope and dignity through compassionate care.</strong></p>
 </div>
 
 <div id="vision" class="tab-content">
-  <h2>Vision</h2>
-  <p><strong>A society where every child is loved and protected.</strong></p>
+<h2>Vision</h2>
+<p><strong>A society where every child thrives.</strong></p>
 </div>
 
 <div id="values" class="tab-content">
-  <h2>Core Values</h2>
-  <ul>
-    <li>Compassion</li>
-    <li>Integrity</li>
-    <li>Dignity</li>
-    <li>Commitment</li>
-    <li>Empowerment</li>
-    <li>Community</li>
-  </ul>
+<h2>Core Values</h2>
+<ul>
+<li>Compassion</li>
+<li>Integrity</li>
+<li>Dignity</li>
+<li>Commitment</li>
+<li>Empowerment</li>
+</ul>
 </div>
 
 <!-- DONATION -->
 <div class="donation">
-  <h2>Support Our Mission</h2>
 
-  <button class="amount-btn" onclick="selectAmount(10)">$10</button>
-  <button class="amount-btn" onclick="selectAmount(50)">$50</button>
-  <button class="amount-btn" onclick="selectAmount(100)">$100</button>
-  <button class="amount-btn" onclick="selectAmount(200)">$200</button>
-  <button class="amount-btn" onclick="selectAmount(500)">$500</button>
-  <button class="amount-btn" onclick="selectAmount(1000)">$1,000</button>
+<h2>Support Our Mission</h2>
 
-  <input type="number" id="customAmount" placeholder="Other Amount">
+<button class="amount-btn" onclick="selectAmount(10)">$10</button>
+<button class="amount-btn" onclick="selectAmount(50)">$50</button>
+<button class="amount-btn" onclick="selectAmount(100)">$100</button>
+<button class="amount-btn" onclick="selectAmount(200)">$200</button>
+<button class="amount-btn" onclick="selectAmount(500)">$500</button>
+<button class="amount-btn" onclick="selectAmount(1000)">$1,000</button>
 
-  <select id="frequency">
-    <option>One-Time</option>
-    <option>Monthly</option>
-    <option>Yearly</option>
-  </select>
+<input type="number" id="customAmount" placeholder="Other Amount">
 
-  <button class="donate-btn" onclick="donateNow()">Donate via PayPal</button>
+<select id="frequency">
+<option>One-Time</option>
+<option>Monthly</option>
+<option>Yearly</option>
+</select>
 
-  <!-- IMPACT -->
-  <h3>💖 Donation Impact</h3>
-  <table>
-    <tr><th>Amount</th><th>Impact</th></tr>
-    <tr><td>$10</td><td>Feeds a child for a day</td></tr>
-    <tr><td>$50</td><td>Provides school supplies</td></tr>
-    <tr><td>$100</td><td>Supports education</td></tr>
-    <tr><td>$200</td><td>Uniforms & essentials</td></tr>
-    <tr><td>$500</td><td>Medical & welfare support</td></tr>
-    <tr><td>$1,000</td><td>Full monthly care</td></tr>
-  </table>
+<button class="donate-btn" onclick="donateNow()">Donate via PayPal</button>
 
-  <!-- EDUCATION -->
-  <h3>🎓 Sponsor a Child</h3>
-  <ul>
-    <li>School Fees</li>
-    <li>Books & Stationery</li>
-    <li>Uniforms & Shoes</li>
-  </ul>
-  <a href="https://wa.me/254725768628">
-    <button style="background:green; color:white;">Sponsor via WhatsApp</button>
-  </a>
+<h3>💖 Donation Impact</h3>
+<table>
+<tr><th>Amount</th><th>Impact</th></tr>
+<tr><td>$10</td><td>Feeds a child for a day</td></tr>
+<tr><td>$50</td><td>School supplies</td></tr>
+<tr><td>$100</td><td>Education support</td></tr>
+<tr><td>$200</td><td>Uniforms</td></tr>
+<tr><td>$500</td><td>Medical care</td></tr>
+<tr><td>$1000</td><td>Full monthly care</td></tr>
+</table>
 
-  <!-- GIRLS -->
-  <h3>👧 Support Girls</h3>
-  <ul>
-    <li>Sanitary Pads</li>
-    <li>Innerwear</li>
-    <li>Skin Care</li>
-  </ul>
-  <a href="https://wa.me/254725768628">
-    <button style="background:#ff1493; color:white;">Support Girls</button>
-  </a>
+<!-- SPONSORSHIP -->
+<h3>🎓 Sponsorship Program</h3>
 
-  <hr>
+<p><strong>Sponsor a Girl</strong></p>
+<button class="donate-btn" onclick="sponsorNow(100)">Sponsor a Girl</button>
 
-  <h3>Other Ways to Donate</h3>
-  <a href="https://wa.me/254725768628"><button class="alt-btn" style="background:#ff6600;">Western Union</button></a>
-  <a href="https://wa.me/254725768628"><button class="alt-btn" style="background:#0033a0;">MoneyGram</button></a>
-  <a href="https://wa.me/254725768628"><button class="alt-btn" style="background:#ff0000;">WorldRemit</button></a>
+<p><strong>Sponsor a Boy</strong></p>
+<button class="donate-btn" onclick="sponsorNow(100)">Sponsor a Boy</button>
+
+<hr>
+
+<h3>🌍 Other Ways to Donate</h3>
+
+<a href="https://wa.me/254725768628">
+<button class="alt-btn" style="background:#ff6600;">Western Union</button>
+</a>
+
+<a href="https://wa.me/254725768628">
+<button class="alt-btn" style="background:#0033a0;">MoneyGram</button>
+</a>
+
+<a href="https://wa.me/254725768628">
+<button class="alt-btn" style="background:#ff0000;">WorldRemit</button>
+</a>
 
 </div>
 
 <script>
 let selectedAmount = 0;
 
-function selectAmount(amount){
-  selectedAmount = amount;
-  alert("Selected $" + amount);
+function selectAmount(a){
+  selectedAmount = a;
 }
 
 function donateNow(){
@@ -281,6 +267,10 @@ function donateNow(){
     return;
   }
 
+  window.open("https://www.paypal.me/joefayeekenya/" + amount);
+}
+
+function sponsorNow(amount){
   window.open("https://www.paypal.me/joefayeekenya/" + amount);
 }
 
