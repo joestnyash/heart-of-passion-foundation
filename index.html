@@ -5,11 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
-    body {
-      font-family: Arial;
-      margin: 0;
-      background: #f4f6f9;
-    }
+    body { font-family: Arial; margin: 0; background: #f4f6f9; }
 
     .hero {
       background: linear-gradient(135deg,#ff0000,#ff8c00,#1e90ff,#6a11cb);
@@ -24,10 +20,7 @@
       text-shadow: 3px 3px 12px rgba(0,0,0,0.7);
     }
 
-    .tagline {
-      font-size: 18px;
-      font-weight: bold;
-    }
+    .tagline { font-size: 18px; font-weight: bold; }
 
     .intro {
       background: white;
@@ -52,10 +45,7 @@
       font-weight: bold;
     }
 
-    .tab.active {
-      background: black;
-      color: white;
-    }
+    .tab.active { background: black; color: white; }
 
     .tab-content {
       display: none;
@@ -67,11 +57,7 @@
       transition: 0.4s;
     }
 
-    .show {
-      display: block;
-      opacity: 1;
-      transform: translateY(0);
-    }
+    .show { display: block; opacity: 1; transform: translateY(0); }
 
     #mission { background:#ffe6e6; border-left:6px solid red; }
     #vision { background:#e6ffe6; border-left:6px solid green; }
@@ -104,7 +90,7 @@
     .donate-btn {
       width: 100%;
       padding: 12px;
-      margin-top: 15px;
+      margin-top: 10px;
       background: black;
       color: white;
       border-radius: 8px;
@@ -122,9 +108,14 @@
       border-bottom: 1px solid #ddd;
     }
 
-    th {
-      background: #0070ba;
-      color: white;
+    th { background: #0070ba; color: white; }
+
+    .sponsor-box {
+      background: #ffffff;
+      padding: 15px;
+      margin-top: 15px;
+      border-radius: 10px;
+      border-left: 5px solid #333;
     }
 
     .alt-btn {
@@ -224,14 +215,42 @@
 <tr><td>$1000</td><td>Full monthly care</td></tr>
 </table>
 
-<!-- SPONSORSHIP -->
-<h3>🎓 Sponsorship Program</h3>
+<!-- GIRL -->
+<div class="sponsor-box">
+<h3>👧 Support a Girl</h3>
+<ul>
+<li>Sanitary Towels</li>
+<li>Innerwears</li>
+<li>Skin Care Products</li>
+</ul>
+<button class="donate-btn" onclick="sponsorNow(50)">Support a Girl</button>
+</div>
 
-<p><strong>Sponsor a Girl</strong></p>
-<button class="donate-btn" onclick="sponsorNow(100)">Sponsor a Girl</button>
+<!-- BOY -->
+<div class="sponsor-box">
+<h3>👦 Support a Boy</h3>
+<ul>
+<li>Innerwears</li>
+<li>Clothes</li>
+<li>Playing Items</li>
+<li>Arts Materials</li>
+</ul>
+<button class="donate-btn" onclick="sponsorNow(50)">Support a Boy</button>
+</div>
 
-<p><strong>Sponsor a Boy</strong></p>
-<button class="donate-btn" onclick="sponsorNow(100)">Sponsor a Boy</button>
+<!-- ACADEMIC -->
+<div class="sponsor-box">
+<h3>🎓 Academic Sponsorship</h3>
+<ul>
+<li>Study Materials</li>
+<li>Text Books</li>
+<li>Writing Books</li>
+<li>Stationery</li>
+<li>Uniforms</li>
+<li>Shoes</li>
+</ul>
+<button class="donate-btn" onclick="sponsorNow(100)">Support Education</button>
+</div>
 
 <hr>
 
@@ -254,19 +273,12 @@
 <script>
 let selectedAmount = 0;
 
-function selectAmount(a){
-  selectedAmount = a;
-}
+function selectAmount(a){ selectedAmount = a; }
 
 function donateNow(){
   let custom = document.getElementById("customAmount").value;
   let amount = custom || selectedAmount;
-
-  if(!amount){
-    alert("Select amount");
-    return;
-  }
-
+  if(!amount){ alert("Select amount"); return; }
   window.open("https://www.paypal.me/joefayeekenya/" + amount);
 }
 
