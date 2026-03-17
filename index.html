@@ -1,119 +1,94 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html><html>
 <head>
   <title>Heart of Passion Foundation</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><style>
 body {
-  font-family: Arial;
   margin:0;
+  font-family: 'Segoe UI', Arial;
   background: linear-gradient(135deg,#fdfbfb,#ebedee,#e0c3fc,#8ec5fc);
 }
 
 /* NAV */
 .nav {
-  background:black;
-  padding:12px;
+  background: #111;
+  padding: 15px;
   text-align:center;
+  position:sticky;
+  top:0;
+  z-index:1000;
 }
 .nav a {
   color:white;
-  margin:10px;
+  margin:0 15px;
   text-decoration:none;
   font-weight:bold;
 }
 
-/* HEADER */
+/* HERO */
 .hero {
   background: linear-gradient(135deg,#ff0000,#ff8c00,#1e90ff,#6a11cb);
   color:white;
   text-align:center;
-  padding:70px 20px;
+  padding:90px 20px;
 }
 .hero h1 {
-  font-size:42px;
+  font-size:50px;
   font-weight:900;
+  text-shadow:3px 3px 12px rgba(0,0,0,0.7);
 }
 
-/* SECTIONS */
 .section {
   background:white;
   margin:20px;
-  padding:20px;
-  border-radius:12px;
+  padding:25px;
+  border-radius:15px;
   border:3px solid;
   border-image: linear-gradient(45deg,#ff0000,#1e90ff,#28a745) 1;
-  box-shadow:0 4px 10px rgba(0,0,0,0.1);
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
 }
 
-/* TABS */
-.tabs { text-align:center; }
-.tab {
-  display:inline-block;
-  padding:10px;
-  margin:5px;
-  background:#ddd;
-  cursor:pointer;
-  border-radius:6px;
-}
-.tab-content {
-  display:none;
-  margin:20px;
-  padding:20px;
-  background:white;
-  border-radius:10px;
-}
-.show { display:block; }
-
-/* BUTTON BASE */
+/* BUTTONS */
 button {
   padding:12px;
-  margin:6px 0;
   border-radius:8px;
-  font-weight:bold;
+  border:none;
   cursor:pointer;
-  border:2px solid transparent;
+  font-weight:bold;
   transition:0.3s;
 }
+button:hover { transform:scale(1.05); }
 
-/* DONATION BUTTON COLORS */
-.btn-10 { background:#28a745; color:white; border-color:#1e7e34; }
-.btn-50 { background:#17a2b8; color:white; border-color:#117a8b; }
-.btn-100 { background:#ffc107; color:black; border-color:#d39e00; }
-.btn-200 { background:#fd7e14; color:white; border-color:#c05600; }
-.btn-500 { background:#6f42c1; color:white; border-color:#4e2a8e; }
-.btn-1000 { background:#dc3545; color:white; border-color:#a71d2a; }
+.btn { color:white; width:100%; margin-top:8px; }
+.btn-paypal { background:black; }
+.btn-green { background:#28a745; }
+.btn-blue { background:#007bff; }
+.btn-pink { background:#ff69b4; }
+.btn-purple { background:#6f42c1; }
 
-/* PAYPAL */
-.paypal-btn {
-  background:black;
-  color:white;
-  border-color:black;
+/* CARDS */
+.grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:15px;
+}
+.card {
+  background:white;
+  padding:15px;
+  border-radius:12px;
+  border:2px solid #ddd;
 }
 
-/* SPONSOR */
-.girl-btn { background:#ff69b4; color:white; border-color:#cc2f7a; }
-.boy-btn { background:#007bff; color:white; border-color:#0056b3; }
-.academic-btn { background:#20c997; color:white; border-color:#148f77; }
-
-/* CHILD BUTTON */
-.child-btn { background:#0070ba; color:white; }
-
-/* BADGES */
 .badge {
   padding:5px 10px;
   border-radius:20px;
-  font-size:12px;
   color:white;
-  display:inline-block;
-  margin-bottom:5px;
+  font-size:12px;
 }
 .sponsored { background:green; }
 .not-sponsored { background:red; }
 
-/* FLOAT BUTTON */
-.floating-btn {
+/* FLOAT */
+.float {
   position:fixed;
   bottom:20px;
   right:20px;
@@ -122,170 +97,46 @@ button {
   padding:15px 20px;
   border-radius:50px;
   text-decoration:none;
-  font-weight:bold;
 }
 
-/* HOVER */
-button:hover {
-  transform:scale(1.05);
-  opacity:0.9;
-}
-</style>
-</head>
-
-<body>
-
-<!-- NAV -->
-<div class="nav">
-  <a href="#">Home</a>
-  <a href="#donate">Donate</a>
-  <a href="gallery.html">Gallery</a>
-</div>
-
-<!-- HEADER -->
-<div class="hero">
-  <h1>HEART OF PASSION FOUNDATION</h1>
-  <p><strong>Bonded in Love ♥️, Humanity, and By God</strong></p>
-</div>
-
-<!-- INTRO -->
-<div class="section">
+</style></head><body><div class="nav">
+<a href="#">Home</a>
+<a href="#donate">Donate</a>
+<a href="#children">Children</a>
+</div><div class="hero">
+<h1>HEART OF PASSION FOUNDATION</h1>
+<p><b>Bonded in Love ♥️, Humanity, and By God</b></p>
+</div><div class="section">
 <h2>Introduction</h2>
-<p><strong>
-Founded in 2016 by Reverend JoeFaye (Joseph Nyaga Gachoki), Heart of Passion Foundation supports vulnerable children and communities in Nairobi.
-</strong></p>
-<p>
-We provide shelter, education, food, and emotional care while empowering lives.
-</p>
-</div>
-
-<!-- TABS -->
-<div class="tabs">
-<div class="tab" onclick="showTab('mission')">Mission</div>
-<div class="tab" onclick="showTab('vision')">Vision</div>
-<div class="tab" onclick="showTab('values')">Values</div>
-</div>
-
-<div id="mission" class="tab-content show">
-<p><strong>Restoring hope and dignity.</strong></p>
-</div>
-
-<div id="vision" class="tab-content">
-<p><strong>A society where every child thrives.</strong></p>
-</div>
-
-<div id="values" class="tab-content">
-<p><strong>Compassion, Integrity, Dignity.</strong></p>
-</div>
-
-<!-- DONATION -->
-<div id="donate" class="section">
-
+<p><b>Founded in 2016 by Reverend JoeFaye (Joseph Nyaga Gachoki)</b>, we support vulnerable children, GBV survivors and families in Nairobi.</p>
+</div><div id="donate" class="section">
 <h2>Donate</h2>
-
-<button class="btn-10" onclick="donate(10)">$10</button>
-<button class="btn-50" onclick="donate(50)">$50</button>
-<button class="btn-100" onclick="donate(100)">$100</button>
-<button class="btn-200" onclick="donate(200)">$200</button>
-<button class="btn-500" onclick="donate(500)">$500</button>
-<button class="btn-1000" onclick="donate(1000)">$1000</button>
-
+<button class="btn btn-green" onclick="donate(10)">$10</button>
+<button class="btn btn-blue" onclick="donate(50)">$50</button>
+<button class="btn btn-purple" onclick="donate(100)">$100</button>
 <input type="number" id="amount" placeholder="Other amount">
-
-<button class="paypal-btn" onclick="donateCustom()">Donate via PayPal</button>
-
-<h3>🎓 Sponsorship</h3>
-
-<h4>👧 Sponsor a Girl</h4>
-<ul>
-<li>Sanitary Towels</li>
-<li>Innerwears</li>
-<li>Skin Care Products</li>
-</ul>
-<button class="girl-btn" onclick="donate(60)">Sponsor Girl</button>
-
-<h4>👦 Sponsor a Boy</h4>
-<ul>
-<li>Clothes</li>
-<li>Playing Items</li>
-</ul>
-<button class="boy-btn" onclick="donate(60)">Sponsor Boy</button>
-
-<h4>📚 Academic Sponsorship</h4>
-<ul>
-<li>Books, Uniforms, Shoes, Stationery</li>
-</ul>
-<button class="academic-btn" onclick="donate(100)">Support Education</button>
-
-</div>
-
-<!-- CHILDREN -->
-<div class="section">
+<button class="btn btn-paypal" onclick="donateCustom()">Donate via PayPal</button>
+</div><div id="children" class="section">
 <h2>👶 Sponsor a Child ($60/month)</h2>
-
-<div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:15px;">
-
-<div class="card">
+<div class="grid"><div class="card">
 <span class="badge not-sponsored">Not Sponsored</span>
 <h3>Faith Wanjiku</h3>
 <p>Age: 8</p>
-<button class="child-btn" onclick="donate(60)">Sponsor</button>
-</div>
-
-<div class="card">
+<button class="btn btn-blue" onclick="donate(60)">Sponsor</button>
+</div><div class="card">
 <span class="badge sponsored">Sponsored</span>
 <h3>Mercy John</h3>
 <p>Age: 11</p>
-<button class="child-btn" onclick="donate(60)">Sponsor</button>
-</div>
-
-<div class="card">
-<span class="badge not-sponsored">Not Sponsored</span>
-<h3>Brian Mwangi</h3>
-<p>Age: 10</p>
-<button class="child-btn" onclick="donate(60)">Sponsor</button>
-</div>
-
-<div class="card">
-<span class="badge not-sponsored">Not Sponsored</span>
-<h3>Daniel Kararani</h3>
-<p>Age: 14</p>
-<button class="child-btn" onclick="donate(60)">Sponsor</button>
-</div>
-
-</div>
-</div>
-
-<!-- LOCATION -->
-<div class="section">
+<button class="btn btn-green" onclick="donate(60)">Sponsor</button>
+</div></div>
+</div><div class="section">
 <h2>📍 Location</h2>
 <p>Kenya, Nairobi, Roysambu, Zimmerman Ward</p>
-
-<iframe src="https://maps.google.com/maps?q=Zimmerman%20Nairobi&output=embed"
-width="100%" height="300"></iframe>
-</div>
-
-<!-- FLOAT BUTTON -->
-<a href="https://www.paypal.me/joefayeekenya" class="floating-btn">
-💖 Donate Now
-</a>
+<iframe src="https://maps.google.com/maps?q=Zimmerman%20Nairobi&output=embed" width="100%" height="300"></iframe>
+</div><a href="https://www.paypal.me/joefayeekenya" class="float">Donate</a>
 
 <script>
-function donate(amount){
-window.open("https://www.paypal.me/joefayeekenya/"+amount);
-}
-
-function donateCustom(){
-let a=document.getElementById("amount").value;
-if(!a){alert("Enter amount"); return;}
-window.open("https://www.paypal.me/joefayeekenya/"+a);
-}
-
-function showTab(id){
-document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('show'));
-document.getElementById(id).classList.add('show');
-}
-</script>
-
-</body>
+function donate(amount){ window.open("https://www.paypal.me/joefayeekenya/"+amount); }
+function donateCustom(){ let a=document.getElementById("amount").value; if(!a){alert("Enter amount"); return;} donate(a); }
+</script></body>
 </html>
