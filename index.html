@@ -9,28 +9,63 @@
 
 <!-- HERO -->
 <div style="
-  background: linear-gradient(135deg, #ff0000, #ff8c00, #1e90ff, #6a11cb);
-  color: white;
-  padding: 70px 20px;
-  text-align: center;
-  border-bottom: 6px solid #000;
-  animation: fadeIn 1.2s ease-in-out;
+  position:relative;
+  overflow:hidden;
+  color:white;
+  padding:80px 20px;
+  text-align:center;
 ">
 
-  <!-- SIMPLE LOGO -->
-  <div style="margin-bottom:15px;">
-    <div style="
-      display:inline-block;
-      background:white;
-      color:red;
-      font-weight:900;
-      padding:10px 18px;
-      border-radius:50px;
-      font-size:18px;
-      box-shadow:0 4px 10px rgba(0,0,0,0.3);
-    ">
-      ♥ HOPF
-    </div>
+<!-- BACKGROUND SLIDES -->
+<div style="
+  position:absolute;
+  top:0; left:0; width:100%; height:100%;
+  z-index:-1;
+  animation: slideBg 15s infinite;
+  background-size:cover;
+">
+</div>
+
+<!-- LOGO -->
+<img src="logo.png" alt="HOPF Logo" style="width:120px; margin-bottom:15px; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.5);">
+
+<h1 style="
+  font-size: 44px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
+">
+  HEART OF PASSION FOUNDATION
+</h1>
+
+<p style="font-size:20px; font-weight:bold;">
+  Not only a cause, but where every Heart ♥️ Matters!
+</p>
+
+<p>Help us change lives today. Your support matters.</p>
+
+<a href="https://wa.me/254725768628" target="_blank">
+  <button style="padding:12px 20px; margin:8px; background:white; border:none; border-radius:8px; font-weight:bold;">
+    WhatsApp
+  </button>
+</a>
+
+<a href="https://www.paypal.com/paypalme/joefayeekenya" target="_blank">
+  <button style="padding:12px 20px; margin:8px; background:black; color:white; border:none; border-radius:8px; font-weight:bold;">
+    Donate
+  </button>
+</a>
+
+</div>
+
+<style>
+@keyframes slideBg {
+  0% { background-image: url('IMG_20251112_WA0001.jpg'); }
+  33% { background-image: url('IMG_20251112_WA0002.jpg'); }
+  66% { background-image: url('IMG_20251112_WA0003.jpg'); }
+  100% { background-image: url('IMG_20251112_WA0001.jpg'); }
+}
+</s
   </div>
 
   <h1 style="
