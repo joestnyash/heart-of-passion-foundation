@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gallery - Heart of Passion Foundation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      font-family: Arial;
+      margin: 0;
+      background: #f5f5f5;
+    }
+
+    h2 {
+      margin-top: 30px;
+    }
+
+    .header {
+      background: linear-gradient(135deg,#ff416c,#1e90ff);
+      color: white;
+      padding: 30px;
+      text-align: center;
+    }
+
+    .container {
+      padding: 20px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+      gap: 15px;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    /* FULLSCREEN IMAGE */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      padding-top: 50px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.9);
+    }
+
+    .modal img {
+      margin: auto;
+      display: block;
+      width: 90%;
+      max-width: 700px;
+    }
+
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 35px;
+      color: white;
+      font-size: 40px;
+      cursor: pointer;
+    }
+
+    button {
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <h1>Our Gallery</h1>
+  <p>Moments from Heart of Passion Foundation</p>
+
+  <a href="index.html">
+    <button>⬅ Back Home</button>
+  </a>
+</div>
+
+<div class="container">
+
+<!-- CHILDREN HOME -->
+<h2>Children's Home</h2>
+<div class="gallery">
+  <img src="IMG_20251112_WA0001.jpg" onclick="openModal(this)">
+  <img src="IMG_20251112_WA0002.jpg" onclick="openModal(this)">
+  <img src="IMG_20251112_WA0003.jpg" onclick="openModal(this)">
+</div>
+
+<!-- ACTIVITIES -->
+<h2>Children Activities</h2>
+<div class="gallery">
+  <img src="IMG_20251119_221332.jpg" onclick="openModal(this)">
+  <img src="IMG_20251119_221351.jpg" onclick="openModal(this)">
+  <img src="IMG_20251119_221423.jpg" onclick="openModal(this)">
+</div>
+
+<!-- DONORS -->
+<h2>Donors & Volunteers</h2>
+<div class="gallery">
+  <img src="IMG_20251119_221451.jpg" onclick="openModal(this)">
+  <img src="IMG_20251120_123456.jpg" onclick="openModal(this)">
+</div>
+
+</div>
+
+<!-- MODAL (POPUP IMAGE) -->
+<div id="imageModal" class="modal">
+  <span class="close" onclick="closeModal()">&times;</span>
+  <img id="modalImg">
+</div>
+
+<script>
+function openModal(img) {
+  document.getElementById("imageModal").style.display = "block";
+  document.getElementById("modalImg").src = img.src;
+}
+
+function closeModal() {
+  document.getElementById("imageModal").style.display = "none";
+}
+</script>
+
+</body>
+</html>
