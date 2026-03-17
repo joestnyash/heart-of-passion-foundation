@@ -31,6 +31,10 @@ body {
   text-align:center;
   padding:70px 20px;
 }
+.hero h1 {
+  font-size:42px;
+  font-weight:900;
+}
 
 /* SECTIONS */
 .section {
@@ -38,7 +42,8 @@ body {
   margin:20px;
   padding:20px;
   border-radius:12px;
-  border:3px solid #ddd;
+  border:3px solid;
+  border-image: linear-gradient(45deg,#ff0000,#1e90ff,#28a745) 1;
   box-shadow:0 4px 10px rgba(0,0,0,0.1);
 }
 
@@ -61,29 +66,39 @@ body {
 }
 .show { display:block; }
 
-/* BUTTONS */
+/* BUTTON BASE */
 button {
-  padding:10px;
-  margin-top:8px;
-  border:none;
+  padding:12px;
+  margin:6px 0;
   border-radius:8px;
   font-weight:bold;
   cursor:pointer;
-}
-.donate-btn {
-  width:100%;
-  background:black;
-  color:white;
+  border:2px solid transparent;
+  transition:0.3s;
 }
 
-/* CHILD CARDS */
-.card {
-  background:white;
-  padding:15px;
-  border-radius:10px;
-  border:2px solid #ddd;
-  box-shadow:0 4px 10px rgba(0,0,0,0.1);
+/* DONATION BUTTON COLORS */
+.btn-10 { background:#28a745; color:white; border-color:#1e7e34; }
+.btn-50 { background:#17a2b8; color:white; border-color:#117a8b; }
+.btn-100 { background:#ffc107; color:black; border-color:#d39e00; }
+.btn-200 { background:#fd7e14; color:white; border-color:#c05600; }
+.btn-500 { background:#6f42c1; color:white; border-color:#4e2a8e; }
+.btn-1000 { background:#dc3545; color:white; border-color:#a71d2a; }
+
+/* PAYPAL */
+.paypal-btn {
+  background:black;
+  color:white;
+  border-color:black;
 }
+
+/* SPONSOR */
+.girl-btn { background:#ff69b4; color:white; border-color:#cc2f7a; }
+.boy-btn { background:#007bff; color:white; border-color:#0056b3; }
+.academic-btn { background:#20c997; color:white; border-color:#148f77; }
+
+/* CHILD BUTTON */
+.child-btn { background:#0070ba; color:white; }
 
 /* BADGES */
 .badge {
@@ -92,6 +107,7 @@ button {
   font-size:12px;
   color:white;
   display:inline-block;
+  margin-bottom:5px;
 }
 .sponsored { background:green; }
 .not-sponsored { background:red; }
@@ -108,6 +124,12 @@ button {
   text-decoration:none;
   font-weight:bold;
 }
+
+/* HOVER */
+button:hover {
+  transform:scale(1.05);
+  opacity:0.9;
+}
 </style>
 </head>
 
@@ -117,7 +139,7 @@ button {
 <div class="nav">
   <a href="#">Home</a>
   <a href="#donate">Donate</a>
-  <a href="#">Gallery</a>
+  <a href="gallery.html">Gallery</a>
 </div>
 
 <!-- HEADER -->
@@ -133,7 +155,7 @@ button {
 Founded in 2016 by Reverend JoeFaye (Joseph Nyaga Gachoki), Heart of Passion Foundation supports vulnerable children and communities in Nairobi.
 </strong></p>
 <p>
-We provide shelter, education, food, and emotional care to children while empowering families and GBV survivors.
+We provide shelter, education, food, and emotional care while empowering lives.
 </p>
 </div>
 
@@ -145,7 +167,7 @@ We provide shelter, education, food, and emotional care to children while empowe
 </div>
 
 <div id="mission" class="tab-content show">
-<p><strong>Restoring hope and dignity through compassion.</strong></p>
+<p><strong>Restoring hope and dignity.</strong></p>
 </div>
 
 <div id="vision" class="tab-content">
@@ -153,7 +175,7 @@ We provide shelter, education, food, and emotional care to children while empowe
 </div>
 
 <div id="values" class="tab-content">
-<p><strong>Compassion, Integrity, Dignity, Empowerment.</strong></p>
+<p><strong>Compassion, Integrity, Dignity.</strong></p>
 </div>
 
 <!-- DONATION -->
@@ -161,16 +183,16 @@ We provide shelter, education, food, and emotional care to children while empowe
 
 <h2>Donate</h2>
 
-<button onclick="donate(10)">$10</button>
-<button onclick="donate(50)">$50</button>
-<button onclick="donate(100)">$100</button>
-<button onclick="donate(200)">$200</button>
-<button onclick="donate(500)">$500</button>
-<button onclick="donate(1000)">$1000</button>
+<button class="btn-10" onclick="donate(10)">$10</button>
+<button class="btn-50" onclick="donate(50)">$50</button>
+<button class="btn-100" onclick="donate(100)">$100</button>
+<button class="btn-200" onclick="donate(200)">$200</button>
+<button class="btn-500" onclick="donate(500)">$500</button>
+<button class="btn-1000" onclick="donate(1000)">$1000</button>
 
 <input type="number" id="amount" placeholder="Other amount">
 
-<button class="donate-btn" onclick="donateCustom()">Donate via PayPal</button>
+<button class="paypal-btn" onclick="donateCustom()">Donate via PayPal</button>
 
 <h3>🎓 Sponsorship</h3>
 
@@ -180,21 +202,24 @@ We provide shelter, education, food, and emotional care to children while empowe
 <li>Innerwears</li>
 <li>Skin Care Products</li>
 </ul>
+<button class="girl-btn" onclick="donate(60)">Sponsor Girl</button>
 
 <h4>👦 Sponsor a Boy</h4>
 <ul>
 <li>Clothes</li>
 <li>Playing Items</li>
 </ul>
+<button class="boy-btn" onclick="donate(60)">Sponsor Boy</button>
 
 <h4>📚 Academic Sponsorship</h4>
 <ul>
 <li>Books, Uniforms, Shoes, Stationery</li>
 </ul>
+<button class="academic-btn" onclick="donate(100)">Support Education</button>
 
 </div>
 
-<!-- CHILD PROFILES -->
+<!-- CHILDREN -->
 <div class="section">
 <h2>👶 Sponsor a Child ($60/month)</h2>
 
@@ -204,40 +229,28 @@ We provide shelter, education, food, and emotional care to children while empowe
 <span class="badge not-sponsored">Not Sponsored</span>
 <h3>Faith Wanjiku</h3>
 <p>Age: 8</p>
-<p>Needs: School supplies, uniform</p>
-<button onclick="donate(60)">Sponsor</button>
+<button class="child-btn" onclick="donate(60)">Sponsor</button>
 </div>
 
 <div class="card">
 <span class="badge sponsored">Sponsored</span>
 <h3>Mercy John</h3>
 <p>Age: 11</p>
-<p>Needs: School fees, books</p>
-<button onclick="donate(60)">Sponsor</button>
-</div>
-
-<div class="card">
-<span class="badge not-sponsored">Not Sponsored</span>
-<h3>Anne Kimani</h3>
-<p>Age: 5</p>
-<p>Needs: Food, clothing</p>
-<button onclick="donate(60)">Sponsor</button>
+<button class="child-btn" onclick="donate(60)">Sponsor</button>
 </div>
 
 <div class="card">
 <span class="badge not-sponsored">Not Sponsored</span>
 <h3>Brian Mwangi</h3>
 <p>Age: 10</p>
-<p>Needs: Clothing, education</p>
-<button onclick="donate(60)">Sponsor</button>
+<button class="child-btn" onclick="donate(60)">Sponsor</button>
 </div>
 
 <div class="card">
 <span class="badge not-sponsored">Not Sponsored</span>
 <h3>Daniel Kararani</h3>
 <p>Age: 14</p>
-<p>Needs: High school fees</p>
-<button onclick="donate(60)">Sponsor</button>
+<button class="child-btn" onclick="donate(60)">Sponsor</button>
 </div>
 
 </div>
@@ -252,7 +265,7 @@ We provide shelter, education, food, and emotional care to children while empowe
 width="100%" height="300"></iframe>
 </div>
 
-<!-- FLOATING BUTTON -->
+<!-- FLOAT BUTTON -->
 <a href="https://www.paypal.me/joefayeekenya" class="floating-btn">
 💖 Donate Now
 </a>
