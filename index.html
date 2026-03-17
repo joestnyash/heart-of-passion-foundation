@@ -8,176 +8,202 @@
     body {
       font-family: Arial;
       margin: 0;
-      background: linear-gradient(to right,#fdfbfb,#ebedee);
+      background: #f4f6f9;
     }
 
-    .nav {
-      background: #000;
-      padding: 12px;
-      text-align: center;
-    }
-
-    .nav a {
-      color: white;
-      margin: 10px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
+    /* HERO */
     .hero {
-      position: relative;
-      text-align: center;
-      color: white;
-      padding: 80px 20px;
       background: linear-gradient(135deg,#ff416c,#1e90ff);
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
     }
 
     .hero h1 {
-      font-size: 38px;
+      font-size: 34px;
       font-weight: 900;
-      text-shadow: 2px 2px 10px rgba(0,0,0,0.6);
     }
 
-    .card {
-      background: white;
-      margin: 20px;
+    /* TABS */
+    .tabs {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .tab {
+      padding: 12px 20px;
+      margin: 5px;
+      cursor: pointer;
+      border-radius: 8px;
+      font-weight: bold;
+      background: #ddd;
+    }
+
+    .tab.active {
+      background: black;
+      color: white;
+    }
+
+    .tab-content {
+      display: none;
       padding: 20px;
-      border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      margin: 20px;
+      border-radius: 12px;
+      font-size: 16px;
     }
 
-    button {
-      padding: 10px 15px;
+    /* Different colors per section */
+    #mission { background: #ffe6e6; border-left: 6px solid red; }
+    #vision { background: #e6ffe6; border-left: 6px solid green; }
+    #values { background: #f0e6ff; border-left: 6px solid purple; }
+
+    .show {
+      display: block;
+    }
+
+    /* DONATION */
+    .donation {
+      background: #e6f2ff;
+      padding: 20px;
+      margin: 20px;
+      border-radius: 12px;
+      border-left: 6px solid #0070ba;
+    }
+
+    .donation button {
+      padding: 10px;
       margin: 5px;
       border: none;
       border-radius: 8px;
       cursor: pointer;
+      background: #0070ba;
+      color: white;
+      font-weight: bold;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
     }
 
     .donate-btn {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: red;
+      width: 100%;
+      padding: 12px;
+      margin-top: 15px;
+      background: black;
       color: white;
-      padding: 15px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: bold;
+      border: none;
+      border-radius: 8px;
     }
+
   </style>
 </head>
 
 <body>
 
-<!-- NAV -->
-<div class="nav">
-  <a href="index.html">Home</a>
-  <a href="gallery.html">Gallery</a>
-</div>
-
 <!-- HERO -->
 <div class="hero">
-
-<img src="logo.png" style="width:120px; margin-bottom:10px;">
-
-<h1>HEART OF PASSION FOUNDATION</h1>
-
-<p><strong>Not only a cause, but where every Heart ♥️ Matters!</strong></p>
-
-<a href="https://wa.me/254725768628">
-<button>WhatsApp</button>
-</a>
-
-<a href="https://www.paypal.com/paypalme/joefayeekenya">
-<button style="background:black; color:white;">Donate</button>
-</a>
-
+  <h1>HEART OF PASSION FOUNDATION</h1>
+  <p><strong>Not only a cause, but where every Heart ♥️ Matters!</strong></p>
 </div>
 
-<!-- CONTENT -->
-
-<div class="card">
-<h2>About Us</h2>
-<p>
-Heart of Passion Foundation supports the needy, empowers GBV victims, and runs a children's home caring for 42 children in Nairobi.
-</p>
+<!-- TABS -->
+<div class="tabs">
+  <div class="tab active" onclick="showTab('mission')">Mission</div>
+  <div class="tab" onclick="showTab('vision')">Vision</div>
+  <div class="tab" onclick="showTab('values')">Core Values</div>
 </div>
 
-<div class="card">
-<h2>Mission</h2>
-<p><strong>
-Restoring hope, dignity, and purpose to vulnerable individuals through compassionate care.
-</strong></p>
+<!-- TAB CONTENT -->
+<div id="mission" class="tab-content show">
+  <h2>Mission</h2>
+  <p><strong>
+  Restoring hope, dignity, and purpose to vulnerable individuals through compassionate care and long-term support.
+  </strong></p>
 </div>
 
-<div class="card">
-<h2>Vision</h2>
-<p><strong>
-A society where every child is loved, protected, and given the opportunity to thrive.
-</strong></p>
+<div id="vision" class="tab-content">
+  <h2>Vision</h2>
+  <p><strong>
+  A society where every child is loved, protected, and given the opportunity to thrive.
+  </strong></p>
 </div>
 
-<div class="card">
-<h2>Core Values</h2>
-<ul>
-<li>Compassion</li>
-<li>Integrity</li>
-<li>Dignity</li>
-<li>Commitment</li>
-<li>Empowerment</li>
-<li>Community</li>
-</ul>
-</div>
-
-<div class="card">
-<h2>Our Impact</h2>
-<ul>
-<li>👶 42 children supported daily</li>
-<li>🍲 Meals provided</li>
-<li>🏫 Education support</li>
-<li>🤝 GBV support programs</li>
-</ul>
+<div id="values" class="tab-content">
+  <h2>Core Values</h2>
+  <ul>
+    <li><strong>Compassion:</strong> Love and empathy</li>
+    <li><strong>Integrity:</strong> Transparency</li>
+    <li><strong>Dignity:</strong> Every life matters</li>
+    <li><strong>Commitment:</strong> Long-term impact</li>
+    <li><strong>Empowerment:</strong> Uplifting lives</li>
+    <li><strong>Community:</strong> Working together</li>
+  </ul>
 </div>
 
 <!-- DONATION -->
-<div class="card">
-<h2>Support Our Mission</h2>
+<div class="donation">
+  <h2>Support Our Mission</h2>
 
-<button>$10</button>
-<button>$50</button>
-<button>$100</button>
-<button>$200</button>
+  <p>Select Amount:</p>
 
-<p><strong>M-Pesa:</strong> +254725768628</p>
-<p><strong>Paybill:</strong> 162180 (Acc: 0300327)</p>
+  <button onclick="selectAmount(10)">$10</button>
+  <button onclick="selectAmount(50)">$50</button>
+  <button onclick="selectAmount(100)">$100</button>
+  <button onclick="selectAmount(200)">$200</button>
+  <button onclick="selectAmount(500)">$500</button>
+  <button onclick="selectAmount(1000)">$1,000</button>
 
-<p><strong>Other Options:</strong></p>
-<ul>
-<li>PayPal</li>
-<li>Western Union</li>
-<li>MoneyGram</li>
-<li>WorldRemit</li>
-</ul>
+  <p><strong>Other Amount</strong></p>
+  <input type="number" id="customAmount" placeholder="Enter amount">
 
+  <p><strong>Donation Frequency</strong></p>
+  <select id="frequency">
+    <option>One-Time</option>
+    <option>Weekly</option>
+    <option>Monthly</option>
+    <option>Yearly</option>
+  </select>
+
+  <button class="donate-btn" onclick="donateNow()">Donate Now</button>
 </div>
 
-<div class="card">
-<h2>Contact</h2>
-<p>📞 +254725768628 / +254703139012</p>
-<p>📧 heartofpassionfdn@gmail.com</p>
-</div>
+<script>
+let selectedAmount = 0;
 
-<!-- MAP -->
-<div class="card">
-<h2>Location</h2>
-<iframe src="https://maps.google.com/maps?q=Zimmerman%20Nairobi&output=embed" width="100%" height="300"></iframe>
-</div>
+function selectAmount(amount) {
+  selectedAmount = amount;
+  alert("Selected $" + amount);
+}
 
-<!-- FLOATING BUTTON -->
-<a href="https://www.paypal.com/paypalme/joefayeekenya" class="donate-btn">
-Donate
-</a>
+function donateNow() {
+  let custom = document.getElementById("customAmount").value;
+  let freq = document.getElementById("frequency").value;
+
+  let amount = custom || selectedAmount;
+
+  if (!amount) {
+    alert("Please select or enter an amount");
+    return;
+  }
+
+  alert("Donating $" + amount + " (" + freq + ")");
+  window.open("https://www.paypal.com/paypalme/joefayeekenya");
+}
+
+function showTab(tabId) {
+  let tabs = document.querySelectorAll(".tab-content");
+  let buttons = document.querySelectorAll(".tab");
+
+  tabs.forEach(t => t.classList.remove("show"));
+  buttons.forEach(b => b.classList.remove("active"));
+
+  document.getElementById(tabId).classList.add("show");
+  event.target.classList.add("active");
+}
+</script>
 
 </body>
 </html>
