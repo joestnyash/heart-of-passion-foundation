@@ -5,13 +5,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
-    body { font-family: Arial; margin: 0; background: #f4f6f9; }
+    body {
+      font-family: Arial;
+      margin: 0;
+      background: linear-gradient(135deg,#fdfbfb,#ebedee,#e0c3fc,#8ec5fc);
+    }
 
+    /* NAVIGATION */
+    .nav {
+      background: black;
+      padding: 12px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav a {
+      color: white;
+      margin: 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* HEADER */
     .hero {
       background: linear-gradient(135deg,#ff0000,#ff8c00,#1e90ff,#6a11cb);
       color: white;
       text-align: center;
       padding: 70px 20px;
+      border-bottom: 5px solid white;
     }
 
     .hero h1 {
@@ -20,14 +43,13 @@
       text-shadow: 3px 3px 12px rgba(0,0,0,0.7);
     }
 
-    .tagline { font-size: 18px; font-weight: bold; }
-
-    .intro {
+    .section {
       background: white;
       margin: 20px;
       padding: 20px;
       border-radius: 12px;
-      border-left: 6px solid #ff416c;
+      border: 3px solid #ddd;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
 
     .tabs {
@@ -45,95 +67,52 @@
       font-weight: bold;
     }
 
-    .tab.active { background: black; color: white; }
+    .tab.active {
+      background: black;
+      color: white;
+    }
 
     .tab-content {
       display: none;
       margin: 20px;
       padding: 20px;
       border-radius: 12px;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: 0.4s;
+      border: 3px solid #ccc;
     }
 
-    .show { display: block; opacity: 1; transform: translateY(0); }
-
-    #mission { background:#ffe6e6; border-left:6px solid red; }
-    #vision { background:#e6ffe6; border-left:6px solid green; }
-    #values { background:#f0e6ff; border-left:6px solid purple; }
+    .show { display: block; }
 
     .donation {
       background: #e6f2ff;
-      margin: 20px;
-      padding: 20px;
-      border-radius: 12px;
       border-left: 6px solid #0070ba;
     }
 
-    .amount-btn {
+    button {
       padding: 10px;
       margin: 5px;
-      background: #0070ba;
-      color: white;
       border: none;
       border-radius: 8px;
+      cursor: pointer;
       font-weight: bold;
-    }
-
-    input, select {
-      width: 100%;
-      padding: 10px;
-      margin-top: 10px;
     }
 
     .donate-btn {
       width: 100%;
-      padding: 12px;
-      margin-top: 10px;
       background: black;
       color: white;
-      border-radius: 8px;
-      border: none;
     }
 
-    table {
-      width: 100%;
-      margin-top: 10px;
-      border-collapse: collapse;
-    }
-
-    th, td {
-      padding: 10px;
-      border-bottom: 1px solid #ddd;
-    }
-
-    th { background: #0070ba; color: white; }
-
-    .sponsor-box {
-      background: #ffffff;
-      padding: 15px;
-      margin-top: 15px;
-      border-radius: 10px;
-      border-left: 5px solid #333;
-    }
-
-    .alt-btn {
-      width: 100%;
-      padding: 12px;
-      margin-top: 10px;
-      border-radius: 8px;
+    .floating-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: red;
       color: white;
-      border: none;
+      padding: 15px 20px;
+      border-radius: 50px;
+      text-decoration: none;
       font-weight: bold;
-    }
-
-    .location {
-      background:white;
-      margin:20px;
-      padding:20px;
-      border-radius:12px;
-      border-left:6px solid #1e90ff;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     }
 
   </style>
@@ -141,22 +120,28 @@
 
 <body>
 
+<!-- NAV -->
+<div class="nav">
+  <a href="#">Home</a>
+  <a href="#donate">Donate</a>
+  <a href="gallery.html">Gallery</a>
+</div>
+
 <!-- HEADER -->
 <div class="hero">
   <h1>HEART OF PASSION FOUNDATION</h1>
-  <p class="tagline">Bonded in Love ♥️, Humanity, and By God</p>
+  <p><strong>Bonded in Love ♥️, Humanity, and By God</strong></p>
 </div>
 
 <!-- INTRO -->
-<div class="intro">
+<div class="section">
   <h2>Introduction</h2>
   <p><strong>
-  Heart of Passion Foundation is a nonprofit charitable organization based in Nairobi, Kenya, founded in 2016 by Reverend JoeFaye (Joseph Nyaga Gachoki).
+  Heart of Passion Foundation is a nonprofit organization founded in 2016 by Reverend JoeFaye (Joseph Nyaga Gachoki).
   </strong></p>
   <p>
-  We support vulnerable communities, empower GBV survivors, and care for children through our home by providing food, shelter, education, and emotional support.
+  We support vulnerable communities, empower GBV survivors, and care for children through provision of food, shelter, education and emotional support.
   </p>
-  <a href="https://wa.me/254725768628"><button>Contact WhatsApp</button></a>
 </div>
 
 <!-- TABS -->
@@ -167,99 +152,84 @@
 </div>
 
 <div id="mission" class="tab-content show">
-<h2>Mission</h2>
-<p><strong>Restoring hope and dignity through compassionate care.</strong></p>
+<h3>Mission</h3>
+<p>Restoring hope and dignity.</p>
 </div>
 
 <div id="vision" class="tab-content">
-<h2>Vision</h2>
-<p><strong>A society where every child thrives.</strong></p>
+<h3>Vision</h3>
+<p>A society where every child thrives.</p>
 </div>
 
 <div id="values" class="tab-content">
-<h2>Core Values</h2>
+<h3>Core Values</h3>
 <ul>
 <li>Compassion</li>
 <li>Integrity</li>
 <li>Dignity</li>
-<li>Commitment</li>
-<li>Empowerment</li>
 </ul>
 </div>
 
 <!-- DONATION -->
-<div class="donation">
-<h2>Support Our Mission</h2>
+<div id="donate" class="section donation">
 
-<button class="amount-btn" onclick="selectAmount(10)">$10</button>
-<button class="amount-btn" onclick="selectAmount(50)">$50</button>
-<button class="amount-btn" onclick="selectAmount(100)">$100</button>
+<h2>Donate</h2>
 
-<input type="number" id="customAmount" placeholder="Other Amount">
+<button onclick="donate(10)">$10</button>
+<button onclick="donate(50)">$50</button>
+<button onclick="donate(100)">$100</button>
 
-<button class="donate-btn" onclick="donateNow()">Donate via PayPal</button>
+<input type="number" id="customAmount" placeholder="Other amount">
+
+<button class="donate-btn" onclick="donateCustom()">Donate via PayPal</button>
 
 <h3>🎓 Sponsorship</h3>
 
-<div class="sponsor-box">
 <h4>👧 Support a Girl</h4>
 <ul>
 <li>Sanitary Towels</li>
 <li>Innerwears</li>
-<li>Skin Care Products</li>
+<li>Skin Care</li>
 </ul>
-<button class="donate-btn" onclick="sponsorNow(50)">Support Girl</button>
-</div>
+<button onclick="donate(50)">Support Girl</button>
 
-<div class="sponsor-box">
 <h4>👦 Support a Boy</h4>
 <ul>
 <li>Clothes</li>
-<li>Innerwears</li>
 <li>Playing Items</li>
 </ul>
-<button class="donate-btn" onclick="sponsorNow(50)">Support Boy</button>
-</div>
-
-<hr>
-
-<h3>🌍 Other Ways</h3>
-
-<a href="https://wa.me/254725768628">
-<button class="alt-btn" style="background:#ff6600;">Western Union</button>
-</a>
-
-<a href="https://wa.me/254725768628">
-<button class="alt-btn" style="background:#0033a0;">MoneyGram</button>
-</a>
+<button onclick="donate(50)">Support Boy</button>
 
 </div>
 
-<!-- LOCATION (BOTTOM) -->
-<div class="location">
-<h2>📍 Our Location</h2>
+<!-- LOCATION -->
+<div class="section">
+<h2>📍 Location</h2>
+<p>Kenya, Nairobi, Roysambu, Zimmerman Ward</p>
 
-<p><strong>Country:</strong> Kenya</p>
-<p><strong>County:</strong> Nairobi</p>
-<p><strong>Area:</strong> Roysambu, Zimmerman Ward</p>
-
-<div style="margin-top:15px; border-radius:10px; overflow:hidden;">
-<iframe src="https://maps.google.com/maps?q=Zimmerman%20Nairobi%20Kenya&output=embed"
+<iframe src="https://maps.google.com/maps?q=Zimmerman%20Nairobi&output=embed"
 width="100%" height="300"></iframe>
 </div>
 
-</div>
+<!-- FLOATING BUTTON -->
+<a href="https://www.paypal.me/joefayeekenya" class="floating-btn">
+💖 Donate Now
+</a>
 
 <script>
-let selectedAmount=0;
-function selectAmount(a){selectedAmount=a;}
-function donateNow(){window.open("https://www.paypal.me/joefayeekenya/"+selectedAmount);}
-function sponsorNow(a){window.open("https://www.paypal.me/joefayeekenya/"+a);}
+function donate(amount){
+  window.open("https://www.paypal.me/joefayeekenya/"+amount);
+}
+
+function donateCustom(){
+  let amount=document.getElementById("customAmount").value;
+  if(!amount){alert("Enter amount"); return;}
+  window.open("https://www.paypal.me/joefayeekenya/"+amount);
+}
+
 function showTab(e,id){
-document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('show'));
-document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
-document.getElementById(id).classList.add('show');
-e.currentTarget.classList.add('active');
+  document.querySelectorAll('.tab-content').forEach(t=>t.style.display='none');
+  document.getElementById(id).style.display='block';
 }
 </script>
 
