@@ -38,6 +38,7 @@
       border-radius: 8px;
       font-weight: bold;
       background: #ddd;
+      transition: 0.3s;
     }
 
     .tab.active {
@@ -51,16 +52,20 @@
       margin: 20px;
       border-radius: 12px;
       font-size: 16px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.5s ease;
     }
-
-    /* Different colors per section */
-    #mission { background: #ffe6e6; border-left: 6px solid red; }
-    #vision { background: #e6ffe6; border-left: 6px solid green; }
-    #values { background: #f0e6ff; border-left: 6px solid purple; }
 
     .show {
       display: block;
+      opacity: 1;
+      transform: translateY(0);
     }
+
+    #mission { background:#ffe6e6; border-left:6px solid red; }
+    #vision { background:#e6ffe6; border-left:6px solid green; }
+    #values { background:#f0e6ff; border-left:6px solid purple; }
 
     /* DONATION */
     .donation {
@@ -77,9 +82,12 @@
       border: none;
       border-radius: 8px;
       cursor: pointer;
+      font-weight: bold;
+    }
+
+    .amount-btn {
       background: #0070ba;
       color: white;
-      font-weight: bold;
     }
 
     input, select {
@@ -94,8 +102,16 @@
       margin-top: 15px;
       background: black;
       color: white;
-      border: none;
       border-radius: 8px;
+    }
+
+    .alt-btn {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      border-radius: 8px;
+      color: white;
+      border: none;
     }
 
   </style>
@@ -111,35 +127,31 @@
 
 <!-- TABS -->
 <div class="tabs">
-  <div class="tab active" onclick="showTab('mission')">Mission</div>
-  <div class="tab" onclick="showTab('vision')">Vision</div>
-  <div class="tab" onclick="showTab('values')">Core Values</div>
+  <div class="tab active" onclick="showTab(event,'mission')">Mission</div>
+  <div class="tab" onclick="showTab(event,'vision')">Vision</div>
+  <div class="tab" onclick="showTab(event,'values')">Core Values</div>
 </div>
 
-<!-- TAB CONTENT -->
+<!-- CONTENT -->
 <div id="mission" class="tab-content show">
   <h2>Mission</h2>
-  <p><strong>
-  Restoring hope, dignity, and purpose to vulnerable individuals through compassionate care and long-term support.
-  </strong></p>
+  <p><strong>Restoring hope, dignity, and purpose to vulnerable individuals through compassionate care.</strong></p>
 </div>
 
 <div id="vision" class="tab-content">
   <h2>Vision</h2>
-  <p><strong>
-  A society where every child is loved, protected, and given the opportunity to thrive.
-  </strong></p>
+  <p><strong>A society where every child is loved and protected.</strong></p>
 </div>
 
 <div id="values" class="tab-content">
   <h2>Core Values</h2>
   <ul>
-    <li><strong>Compassion:</strong> Love and empathy</li>
-    <li><strong>Integrity:</strong> Transparency</li>
-    <li><strong>Dignity:</strong> Every life matters</li>
-    <li><strong>Commitment:</strong> Long-term impact</li>
-    <li><strong>Empowerment:</strong> Uplifting lives</li>
-    <li><strong>Community:</strong> Working together</li>
+    <li>Compassion</li>
+    <li>Integrity</li>
+    <li>Dignity</li>
+    <li>Commitment</li>
+    <li>Empowerment</li>
+    <li>Community</li>
   </ul>
 </div>
 
@@ -147,19 +159,15 @@
 <div class="donation">
   <h2>Support Our Mission</h2>
 
-  <p>Select Amount:</p>
+  <button class="amount-btn" onclick="selectAmount(10)">$10</button>
+  <button class="amount-btn" onclick="selectAmount(50)">$50</button>
+  <button class="amount-btn" onclick="selectAmount(100)">$100</button>
+  <button class="amount-btn" onclick="selectAmount(200)">$200</button>
+  <button class="amount-btn" onclick="selectAmount(500)">$500</button>
+  <button class="amount-btn" onclick="selectAmount(1000)">$1,000</button>
 
-  <button onclick="selectAmount(10)">$10</button>
-  <button onclick="selectAmount(50)">$50</button>
-  <button onclick="selectAmount(100)">$100</button>
-  <button onclick="selectAmount(200)">$200</button>
-  <button onclick="selectAmount(500)">$500</button>
-  <button onclick="selectAmount(1000)">$1,000</button>
+  <input type="number" id="customAmount" placeholder="Other Amount">
 
-  <p><strong>Other Amount</strong></p>
-  <input type="number" id="customAmount" placeholder="Enter amount">
-
-  <p><strong>Donation Frequency</strong></p>
   <select id="frequency">
     <option>One-Time</option>
     <option>Weekly</option>
@@ -167,33 +175,49 @@
     <option>Yearly</option>
   </select>
 
-  <button class="donate-btn" onclick="donateNow()">Donate Now</button>
+  <button class="donate-btn" onclick="donateNow()">Donate via PayPal</button>
+
+  <hr>
+
+  <h3>Other Ways to Donate</h3>
+
+  <a href="https://wa.me/254725768628" target="_blank">
+    <button class="alt-btn" style="background:#ff6600;">Western Union</button>
+  </a>
+
+  <a href="https://wa.me/254725768628" target="_blank">
+    <button class="alt-btn" style="background:#0033a0;">MoneyGram</button>
+  </a>
+
+  <a href="https://wa.me/254725768628" target="_blank">
+    <button class="alt-btn" style="background:#ff0000;">WorldRemit</button>
+  </a>
+
+  <p style="font-size:13px;">Click any option above to get instructions via WhatsApp</p>
 </div>
 
 <script>
 let selectedAmount = 0;
 
-function selectAmount(amount) {
+function selectAmount(amount){
   selectedAmount = amount;
   alert("Selected $" + amount);
 }
 
-function donateNow() {
+function donateNow(){
   let custom = document.getElementById("customAmount").value;
-  let freq = document.getElementById("frequency").value;
-
   let amount = custom || selectedAmount;
 
-  if (!amount) {
-    alert("Please select or enter an amount");
+  if(!amount){
+    alert("Select amount");
     return;
   }
 
-  alert("Donating $" + amount + " (" + freq + ")");
-  window.open("https://www.paypal.com/paypalme/joefayeekenya");
+  // PayPal with amount
+  window.open("https://www.paypal.me/joefayeekenya/" + amount);
 }
 
-function showTab(tabId) {
+function showTab(evt, tabId){
   let tabs = document.querySelectorAll(".tab-content");
   let buttons = document.querySelectorAll(".tab");
 
@@ -201,7 +225,7 @@ function showTab(tabId) {
   buttons.forEach(b => b.classList.remove("active"));
 
   document.getElementById(tabId).classList.add("show");
-  event.target.classList.add("active");
+  evt.currentTarget.classList.add("active");
 }
 </script>
 
