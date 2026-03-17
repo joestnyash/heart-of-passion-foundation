@@ -128,6 +128,14 @@
       font-weight: bold;
     }
 
+    .location {
+      background:white;
+      margin:20px;
+      padding:20px;
+      border-radius:12px;
+      border-left:6px solid #1e90ff;
+    }
+
   </style>
 </head>
 
@@ -142,15 +150,12 @@
 <!-- INTRO -->
 <div class="intro">
   <h2>Introduction</h2>
-
   <p><strong>
   Heart of Passion Foundation is a nonprofit charitable organization based in Nairobi, Kenya, founded in 2016 by Reverend JoeFaye (Joseph Nyaga Gachoki).
   </strong></p>
-
   <p>
   We support vulnerable communities, empower GBV survivors, and care for children through our home by providing food, shelter, education, and emotional support.
   </p>
-
   <a href="https://wa.me/254725768628"><button>Contact WhatsApp</button></a>
 </div>
 
@@ -184,77 +189,41 @@
 
 <!-- DONATION -->
 <div class="donation">
-
 <h2>Support Our Mission</h2>
 
 <button class="amount-btn" onclick="selectAmount(10)">$10</button>
 <button class="amount-btn" onclick="selectAmount(50)">$50</button>
 <button class="amount-btn" onclick="selectAmount(100)">$100</button>
-<button class="amount-btn" onclick="selectAmount(200)">$200</button>
-<button class="amount-btn" onclick="selectAmount(500)">$500</button>
-<button class="amount-btn" onclick="selectAmount(1000)">$1,000</button>
 
 <input type="number" id="customAmount" placeholder="Other Amount">
 
-<select id="frequency">
-<option>One-Time</option>
-<option>Monthly</option>
-<option>Yearly</option>
-</select>
-
 <button class="donate-btn" onclick="donateNow()">Donate via PayPal</button>
 
-<h3>💖 Donation Impact</h3>
-<table>
-<tr><th>Amount</th><th>Impact</th></tr>
-<tr><td>$10</td><td>Feeds a child for a day</td></tr>
-<tr><td>$50</td><td>School supplies</td></tr>
-<tr><td>$100</td><td>Education support</td></tr>
-<tr><td>$200</td><td>Uniforms</td></tr>
-<tr><td>$500</td><td>Medical care</td></tr>
-<tr><td>$1000</td><td>Full monthly care</td></tr>
-</table>
+<h3>🎓 Sponsorship</h3>
 
-<!-- GIRL -->
 <div class="sponsor-box">
-<h3>👧 Support a Girl</h3>
+<h4>👧 Support a Girl</h4>
 <ul>
 <li>Sanitary Towels</li>
 <li>Innerwears</li>
 <li>Skin Care Products</li>
 </ul>
-<button class="donate-btn" onclick="sponsorNow(50)">Support a Girl</button>
+<button class="donate-btn" onclick="sponsorNow(50)">Support Girl</button>
 </div>
 
-<!-- BOY -->
 <div class="sponsor-box">
-<h3>👦 Support a Boy</h3>
+<h4>👦 Support a Boy</h4>
 <ul>
-<li>Innerwears</li>
 <li>Clothes</li>
+<li>Innerwears</li>
 <li>Playing Items</li>
-<li>Arts Materials</li>
 </ul>
-<button class="donate-btn" onclick="sponsorNow(50)">Support a Boy</button>
-</div>
-
-<!-- ACADEMIC -->
-<div class="sponsor-box">
-<h3>🎓 Academic Sponsorship</h3>
-<ul>
-<li>Study Materials</li>
-<li>Text Books</li>
-<li>Writing Books</li>
-<li>Stationery</li>
-<li>Uniforms</li>
-<li>Shoes</li>
-</ul>
-<button class="donate-btn" onclick="sponsorNow(100)">Support Education</button>
+<button class="donate-btn" onclick="sponsorNow(50)">Support Boy</button>
 </div>
 
 <hr>
 
-<h3>🌍 Other Ways to Donate</h3>
+<h3>🌍 Other Ways</h3>
 
 <a href="https://wa.me/254725768628">
 <button class="alt-btn" style="background:#ff6600;">Western Union</button>
@@ -264,37 +233,33 @@
 <button class="alt-btn" style="background:#0033a0;">MoneyGram</button>
 </a>
 
-<a href="https://wa.me/254725768628">
-<button class="alt-btn" style="background:#ff0000;">WorldRemit</button>
-</a>
+</div>
+
+<!-- LOCATION (BOTTOM) -->
+<div class="location">
+<h2>📍 Our Location</h2>
+
+<p><strong>Country:</strong> Kenya</p>
+<p><strong>County:</strong> Nairobi</p>
+<p><strong>Area:</strong> Roysambu, Zimmerman Ward</p>
+
+<div style="margin-top:15px; border-radius:10px; overflow:hidden;">
+<iframe src="https://maps.google.com/maps?q=Zimmerman%20Nairobi%20Kenya&output=embed"
+width="100%" height="300"></iframe>
+</div>
 
 </div>
 
 <script>
-let selectedAmount = 0;
-
-function selectAmount(a){ selectedAmount = a; }
-
-function donateNow(){
-  let custom = document.getElementById("customAmount").value;
-  let amount = custom || selectedAmount;
-  if(!amount){ alert("Select amount"); return; }
-  window.open("https://www.paypal.me/joefayeekenya/" + amount);
-}
-
-function sponsorNow(amount){
-  window.open("https://www.paypal.me/joefayeekenya/" + amount);
-}
-
-function showTab(evt, tabId){
-  let tabs = document.querySelectorAll(".tab-content");
-  let buttons = document.querySelectorAll(".tab");
-
-  tabs.forEach(t => t.classList.remove("show"));
-  buttons.forEach(b => b.classList.remove("active"));
-
-  document.getElementById(tabId).classList.add("show");
-  evt.currentTarget.classList.add("active");
+let selectedAmount=0;
+function selectAmount(a){selectedAmount=a;}
+function donateNow(){window.open("https://www.paypal.me/joefayeekenya/"+selectedAmount);}
+function sponsorNow(a){window.open("https://www.paypal.me/joefayeekenya/"+a);}
+function showTab(e,id){
+document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('show'));
+document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+document.getElementById(id).classList.add('show');
+e.currentTarget.classList.add('active');
 }
 </script>
 
