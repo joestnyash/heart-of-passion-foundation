@@ -5,110 +5,212 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-body{margin:0;font-family:Arial;background:linear-gradient(135deg,#fdfbfb,#ebedee,#e0c3fc,#8ec5fc)}
-.nav{background:#111;padding:14px;text-align:center;position:sticky;top:0}
-.nav a{color:#fff;margin:0 12px;text-decoration:none;font-weight:bold}
-.hero{background:linear-gradient(135deg,#ff0000,#ff8c00,#1e90ff,#6a11cb);color:#fff;text-align:center;padding:80px 20px}
-.hero h1{font-size:48px;font-weight:900}
-.section{background:#fff;margin:20px;padding:22px;border-radius:14px;border:3px solid;border-image:linear-gradient(45deg,#ff0000,#1e90ff,#28a745)1}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px}
-.card{background:#fff;padding:15px;border-radius:12px;border:2px solid #ddd}
-.badge{padding:5px 10px;border-radius:20px;color:#fff;font-size:12px}
-.sponsored{background:green}.not{background:red}
-button{padding:12px;border:none;border-radius:8px;font-weight:bold;margin-top:8px;cursor:pointer}
-.btn{color:#fff;width:100%}
-.b10{background:#28a745}.b50{background:#17a2b8}.b100{background:#ffc107;color:#000}.b200{background:#fd7e14}.b500{background:#6f42c1}.b1000{background:#dc3545}
-.pay{background:#000}
-.float{position:fixed;bottom:20px;right:20px;background:red;color:#fff;padding:15px 20px;border-radius:50px;text-decoration:none}
+body{
+  margin:0;
+  font-family:Arial;
+  background:linear-gradient(135deg,#fdfbfb,#ebedee,#e0c3fc,#8ec5fc);
+}
+
+/* NAV */
+.nav{
+  background:#111;
+  padding:15px;
+  text-align:center;
+}
+.nav a{
+  color:white;
+  margin:10px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+/* HERO */
+.hero{
+  background:linear-gradient(135deg,#ff0000,#ff8c00,#1e90ff,#6a11cb);
+  color:white;
+  text-align:center;
+  padding:80px 20px;
+}
+.hero img{
+  width:120px;
+  border-radius:12px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.5);
+  margin-bottom:10px;
+}
+.hero h1{
+  font-size:42px;
+  font-weight:900;
+}
+
+/* SECTIONS */
+.section{
+  background:white;
+  margin:20px;
+  padding:20px;
+  border-radius:12px;
+  border:3px solid;
+  border-image:linear-gradient(45deg,#ff0000,#1e90ff,#28a745)1;
+}
+
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:15px;
+}
+
+/* CARD */
+.card{
+  background:white;
+  padding:15px;
+  border-radius:10px;
+  border:2px solid #ddd;
+}
+
+/* BADGE */
+.badge{
+  padding:5px 10px;
+  border-radius:20px;
+  color:white;
+  font-size:12px;
+}
+.not{background:red}
+
+/* BUTTON */
+button{
+  padding:10px;
+  border:none;
+  border-radius:8px;
+  font-weight:bold;
+  cursor:pointer;
+  width:100%;
+  margin-top:8px;
+}
+
+/* FLOAT */
+.float{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:red;
+  color:white;
+  padding:15px;
+  border-radius:50px;
+  text-decoration:none;
+}
 </style>
 </head>
 
 <body>
 
+<!-- NAV -->
 <div class="nav">
-<a href="#">Home</a>
-<a href="#donate">Donate</a>
-<a href="#children">Children</a>
+  <a href="#">Home</a>
+  <a href="#children">Sponsor</a>
+  <a href="#location">Location</a>
 </div>
 
+<!-- HERO -->
 <div class="hero">
-<h1>HEART OF PASSION FOUNDATION</h1>
-<p><b>Bonded in Love ♥️, Humanity, and By God</b></p>
+  <img src="logo.png" alt="HOPF Logo">
+  <h1>HEART OF PASSION FOUNDATION</h1>
+  <p><b>Bonded in Love ♥️, Humanity, and By God</b></p>
 </div>
 
+<!-- INTRO -->
 <div class="section">
 <h2>Introduction</h2>
-<p><b>Founded in 2016 by Reverend JoeFaye (Joseph Nyaga Gachoki)</b>, Heart of Passion Foundation supports vulnerable children, GBV survivors and families in Nairobi.</p>
-<p>We provide shelter, education, food and emotional care.</p>
-<p><b>We also visit prisons and correctional institutions in Kenya</b> where we provide guidance and counselling programs. We supply essential personal items such as toiletries, bathing soaps, toothpaste, toothbrushes, towels and other needs not provided by the Government. The Kenyan Government mainly provides food only.</p>
-<p>We run programs like <b>Technical Training, Computer Courses and Communication Training</b> to empower inmates.</p>
+<p><b>Founded in 2016 by Reverend JoeFaye (Joseph Nyaga Gachoki)</b>, Heart of Passion Foundation supports vulnerable children and communities.</p>
+
+<p>We also visit prisons and correctional institutions in Kenya where we provide guidance and counselling programs.</p>
+
+<p>We provide essential items such as toiletries, bathing soaps, toothpaste, toothbrushes, towels and other needs not provided by the Government.</p>
+
+<p>The Kenyan Government mainly provides food only.</p>
+
+<p>We also run programs like <b>Technical Training, Computer Courses and Communication Training</b> to empower inmates.</p>
 </div>
 
-<div id="donate" class="section">
-<h2>Donate</h2>
-<button class="btn b10" onclick="donate(10)">$10</button>
-<button class="btn b50" onclick="donate(50)">$50</button>
-<button class="btn b100" onclick="donate(100)">$100</button>
-<button class="btn b200" onclick="donate(200)">$200</button>
-<button class="btn b500" onclick="donate(500)">$500</button>
-<button class="btn b1000" onclick="donate(1000)">$1000</button>
-<input type="number" id="amount" placeholder="Other amount">
-<button class="btn pay" onclick="donateCustom()">Donate via PayPal</button>
-</div>
-
+<!-- CHILDREN -->
 <div id="children" class="section">
 <h2>👶 Choose a Child to Sponsor ($60/month)</h2>
+
 <div class="grid">
 
-<!-- 30 CHILDREN -->
+<!-- SAMPLE CHILD (REPEAT STYLE) -->
+<div class="card">
+<span class="badge not">Not Sponsored</span>
+<h3 onclick="chooseChild('Faith Wanjiku')">Faith Wanjiku</h3>
+<p>Age: 8</p>
+<p>Needs: School fees, Medical, Clothing, Hygiene</p>
+</div>
 
-<div class="card"><span class="badge not">Not Sponsored</span><h3>Faith Wanjiku</h3><p>Age 8</p><p>Needs: School fees, Medical, Clothing, Hygiene</p><button class="btn b50" onclick="donate(60)">Sponsor</button></div>
-<div class="card"><span class="badge not">Not Sponsored</span><h3>Brian Mwangi</h3><p>Age 10</p><p>Needs: School fees, Medical, Clothing, Hygiene</p><button class="btn b200" onclick="donate(60)">Sponsor</button></div>
-<div class="card"><span class="badge not">Not Sponsored</span><h3>Mercy Achieng</h3><p>Age 9</p><button class="btn b100" onclick="donate(60)">Sponsor</button></div>
-<div class="card"><span class="badge not">Not Sponsored</span><h3>Kevin Otieno</h3><p>Age 12</p><button class="btn b500" onclick="donate(60)">Sponsor</button></div>
-<div class="card"><span class="badge not">Not Sponsored</span><h3>Sharon Njeri</h3><p>Age 11</p><button class="btn b10" onclick="donate(60)">Sponsor</button></div>
-<div class="card"><span class="badge not">Not Sponsored</span><h3>Peter Kariuki</h3><p>Age 7</p><button class="btn b50" onclick="donate(60)">Sponsor</button></div>
-<div class="card"><span class="badge not">Not Sponsored</span><h3>Lucy Wangari</h3><p>Age 6</p><button class="btn b100" onclick="donate(60)">Sponsor</button></div>
-<div class="card"><span class="badge not">Not Sponsored</span><h3>James Mutua</h3><p>Age 13</p><button class="btn b200" onclick="donate(60)">Sponsor</button></div>
-<div class="card"><span class="badge not">Not Sponsored</span><h3>Naomi Wambui</h3><p>Age 8</p><button class="btn b500" onclick="donate(60)">Sponsor</button></div>
-<div class="card"><span class="badge not">Not Sponsored</span><h3>Samuel Kiptoo</h3><p>Age 10</p><button class="btn b10" onclick="donate(60)">Sponsor</button></div>
+<div class="card">
+<span class="badge not">Not Sponsored</span>
+<h3 onclick="chooseChild('Brian Mwangi')">Brian Mwangi</h3>
+<p>Age: 10</p>
+<p>Needs: School fees, Medical, Clothing, Hygiene</p>
+</div>
 
-<div class="card"><span class="badge not">Not Sponsored</span><h3>Esther Wanjiru</h3><p>Age 9</p><button class="btn b50" onclick="donate(60)">Sponsor</button></div>
-<div class="card"><span class="badge not">Not Sponsored</span><h3>Daniel Onyango</h3><p>Age 14</p><button class="btn b100" onclick="donate(60)">Sponsor</button></div>
-<div class="card"><span class="badge not">Not Sponsored</span><h3>Grace Naliaka</h3><p>Age 11</p><button class="btn b200" onclick="donate(60)">Sponsor</button></div>
-<div class="card"><span class="badge not">Not Sponsored</span><h3>Victor Odhiambo</h3><p>Age 12</p><button class="btn b500" onclick="donate(60)">Sponsor</button></div>
-<div class="card"><span class="badge not">Not Sponsored</span><h3>Ruth Chebet</h3><p>Age 8</p><button class="btn b10" onclick="donate(60)">Sponsor</button></div>
-<div class="card"><span class="badge not">Not Sponsored</span><h3>Joseph Kimani</h3><p>Age 13</p><button class="btn b50" onclick="donate(60)">Sponsor</button></div>
-<div class="card"><span class="badge not">Not Sponsored</span><h3>Purity Jepkoech</h3><p>Age 7</p><button class="btn b100" onclick="donate(60)">Sponsor</button></div>
-<div class="card"><span class="badge not">Not Sponsored</span><h3>Michael Karanja</h3><p>Age 10</p><button class="btn b200" onclick="donate(60)">Sponsor</button></div>
-<div class="card"><span class="badge not">Not Sponsored</span><h3>Ann Mwende</h3><p>Age 9</p><button class="btn b500" onclick="donate(60)">Sponsor</button></div>
-<div class="card"><span class="badge not">Not Sponsored</span><h3>David Kiprotich</h3><p>Age 11</p><button class="btn b10" onclick="donate(60)">Sponsor</button></div>
+<div class="card">
+<span class="badge not">Not Sponsored</span>
+<h3 onclick="chooseChild('Mercy Achieng')">Mercy Achieng</h3>
+<p>Age: 9</p>
+<p>Needs: School fees, Medical, Clothing, Hygiene</p>
+</div>
 
-<div class="card"><span class="badge not">Not Sponsored</span><h3>Rose Akinyi</h3><p>Age 12</p><button class="btn b50" onclick="donate(60)">Sponsor</button></div>
-<div class="card"><span class="badge not">Not Sponsored</span><h3>Collins Ndegwa</h3><p>Age 13</p><button class="btn b100" onclick="donate(60)">Sponsor</button></div>
-<div class="card"><span class="badge not">Not Sponsored</span><h3>Mary Wairimu</h3><p>Age 8</p><button class="btn b200" onclick="donate(60)">Sponsor</button></div>
-<div class="card"><span class="badge not">Not Sponsored</span><h3>John Mwenda</h3><p>Age 14</p><button class="btn b500" onclick="donate(60)">Sponsor</button></div>
-<div class="card"><span class="badge not">Not Sponsored</span><h3>Agnes Atieno</h3><p>Age 7</p><button class="btn b10" onclick="donate(60)">Sponsor</button></div>
-<div class="card"><span class="badge not">Not Sponsored</span><h3>Paul Kariuki</h3><p>Age 10</p><button class="btn b50" onclick="donate(60)">Sponsor</button></div>
-<div class="card"><span class="badge not">Not Sponsored</span><h3>Diana Chepkemoi</h3><p>Age 9</p><button class="btn b100" onclick="donate(60)">Sponsor</button></div>
-<div class="card"><span class="badge not">Not Sponsored</span><h3>George Mutiso</h3><p>Age 11</p><button class="btn b200" onclick="donate(60)">Sponsor</button></div>
-<div class="card"><span class="badge not">Not Sponsored</span><h3>Beatrice Nyambura</h3><p>Age 8</p><button class="btn b500" onclick="donate(60)">Sponsor</button></div>
-<div class="card"><span class="badge not">Not Sponsored</span><h3>Isaac Wekesa</h3><p>Age 12</p><button class="btn b10" onclick="donate(60)">Sponsor</button></div>
+<!-- YOU CAN DUPLICATE MORE -->
 
 </div>
 </div>
 
-<div class="section">
+<!-- DONATION OPTIONS -->
+<div id="donationBox" class="section" style="display:none;">
+<h2>Complete Sponsorship</h2>
+<p id="selectedChild"></p>
+
+<button style="background:black;color:white;" onclick="payPaypal()">PayPal</button>
+
+<button style="background:green;color:white;" onclick="payMpesa()">M-Pesa</button>
+
+<button style="background:#ff6600;color:white;" onclick="openWhatsApp()">Western Union</button>
+
+<button style="background:#0033a0;color:white;" onclick="openWhatsApp()">MoneyGram</button>
+
+<button style="background:red;color:white;" onclick="openWhatsApp()">WorldRemit</button>
+
+</div>
+
+<!-- LOCATION -->
+<div id="location" class="section">
 <h2>📍 Location</h2>
 <p>Kenya, Nairobi, Roysambu, Zimmerman Ward</p>
-<iframe src="https://maps.google.com/maps?q=Zimmerman%20Nairobi&output=embed" width="100%" height="300"></iframe>
+
+<iframe src="https://maps.google.com/maps?q=Zimmerman%20Nairobi&output=embed"
+width="100%" height="300"></iframe>
 </div>
 
+<!-- FLOAT -->
 <a href="https://www.paypal.me/joefayeekenya" class="float">💖 Donate</a>
 
 <script>
-function donate(a){window.open("https://www.paypal.me/joefayeekenya/"+a)}
-function donateCustom(){let a=document.getElementById("amount").value;if(!a){alert("Enter amount");return;}donate(a)}
+function chooseChild(name){
+  document.getElementById("donationBox").style.display="block";
+  document.getElementById("selectedChild").innerText="Sponsoring: "+name;
+  window.scrollTo(0,document.body.scrollHeight);
+}
+
+function payPaypal(){
+  window.open("https://www.paypal.me/joefayeekenya/60");
+}
+
+function payMpesa(){
+  alert("Paybill: 162180\nAccount: 0300327\nAmount: KES equivalent of $60");
+}
+
+function openWhatsApp(){
+  window.open("https://wa.me/254725768628");
+}
 </script>
 
 </body>
