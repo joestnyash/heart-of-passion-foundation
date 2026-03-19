@@ -1,115 +1,123 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html><html>
 <head>
 <title>Heart of Passion Foundation</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><style>
 body{margin:0;font-family:Arial;background:linear-gradient(135deg,#fdfbfb,#ebedee,#e0c3fc,#8ec5fc)}
 .nav{background:#111;padding:15px;text-align:center}
 .nav a{color:#fff;margin:10px;text-decoration:none;font-weight:bold}
-.hero{background:linear-gradient(135deg,#ff0000,#ff8c00,#1e90ff,#6a11cb);color:#fff;text-align:center;padding:80px 20px}
-.hero img{width:140px;margin-bottom:10px}
-.hero h1{font-size:42px;font-weight:900}
+.hero{background:linear-gradient(135deg,#ff0000,#ff8c00,#1e90ff,#6a11cb);color:#fff;text-align:center;padding:60px 20px}
+.hero img{width:120px}
+.hero h1{font-size:36px;font-weight:900}
 .section{background:#fff;margin:20px;padding:20px;border-radius:12px;border:3px solid;border-image:linear-gradient(45deg,#ff0000,#1e90ff,#28a745)1}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:15px}
 .card{background:#fff;padding:15px;border-radius:10px;border:2px solid #ddd}
-.badge{padding:5px 10px;border-radius:20px;color:#fff;font-size:12px}
-.not{background:red}
+.card img{width:100%;height:200px;object-fit:cover;border-radius:10px}
+.badge{padding:5px 10px;border-radius:20px;color:#fff;font-size:12px;display:inline-block;margin-bottom:5px}
+.urgent{background:red}
+.sponsored{background:green}
 button{padding:10px;border:none;border-radius:8px;font-weight:bold;width:100%;margin-top:8px;cursor:pointer}
-.float{position:fixed;bottom:20px;right:20px;background:red;color:#fff;padding:15px;border-radius:50px;text-decoration:none}
-</style>
-</head>
-
-<body>
-
-<!-- FIXED NAV MENU -->
-<div class="nav">
-<a href="#">Home</a>
-<a href="#donate">Donate</a>
+input{width:100%;padding:10px;margin:5px 0}
+.hidden{display:none}
+</style></head><body><div class="nav">
+<a href="#home">Home</a>
 <a href="#children">Children</a>
-</div>
-
-<!-- HERO WITH WORKING LOGO (DIRECT IMAGE LINK) -->
-<div class="hero">
-<img src="https://i.imgur.com/8Km9tLL.png" alt="HOPF Logo">
+<a href="#donors">Donors</a>
+</div><div id="home" class="hero">
+<img src="https://i.imgur.com/8Km9tLL.png">
 <h1>HEART OF PASSION FOUNDATION</h1>
 <p><b>Bonded in Love ♥️, Humanity, and By God</b></p>
-</div>
+</div><div id="children" class="section">
+<h2>👶 Sponsor a Child</h2>
+<div class="grid" id="childGrid"></div>
+</div><div id="profile" class="section hidden">
+<h2 id="pname"></h2>
+<img id="pimg">
+<p id="page"></p><button onclick="showForm()" style="background:#007bff;color:white;">Sponsor This Child</button>
 
-<div class="section">
-<h2>Introduction</h2>
-<p><b>Founded in 2016 by Reverend JoeFaye (Joseph Nyaga Gachoki)</b>, Heart of Passion Foundation supports vulnerable children, GBV victims and families in Nairobi.</p>
-<p>We run a children's home supporting over 42 children.</p>
-<p><b>We also visit prisons and correctional institutions in Kenya</b> where we provide guidance and counselling programs.</p>
-<p>We provide essential items such as toiletries, bathing soaps, toothpaste, toothbrushes, towels and other needs not provided by the Government.</p>
-<p>The Government mainly provides food only.</p>
-<p>We also run programs like <b>Technical Training, Computer Courses and Communication Training</b> to empower inmates.</p>
-</div>
+<div id="donorForm" class="hidden">
+<h3>Donor Details</h3>
+<input id="dname" placeholder="Your Name">
+<input id="demail" placeholder="Email">
+<input id="damount" placeholder="Amount"><button onclick="submitDonation()" style="background:black;color:white;">Proceed to PayPal</button> <button onclick="openWhatsApp()" style="background:#ff6600;color:white;">Other Methods (WhatsApp)</button>
 
-<div id="children" class="section">
-<h2>👶 Choose a Child to Sponsor ($60/month)</h2>
-<div class="grid">
+</div><button onclick="goBack()" style="background:gray;color:white;">⬅ Back</button>
 
-<script>
-const children=["Faith Wanjiku","Brian Mwangi","Mercy Achieng","Kevin Otieno","Sharon Njeri","Peter Kariuki","Lucy Wangari","James Mutua","Naomi Wambui","Samuel Kiptoo","Esther Wanjiru","Daniel Onyango","Grace Naliaka","Victor Odhiambo","Ruth Chebet","Joseph Kimani","Purity Jepkoech","Michael Karanja","Ann Mwende","David Kiprotich","Rose Akinyi","Collins Ndegwa","Mary Wairimu","John Mwenda","Agnes Atieno","Paul Kariuki","Diana Chepkemoi","George Mutiso","Beatrice Nyambura","Isaac Wekesa"];
+</div><div id="donors" class="section">
+<h2>📊 Donor Records</h2>
+<ul id="donorList"></ul>
+</div><script>
+let currentChildIndex=null;
 
-document.write(children.map((name,i)=>`
+const children=[
+{name:"Faith Wanjiku",img:"child1.jpg",sponsored:false},
+{name:"Brian Mwangi",img:"child2.jpg",sponsored:false},
+{name:"Mercy Achieng",img:"child3.jpg",sponsored:false},
+{name:"Kevin Otieno",img:"child4.jpg",sponsored:false},
+{name:"Sharon Njeri",img:"child5.jpg",sponsored:false},
+{name:"Peter Kariuki",img:"child6.jpg",sponsored:false}
+];
+
+function loadChildren(){
+let grid=document.getElementById("childGrid");
+grid.innerHTML=children.map((c,i)=>`
 <div class='card'>
-<span class='badge not'>Not Sponsored</span>
-<h3>${name}</h3>
+<img src='${c.img}'>
+<span class='badge ${c.sponsored?"sponsored":"urgent"}'>${c.sponsored?"SPONSORED":"URGENT"}</span>
+<h3>${c.name}</h3>
 <p>Age: ${5+(i%10)}</p>
-<p>Needs: School fees, Medical, Clothing, Hygiene</p>
-
-<button style="background:#007bff;color:white;" onclick="chooseChild('${name}')">Sponsor This Child</button>
-
-</div>
-`).join(''));
-</script>
-
-</div>
-</div>
-
-<div id="donate" class="section">
-<h2>Donate</h2>
-<button style="background:black;color:white;" onclick="payPaypal()">Donate via PayPal</button>
-<button style="background:green;color:white;" onclick="payMpesa()">Donate via M-Pesa</button>
-</div>
-
-<div id="donationBox" class="section" style="display:none;">
-<h2>Complete Sponsorship</h2>
-<p id="selectedChild"></p>
-
-<p><b>Select Donation Method:</b></p>
-
-<button style="background:black;color:white;" onclick="payPaypal()">💳 Donate via PayPal</button>
-
-<button style="background:#ff6600;color:white;" onclick="openWhatsApp()">🌍 Western Union</button>
-
-<button style="background:#0033a0;color:white;" onclick="openWhatsApp()">🌍 MoneyGram</button>
-
-<button style="background:red;color:white;" onclick="openWhatsApp()">🌍 WorldRemit</button>
-
-</div>
-
-<div class="section">
-<h2>📍 Location</h2>
-<p>Kenya, Nairobi, Roysambu, Zimmerman Ward</p>
-<iframe src="https://maps.google.com/maps?q=Zimmerman%20Nairobi&output=embed" width="100%" height="300"></iframe>
-</div>
-
-<a href="https://www.paypal.me/joefayeekenya" class="float">💖 Donate</a>
-
-<script>
-function chooseChild(name){
-document.getElementById("donationBox").style.display="block";
-document.getElementById("selectedChild").innerText="Sponsoring: "+name;
-window.scrollTo(0,document.body.scrollHeight);
+<button onclick="viewProfile(${i})">View Profile</button>
+</div>`).join('');
 }
-function payPaypal(){window.open("https://www.paypal.me/joefayeekenya/60")}
-function payMpesa(){alert("Paybill: 162180\nAccount: 0300327")}
-function openWhatsApp(){window.open("https://wa.me/254725768628")}
-</script>
 
-</body>
+function viewProfile(i){
+currentChildIndex=i;
+let c=children[i];
+document.getElementById("children").style.display="none";
+document.getElementById("profile").classList.remove("hidden");
+document.getElementById("pname").innerText=c.name;
+document.getElementById("pimg").src=c.img;
+document.getElementById("page").innerText="Age: "+(5+(i%10));
+}
+
+function goBack(){
+document.getElementById("profile").classList.add("hidden");
+document.getElementById("children").style.display="block";
+}
+
+function showForm(){
+document.getElementById("donorForm").classList.remove("hidden");
+}
+
+function submitDonation(){
+let name=document.getElementById("dname").value;
+let email=document.getElementById("demail").value;
+let amount=document.getElementById("damount").value;
+
+if(!name||!email||!amount){alert("Fill all fields");return}
+
+let donor={name,email,amount,child:children[currentChildIndex].name};
+let donors=JSON.parse(localStorage.getItem("donors")||"[]");
+donors.push(donor);
+localStorage.setItem("donors",JSON.stringify(donors));
+
+children[currentChildIndex].sponsored=true;
+alert("Thank you for sponsoring!");
+
+window.open("https://www.paypal.me/joefayeekenya/"+amount);
+loadChildren();
+showDonors();
+goBack();
+}
+
+function showDonors(){
+let list=document.getElementById("donorList");
+let donors=JSON.parse(localStorage.getItem("donors")||"[]");
+list.innerHTML=donors.map(d=>`<li>${d.name} sponsored ${d.child} ($${d.amount})</li>`).join('');
+}
+
+function openWhatsApp(){window.open("https://wa.me/254725768628")}
+
+loadChildren();
+showDonors();
+</script></body>
 </html>
