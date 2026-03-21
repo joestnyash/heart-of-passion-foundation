@@ -1,143 +1,77 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html><html>
 <head>
 <title>Heart of Passion Foundation</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700;900&display=swap" rel="stylesheet"><style>
+body{margin:0;font-family:Poppins;background:linear-gradient(135deg,#ff9a9e,#fad0c4,#a1c4fd,#c2e9fb)}
 
-<style>
-body{margin:0;font-family:Arial;background:linear-gradient(135deg,#fdfbfb,#ebedee,#e0c3fc,#8ec5fc)}
-.nav{background:#111;padding:15px;text-align:center}
-.nav a{color:#fff;margin:10px;text-decoration:none;font-weight:bold}
-.hero{background:linear-gradient(135deg,#ff0000,#ff8c00,#1e90ff,#6a11cb);color:#fff;text-align:center;padding:70px 20px}
-.hero img{width:120px}
+.nav{background:#000;padding:15px;text-align:center}
+.nav a{color:white;margin:15px;text-decoration:none;font-weight:bold}
+
+.hero{padding:60px 20px;text-align:center;color:white;background:linear-gradient(135deg,#ff0000,#ff8c00,#1e90ff,#6a11cb)}
+.hero img{width:120px;border-radius:10px}
 .hero h1{font-size:40px;font-weight:900}
-.section{background:#fff;margin:20px;padding:20px;border-radius:12px;border:3px solid;border-image:linear-gradient(45deg,#ff0000,#1e90ff,#28a745)1}
+
+.section{background:white;margin:20px;padding:20px;border-radius:15px;border:3px solid #ddd}
+
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:15px}
-.card{background:#fff;padding:15px;border-radius:10px;border:2px solid #ddd;position:relative}
+
+.card{background:white;padding:15px;border-radius:12px;border:2px solid #ccc;position:relative}
 .card img{width:100%;height:200px;object-fit:cover;border-radius:10px}
-.badge{position:absolute;top:10px;left:10px;padding:5px 10px;border-radius:20px;color:#fff;font-size:12px}
+
+.badge{position:absolute;top:10px;left:10px;padding:5px 10px;color:white;border-radius:20px;font-size:12px}
 .urgent{background:red}
-.sponsored{background:green}
-.progress{background:#eee;border-radius:10px;height:8px;margin-top:8px}
+.supported{background:green}
+
+.progress{background:#eee;height:8px;border-radius:10px;margin-top:10px}
 .progress-bar{height:8px;background:green;border-radius:10px}
-button{padding:10px;border:none;border-radius:8px;font-weight:bold;width:100%;margin-top:8px;cursor:pointer}
-input{width:100%;padding:10px;margin:5px 0}
-.hidden{display:none}
-.highlight{border:3px solid red}
-</style>
-</head>
 
-<body>
+button{width:100%;padding:10px;border:none;border-radius:8px;margin-top:10px;font-weight:bold}
 
-<div class="nav">
+</style></head><body><div class="nav">
 <a href="#home">Home</a>
-<a href="#children">Sponsor</a>
-<a href="#donors">Donors</a>
-</div>
-
-<div id="home" class="hero">
+<a href="#children">Children</a>
+<a href="#gallery">Gallery</a>
+</div><div id="home" class="hero">
 <img src="https://i.imgur.com/8Km9tLL.png">
 <h1>HEART OF PASSION FOUNDATION</h1>
 <p><b>Bonded in Love ♥️, Humanity, and By God</b></p>
-<p>Transforming lives through compassion, education, and empowerment.</p>
-</div>
-
-<div id="children" class="section">
+<p>Transforming lives through compassion, education and empowerment.</p>
+</div><div id="children" class="section">
 <h2>👶 Sponsor a Child</h2>
-<p>Select a child and make a lasting impact today.</p>
 <div class="grid" id="childGrid"></div>
+</div><div id="gallery" class="section">
+<h2>📸 Gallery</h2>
+<div class="grid">
+<img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d" width="100%">
+<img src="https://images.unsplash.com/photo-1529390079861-591de354faf5" width="100%">
+<img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c" width="100%">
 </div>
-
-<div id="profile" class="section hidden">
-<h2 id="pname"></h2>
-<img id="pimg">
-<p id="page"></p>
-
-<div class="progress"><div id="pbar" class="progress-bar"></div></div>
-<p id="pprogress"></p>
-
-<button onclick="showForm()" style="background:#007bff;color:white;">Sponsor This Child</button>
-
-<div id="donorForm" class="hidden">
-<h3>Donor Details</h3>
-<input id="dname" placeholder="Your Name">
-<input id="demail" placeholder="Email">
-<input id="damount" placeholder="Amount">
-
-<button onclick="payPaypal()" style="background:black;color:white;">💳 PayPal</button>
-<button onclick="payMpesa()" style="background:green;color:white;">📱 M-Pesa</button>
-<button onclick="openWhatsApp()" style="background:#ff6600;color:white;">🌍 Other Methods</button>
-</div>
-
-<button onclick="goBack()" style="background:gray;color:white;">⬅ Back</button>
-</div>
-
-<div id="donors" class="section">
-<h2>📊 Donor Records</h2>
-<ul id="donorList"></ul>
-</div>
-
-<script>
-let currentChildIndex=null;
-
+</div><script>
 const children=[
-{name:"Faith Wanjiku",img:"child1.jpg"},
-{name:"Brian Mwangi",img:"child2.jpg"},
-{name:"Mercy Achieng",img:"child3.jpg"},
-{name:"Kevin Otieno",img:"child4.jpg"},
-{name:"Sharon Njeri",img:"child5.jpg"},
-{name:"Peter Kariuki",img:"child6.jpg"}
+{name:"Faith Wanjiku",img:"https://images.unsplash.com/photo-1502767089025-6572583495b0"},
+{name:"Brian Mwangi",img:"https://images.unsplash.com/photo-1524504388940-b1c1722653e1"},
+{name:"Mercy Achieng",img:"https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e"},
+{name:"Kevin Otieno",img:"https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d"}
 ];
 
 function loadChildren(){
 let grid=document.getElementById("childGrid");
 grid.innerHTML=children.map((c,i)=>{
-let progress=Math.floor(Math.random()*80)+10;
+let progress=Math.floor(Math.random()*80)+20;
 let urgent=i%2===0;
 return `
-<div class='card ${urgent?"highlight":""}'>
+<div class='card'>
 <img src='${c.img}'>
-<span class='badge ${urgent?"urgent":"sponsored"}'>${urgent?"URGENT":"SUPPORTED"}</span>
+<span class='badge ${urgent?"urgent":"supported"}'>${urgent?"URGENT":"SUPPORTED"}</span>
 <h3>${c.name}</h3>
-<p>Age: ${5+(i%10)}</p>
+<p>Age: ${5+i}</p>
 <div class='progress'><div class='progress-bar' style='width:${progress}%'></div></div>
 <p>${progress}% funded</p>
-<button onclick="viewProfile(${i})">View Profile</button>
+<button style='background:#007bff;color:white;'>Sponsor</button>
 </div>`}).join('');
 }
 
-function viewProfile(i){
-currentChildIndex=i;
-let c=children[i];
-document.getElementById("children").style.display="none";
-document.getElementById("profile").classList.remove("hidden");
-document.getElementById("pname").innerText=c.name;
-document.getElementById("pimg").src=c.img;
-document.getElementById("page").innerText="Age: "+(5+(i%10));
-let progress=Math.floor(Math.random()*80)+10;
-document.getElementById("pbar").style.width=progress+"%";
-document.getElementById("pprogress").innerText=progress+"% funded";
-}
-
-function goBack(){
-document.getElementById("profile").classList.add("hidden");
-document.getElementById("children").style.display="block";
-}
-
-function showForm(){
-document.getElementById("donorForm").classList.remove("hidden");}
-
-function payPaypal(){
-let amount=document.getElementById("damount").value||60;
-window.open("https://www.paypal.me/joefayeekenya/"+amount);
-}
-
-function payMpesa(){alert("Paybill: 162180\nAccount: 0300327");}
-
-function openWhatsApp(){window.open("https://wa.me/254725768628")}
-
 loadChildren();
-</script>
-
-</body>
+</script></body>
 </html>
