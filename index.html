@@ -1,16 +1,19 @@
-<!DOCTYPE html><html>
+<!DOCTYPE html>
+<html>
 <head>
 <title>Heart of Passion Foundation</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700;900&display=swap" rel="stylesheet"><style>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700;900&display=swap" rel="stylesheet">
+
+<style>
 body{margin:0;font-family:Poppins;background:linear-gradient(135deg,#ff9a9e,#fad0c4,#a1c4fd,#c2e9fb)}
 
-.nav{background:#000;padding:15px;text-align:center}
+.nav{background:#000;padding:15px;text-align:center;position:sticky;top:0;z-index:1000}
 .nav a{color:white;margin:15px;text-decoration:none;font-weight:bold}
 
 .hero{padding:60px 20px;text-align:center;color:white;background:linear-gradient(135deg,#ff0000,#ff8c00,#1e90ff,#6a11cb)}
-.hero img{width:120px;border-radius:10px}
-.hero h1{font-size:40px;font-weight:900}
+.hero img{width:100px;border-radius:10px}
+.hero h1{font-size:38px;font-weight:900}
 
 .section{background:white;margin:20px;padding:20px;border-radius:15px;border:3px solid #ddd}
 
@@ -28,37 +31,76 @@ body{margin:0;font-family:Poppins;background:linear-gradient(135deg,#ff9a9e,#fad
 
 button{width:100%;padding:10px;border:none;border-radius:8px;margin-top:10px;font-weight:bold}
 
-</style></head><body><div class="nav">
+.floating{position:fixed;bottom:20px;right:20px;background:red;color:white;padding:15px;border-radius:50px;text-decoration:none;font-weight:bold}
+</style>
+</head>
+
+<body>
+
+<div class="nav">
 <a href="#home">Home</a>
 <a href="#children">Children</a>
 <a href="#gallery">Gallery</a>
-</div><div id="home" class="hero">
+</div>
+
+<!-- HOME -->
+<div id="home" class="hero">
 <img src="https://i.imgur.com/8Km9tLL.png">
 <h1>HEART OF PASSION FOUNDATION</h1>
 <p><b>Bonded in Love ♥️, Humanity, and By God</b></p>
-<p>Transforming lives through compassion, education and empowerment.</p>
-</div><div id="children" class="section">
-<h2>👶 Sponsor a Child</h2>
+<p>We are a nonprofit organization in Nairobi, Kenya founded in 2016 by Rev. JoeFaye (Joseph Nyaga Gachoki). We support vulnerable children, empower communities, and run outreach programs including prison ministry, education support, and humanitarian aid.</p>
+</div>
+
+<div class="section">
+<h2>📖 Introduction</h2>
+<p>We care for children by providing food, shelter, education, and emotional support. We also visit prisons and correction facilities offering guidance, counseling, and essential items like toiletries and clothing.</p>
+</div>
+
+<div class="section">
+<h2>📞 Contact</h2>
+<p>WhatsApp: +254725768628 / +254703139012</p>
+<p>Facebook: Heart of Passion Foundation</p>
+</div>
+
+<div class="section">
+<h2>📍 Location</h2>
+<p>Kenya, Nairobi County, Roysambu, Zimmerman Ward</p>
+<iframe src="https://maps.google.com/maps?q=Zimmerman%20Nairobi&output=embed" width="100%" height="300"></iframe>
+</div>
+
+<!-- CHILDREN -->
+<div id="children" class="section">
+<h2>👶 Children Sponsorship</h2>
 <div class="grid" id="childGrid"></div>
-</div><div id="gallery" class="section">
+</div>
+
+<!-- GALLERY -->
+<div id="gallery" class="section">
 <h2>📸 Gallery</h2>
 <div class="grid">
+<img src="https://images.unsplash.com/photo-1596461404969-9ae70f2830c1" width="100%">
+<img src="https://images.unsplash.com/photo-1588072432836-e10032774350" width="100%">
 <img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d" width="100%">
 <img src="https://images.unsplash.com/photo-1529390079861-591de354faf5" width="100%">
-<img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c" width="100%">
 </div>
-</div><script>
+</div>
+
+<a class="floating" href="https://www.paypal.com/paypalme/joefayeekenya" target="_blank">💖 Donate</a>
+
+<script>
 const children=[
-{name:"Faith Wanjiku",img:"https://images.unsplash.com/photo-1502767089025-6572583495b0"},
-{name:"Brian Mwangi",img:"https://images.unsplash.com/photo-1524504388940-b1c1722653e1"},
-{name:"Mercy Achieng",img:"https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e"},
-{name:"Kevin Otieno",img:"https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d"}
+{name:"Faith Wanjiku",img:"https://images.unsplash.com/photo-1607746882042-944635dfe10e"},
+{name:"Brian Mwangi",img:"https://images.unsplash.com/photo-1590086782792-42dd2350140d"},
+{name:"Mercy Achieng",img:"https://images.unsplash.com/photo-1604881991720-f91add269bed"},
+{name:"Kevin Otieno",img:"https://images.unsplash.com/photo-1611432579402-7037e3e2c1e4"},
+{name:"Esther Njeri",img:"https://images.unsplash.com/photo-1596495578065-6e0763fa1178"},
+{name:"Peter Kimani",img:"https://images.unsplash.com/photo-1581579188871-45ea61f2a6c9"}
 ];
 
 function loadChildren(){
 let grid=document.getElementById("childGrid");
 grid.innerHTML=children.map((c,i)=>{
-let progress=Math.floor(Math.random()*80)+20;
+let progress=Math.floor(Math.random()*60)+20;
 let urgent=i%2===0;
 return `
 <div class='card'>
@@ -68,10 +110,12 @@ return `
 <p>Age: ${5+i}</p>
 <div class='progress'><div class='progress-bar' style='width:${progress}%'></div></div>
 <p>${progress}% funded</p>
-<button style='background:#007bff;color:white;'>Sponsor</button>
+<button style='background:#007bff;color:white;' onclick="window.open('https://www.paypal.com/paypalme/joefayeekenya')">Sponsor</button>
 </div>`}).join('');
 }
 
 loadChildren();
-</script></body>
+</script>
+
+</body>
 </html>
