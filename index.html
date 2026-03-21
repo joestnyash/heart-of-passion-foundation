@@ -10,10 +10,11 @@ body{margin:0;font-family:Poppins;background:linear-gradient(135deg,#ff9a9e,#fad
 .nav{background:#000;padding:15px;text-align:center;position:sticky;top:0}
 .nav a{color:#fff;margin:15px;text-decoration:none;font-weight:bold}
 .hero{padding:60px 20px;text-align:center;color:#fff;background:linear-gradient(135deg,#ff0000,#ff8c00,#1e90ff,#6a11cb)}
+.hero h1{font-size:42px;font-weight:900}
 .section{background:#fff;margin:20px;padding:20px;border-radius:15px;border:2px solid #ddd}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:15px}
 .card{background:#fff;padding:15px;border-radius:12px;border:2px solid #ccc;position:relative}
-.face{width:100%;height:200px;background-image:url('children.jpg');background-size:600px 400px;border-radius:10px}
+.face{width:100%;height:200px;background-image:url('children.jpg');background-size:800px 600px;border-radius:10px}
 .badge{position:absolute;top:10px;left:10px;padding:5px 10px;color:#fff;border-radius:20px;font-size:12px}
 .urgent{background:red}
 .supported{background:green}
@@ -22,8 +23,7 @@ body{margin:0;font-family:Poppins;background:linear-gradient(135deg,#ff9a9e,#fad
 button{width:100%;padding:10px;border:none;border-radius:8px;margin-top:10px;font-weight:bold;cursor:pointer}
 .floating{position:fixed;bottom:20px;right:20px;background:red;color:#fff;padding:15px;border-radius:50px;text-decoration:none;font-weight:bold}
 .modal{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);display:none;justify-content:center;align-items:center}
-.modal-content{background:#fff;padding:20px;border-radius:10px;width:90%;max-width:300px}
-.modal-content button{margin:5px 0}
+.modal-content{background:#fff;padding:20px;border-radius:10px;width:90%;max-width:320px}
 </style>
 </head>
 
@@ -38,6 +38,24 @@ button{width:100%;padding:10px;border:none;border-radius:8px;margin-top:10px;fon
 <div id="home" class="hero">
 <h1>HEART OF PASSION FOUNDATION</h1>
 <p><b>Bonded in Love ♥️, Humanity, and By God</b></p>
+<p>Founded in 2016 by Rev. JoeFaye (Joseph Nyaga Gachoki), we support vulnerable children, GBV victims and community outreach programs including prison ministry.</p>
+</div>
+
+<div class="section">
+<h2>📖 Introduction</h2>
+<p>We care for 42 children providing shelter, food, education and love. We also visit prisons offering counseling and essential supplies.</p>
+</div>
+
+<div class="section">
+<h2>📞 Contact</h2>
+<p>WhatsApp: +254725768628 / +254703139012</p>
+<p>Email: heartofpassionfdn@gmail.com</p>
+</div>
+
+<div class="section">
+<h2>📍 Location</h2>
+<p>Nairobi, Roysambu, Zimmerman Ward</p>
+<iframe src="https://maps.google.com/maps?q=Zimmerman%20Nairobi&output=embed" width="100%" height="300"></iframe>
 </div>
 
 <div id="children" class="section">
@@ -75,18 +93,17 @@ button{width:100%;padding:10px;border:none;border-radius:8px;margin-top:10px;fon
 </div>
 
 <script>
-const children = Array.from({length:30}, (_,i)=>({
-name:"Child "+(i+1),
-age: Math.floor(Math.random()*12)+4
-}));
+const names=["Faith Wanjiku","Brian Mwangi","Mercy Achieng","Kevin Otieno","Esther Njeri","Peter Kimani","Lucy Wambui","John Kariuki","Ann Wanjiru","Samuel Ochieng","Grace Atieno","Daniel Kiptoo","Mary Wairimu","James Mutua","Susan Akinyi","David Mwangi","Purity Naliaka","Joseph Otieno","Naomi Chebet","Peter Odhiambo","Joyce Njeri","Elijah Kiprotich","Hannah Wanjiku","Paul Onyango","Ruth Jepkosgei","Mark Kimani","Diana Achieng","Stephen Kariuki","Alice Wambui","Victor Otieno"];
+
+const children=names.map((n,i)=>({name:n,age:Math.floor(Math.random()*12)+4,index:i}));
 
 function loadChildren(){
 let grid=document.getElementById("childGrid");
-grid.innerHTML=children.map((c,i)=>{
-let x=(i%5)*-120;
-let y=Math.floor(i/5)*-120;
+grid.innerHTML=children.map(c=>{
+let x=(c.index%6)*-130;
+let y=Math.floor(c.index/6)*-130;
 let progress=Math.floor(Math.random()*60)+20;
-let urgent=i%2===0;
+let urgent=c.index%2===0;
 return `
 <div class='card'>
 <div class='face' style='background-position:${x}px ${y}px'></div>
