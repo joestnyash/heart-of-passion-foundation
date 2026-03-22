@@ -11,10 +11,11 @@ body{margin:0;font-family:Poppins;background:linear-gradient(135deg,#ff9a9e,#fad
 .hero{padding:80px 20px;text-align:center;color:#fff;background:linear-gradient(135deg,#ff0000,#ff8c00,#1e90ff,#6a11cb)}
 
 .hero img{
-width:300px;
-max-width:90%;
-margin-bottom:20px;
-filter:drop-shadow(0 8px 20px rgba(0,0,0,0.5));
+width:420px;
+max-width:95%;
+margin-bottom:25px;
+filter:drop-shadow(0 12px 30px rgba(0,0,0,0.7));
+image-rendering: auto;
 }
 
 .hero h1{font-size:42px;font-weight:900;text-shadow:0 4px 15px rgba(0,0,0,0.6)}
@@ -75,14 +76,18 @@ button{width:100%;padding:10px;border:none;border-radius:8px;margin-top:10px;fon
 <button onclick="closeDonate()">Close</button>
 </div>
 </div><script>
-const names=["Faith Wanjiku","Brian Mwangi","Mercy Achieng","Kevin Otieno","Esther Njeri","Peter Kimani","Lucy Wambui","John Kariuki","Ann Wanjiru","Samuel Ochieng"];
+const names=[
+"Faith Wanjiku","Brian Mwangi","Mercy Achieng","Kevin Otieno","Esther Njeri","Peter Kimani","Lucy Wambui","John Kariuki","Ann Wanjiru","Samuel Ochieng",
+"Mary Atieno","David Kiptoo","Grace Chebet","Daniel Mutua","Ruth Wairimu","Joseph Njoroge","Naomi Chebet","Paul Onyango","Rose Atieno","James Mwangi",
+"Sarah Akinyi","Michael Otieno","Beatrice Wanjiru","George Kariuki","Hannah Njeri","Isaac Kiprotich","Dorcas Atieno","Elijah Mwangi","Lydia Wambui","Victor Otieno"
+];
 
 function loadChildren(){
 let grid=document.getElementById("childGrid");
 grid.innerHTML=names.map((n,i)=>{
 let age=Math.floor(Math.random()*12)+4;
-let progress=Math.floor(Math.random()*10);
-let urgent=i%2===0;
+let progress=Math.floor(Math.random()*10); // 0-9%
+let urgent = Math.random() < 0.75; // most cases urgent
 return `
 <div class='card'>
 <span class='badge ${urgent?"urgent":"supported"}'>${urgent?"URGENT":"SUPPORTED"}</span>
