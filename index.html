@@ -35,8 +35,13 @@ button{width:100%;padding:10px;border:none;border-radius:8px;margin-top:10px;fon
 <h2>👶 Sponsor a Child</h2>
 <div class="grid" id="childGrid"></div>
 </div><div id="gallery" class="section">
-<h2>📸 Gallery</h2>
-<div class="grid gallery" id="galleryGrid"></div>
+<h2>📸 Gallery</h2><!-- FILTER BUTTONS --><div style="text-align:center;margin-bottom:15px;">
+<button onclick="filterGallery('all')">All</button>
+<button onclick="filterGallery('playing')">Children Playing</button>
+<button onclick="filterGallery('cooking')">Children Cooking</button>
+<button onclick="filterGallery('extra')">Extra Curriculum</button>
+<button onclick="filterGallery('bible')">Fellowship & Bible</button>
+</div><div class="grid gallery" id="galleryGrid"></div>
 </div><a class="floating" onclick="openDonate()">💖 Donate</a>
 
 <div id="donateModal" class="modal">
@@ -76,32 +81,75 @@ return `
 </div>`}).join('');
 }
 
-// GALLERY (ADD YOUR 70+ IMAGES HERE CLEANLY)
+// GALLERY DATA WITH CATEGORIES
 const galleryImages=[
-"https://i.postimg.cc/MnvWLT3H/FB-IMG-1766220999253.jpg",
-"https://i.postimg.cc/JsG1FnY3/FB-IMG-1766221003643.jpg",
-"https://i.postimg.cc/Sn3ybhH8/IMG-20251206-154510.jpg",
-"https://i.postimg.cc/w1Z6Ypn4/IMG-20251206-154512.jpg",
-"https://i.postimg.cc/3kVKQTzq/IMG-20251206-154518.jpg"
+{src:"https://i.postimg.cc/MnvWLT3H/FB-IMG-1766220999253.jpg",cat:"playing",cap:"Children playing together"},
+{src:"https://i.postimg.cc/JsG1FnY3/FB-IMG-1766221003643.jpg",cat:"playing",cap:"Fun outdoor play"},
+{src:"https://i.postimg.cc/Sn3ybhH8/IMG-20251206-154510.jpg",cat:"bible",cap:"Bible study session"},
+{src:"https://i.postimg.cc/w1Z6Ypn4/IMG-20251206-154512.jpg",cat:"bible",cap:"Fellowship time"},
+{src:"https://i.postimg.cc/3kVKQTzq/IMG-20251206-154518.jpg",cat:"extra",cap:"Creative activities"},
+
+{src:"https://i.postimg.cc/SjkmhV1D/IMG-20250927-152612.jpg",cat:"playing",cap:"Outdoor moments"},
+{src:"https://i.postimg.cc/qg4pTQDY/IMG-20250927-152615.jpg",cat:"playing",cap:"Children bonding"},
+{src:"https://i.postimg.cc/gXqdh6rm/IMG-20251112-WA0011.jpg",cat:"extra",cap:"Group activity"},
+{src:"https://i.postimg.cc/zbS5hRv9/IMG-20251112-WA0013.jpg",cat:"extra",cap:"Learning together"},
+
+{src:"https://i.postimg.cc/qhd4gGJL/IMG-20251206-101404.jpg",cat:"cooking",cap:"Cooking lesson"},
+{src:"https://i.postimg.cc/PpzhD8JV/IMG-20251206-101410.jpg",cat:"cooking",cap:"Food preparation"},
+{src:"https://i.postimg.cc/0MqPrCkr/IMG-20251206-101416.jpg",cat:"cooking",cap:"Kitchen training"},
+{src:"https://i.postimg.cc/BLG4tCSQ/IMG-20251206-101418.jpg",cat:"cooking",cap:"Cooking skills"},
+
+{src:"https://i.postimg.cc/G8JrDstj/IMG-20251206-102328.jpg",cat:"extra",cap:"Training session"},
+{src:"https://i.postimg.cc/WF6jZJzC/IMG-20251206-114927.jpg",cat:"extra",cap:"Learning activities"},
+
+{src:"https://i.postimg.cc/CRzF21r4/Snapchat-1038678885.jpg",cat:"playing",cap:"Happy moments"},
+{src:"https://i.postimg.cc/gxnY7JtD/Snapchat-1873475586.jpg",cat:"playing",cap:"Smiles and joy"},
+{src:"https://i.postimg.cc/Hc4HM7jT/Snapchat-415552741.jpg",cat:"playing",cap:"Playtime"},
+
+{src:"https://i.postimg.cc/hJMRPR53/IMG-20250906-184614.jpg",cat:"extra",cap:"Daily activities"},
+{src:"https://i.postimg.cc/2qTN8NKG/IMG-20250906-184635.jpg",cat:"extra",cap:"Team work"},
+
+{src:"https://i.postimg.cc/zyC16gSL/IMG-20250927-143026.jpg",cat:"bible",cap:"Fellowship"},
+{src:"https://i.postimg.cc/hJKqBtpb/IMG-20250927-143038.jpg",cat:"bible",cap:"Prayer time"},
+{src:"https://i.postimg.cc/qtpdTvjc/IMG-20250927-143044.jpg",cat:"bible",cap:"Devotion"},
+{src:"https://i.postimg.cc/xk9S21tK/IMG-20250927-143047.jpg",cat:"bible",cap:"Bible reading"},
+
+{src:"https://i.postimg.cc/WDsPv1X8/IMG-20250927-145534.jpg",cat:"extra",cap:"Activities"},
+{src:"https://i.postimg.cc/fVnN8KdB/IMG-20251112-WA0010.jpg",cat:"extra",cap:"Group learning"},
+
+{src:"https://i.postimg.cc/mcr1rBr7/1584701408643.jpg",cat:"playing",cap:"Outdoor joy"},
+{src:"https://i.postimg.cc/qt76747h/1584701408818.jpg",cat:"playing",cap:"Fun time"},
+{src:"https://i.postimg.cc/DWz4znzr/1584701419051.jpg",cat:"playing",cap:"Togetherness"},
+
+{src:"https://i.postimg.cc/R30J0403/1584701419583.jpg",cat:"playing",cap:"Children moments"},
+{src:"https://i.postimg.cc/GBpTpdpY/1584701419774.jpg",cat:"playing",cap:"Play & learn"},
+{src:"https://i.postimg.cc/wtbyyZtw/1584701420018.jpg",cat:"playing",cap:"Joyful learning"}
 ];
 
-function loadGallery(){
+function loadGallery(filter='all'){
 let grid=document.getElementById("galleryGrid");
-grid.innerHTML=galleryImages.map(img=>`<img src='${img}' onclick='openImage(this)'>`).join('');
+let data=filter==='all'?galleryImages:galleryImages.filter(i=>i.cat===filter);
+
+grid.innerHTML=data.map(i=>`
+<div>
+<img src='${i.src}' onclick='openImage(this)'>
+<p style='text-align:center;font-size:13px;'>${i.cap}</p>
+</div>
+`).join('');
 }
 
-function openImage(img){
-document.getElementById("imgModal").style.display="flex";
-document.getElementById("modalImg").src=img.src;
+function filterGallery(cat){loadGallery(cat)}
+
+// slideshow auto
+let slideIndex=0;
+setInterval(()=>{
+let imgs=document.querySelectorAll('#galleryGrid img');
+if(imgs.length>0){
+slideIndex=(slideIndex+1)%imgs.length;
+imgs[slideIndex].click();
 }
-function closeImage(){document.getElementById("imgModal").style.display="none"}
+},8000);
 
-// DONATE
-function openDonate(){document.getElementById('donateModal').style.display='flex'}
-function closeDonate(){document.getElementById('donateModal').style.display='none'}
-function whatsapp(){window.open('https://wa.me/254725768628')}
-
-loadChildren();
 loadGallery();
 
 </script></body>
