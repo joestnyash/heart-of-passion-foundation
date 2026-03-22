@@ -7,7 +7,7 @@ body{margin:0;font-family:Poppins;background:linear-gradient(135deg,#ff9a9e,#fad
 .nav{background:#000;padding:15px;text-align:center;position:sticky;top:0}
 .nav a{color:#fff;margin:15px;text-decoration:none;font-weight:bold}
 .hero{padding:80px 20px;text-align:center;color:#fff;background:linear-gradient(135deg,#ff0000,#ff8c00,#1e90ff,#6a11cb)}
-.hero img{width:420px;max-width:95%;margin-bottom:25px}
+.hero img{width:420px;max-width:95%;margin-bottom:20px}
 .hero h1{font-size:44px;font-weight:900}
 .section{background:#fff;margin:20px;padding:20px;border-radius:15px;border:2px solid #ddd}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:15px}
@@ -27,15 +27,16 @@ button{width:100%;padding:10px;border:none;border-radius:8px;margin-top:10px;fon
 <a href="#home">Home</a>
 <a href="#children">Children</a>
 <a href="#gallery">Gallery</a>
+<a href="#contact">Contact</a>
 </div><div id="home" class="hero">
 <img src="https://i.postimg.cc/7Z95tJtN/file-000000001a8871fdaf1d6e48910c57af.png">
 <h1>HEART OF PASSION FOUNDATION</h1>
 <p><b>Bonded in Love ♥️, Humanity, and By God</b></p>
 </div><div class="section">
 <h2>Introduction</h2>
-<p><b>Founder:</b> My Name Rev JoeFaye (Joseph Nyaga Gachoki). I am a man devoted to compassion, bringing hope where there is despair and lifting lives through charity.</p>
-<p><b>Children Ministry:</b> We care for 42 children providing Food, Shelter, Education, Clothing and love under Heart of Passion Children's Home.</p>
-<p><b>Prison Ministry:</b> We visit prisons in Kenya providing counselling, technical training, communication skills, paralegal guidance and essential items like toiletries, soaps, toothbrushes and clothing.</p>
+<p><b>Founder:</b> My Name Rev JoeFaye (Joseph Nyaga Gachoki). A man devoted to compassion and uplifting lives.</p>
+<p><b>Children Ministry:</b> Supporting 42 children with food, shelter, education and care.</p>
+<p><b>Prison Ministry:</b> Providing counselling, training and essential supplies in prisons across Kenya.</p>
 </div><div class="section">
 <h2>📍 Location</h2>
 <p>Kenya, Nairobi County, Roysambu, Zimmerman Ward</p>
@@ -46,32 +47,44 @@ button{width:100%;padding:10px;border:none;border-radius:8px;margin-top:10px;fon
 </div><div id="gallery" class="section">
 <h2>📸 Gallery</h2>
 <div class="grid" id="galleryGrid"></div>
+</div><div id="contact" class="section">
+<h2>📞 Contact Us</h2>
+<p><strong>Phone:</strong> +254725768628 / +254703139012</p>
+<p><strong>Email:</strong> heartofpassionfdn@gmail.com</p>
+<p><strong>Facebook:</strong> Heart of Passion Foundation</p>
 </div><a class="floating" onclick="openDonate()">💖 Donate</a>
 
-<div id="donateModal" class="modal">
+<!-- DONATION MODAL --><div id="donateModal" class="modal">
 <div class="modal-content">
-<h3>Donate</h3><button onclick="setAmount(10)">$10</button> <button onclick="setAmount(50)">$50</button> <button onclick="setAmount(100)">$100</button> <button onclick="setAmount(200)">$200</button> <button onclick="setAmount(500)">$500</button> <button onclick="setAmount(1000)">$1000</button>
-
-<input id="customAmount" placeholder="Other Amount" style="width:100%;padding:10px;margin-top:10px"><select id="frequency" style="width:100%;padding:10px;margin-top:10px">
+<h3>💖 Donate</h3><h4>Select Amount</h4>
+<button onclick="setAmount(10)">$10</button>
+<button onclick="setAmount(50)">$50</button>
+<button onclick="setAmount(100)">$100</button>
+<button onclick="setAmount(200)">$200</button>
+<button onclick="setAmount(500)">$500</button>
+<button onclick="setAmount(1000)">$1000</button><input id="customAmount" placeholder="Other Amount" style="width:100%;padding:10px;margin-top:10px"><h4>Donation Frequency</h4>
+<select id="frequency" style="width:100%;padding:10px">
 <option>One Time</option>
 <option>Weekly</option>
 <option>Monthly</option>
 <option>Yearly</option>
 <option>Lifetime</option>
-</select><button onclick="donatePaypal()">PayPal</button> <button onclick="mpesa()" style="background:green;color:white">M-Pesa</button> <button onclick="whatsapp()">MoneyGram / Western Union / WorldRemit</button>
+</select><h4>Choose Payment Method</h4>
+<button onclick="donatePaypal()">PayPal</button><button onclick="mpesa()" style="background:green;color:white">M-Pesa</button>
 
-<p style="font-size:13px;">
-Paybill: 162180<br>
-Account: 0300327<br>
-Or Send to: +254725768628
+<button onclick="whatsapp()">MoneyGram / Western Union / WorldRemit</button>
+
+<p style="font-size:13px;margin-top:10px;">
+<strong>M-Pesa Paybill:</strong> 162180<br>
+<strong>Account:</strong> 0300327<br>
+<strong>Or Send to:</strong> +254725768628
 </p><button onclick="closeDonate()">Close</button>
 
 </div>
-</div><div id="imgModal" class="modal" onclick="closeImage()">
+</div><!-- IMAGE MODAL --><div id="imgModal" class="modal" onclick="closeImage()">
 <img id="modalImg" style="max-width:90%;max-height:90%">
 </div><script>
 
-// 👉 ADD ALL YOUR 70+ IMAGES HERE
 const galleryImages=[
 "https://i.postimg.cc/MnvWLT3H/FB-IMG-1766220999253.jpg",
 "https://i.postimg.cc/JsG1FnY3/FB-IMG-1766221003643.jpg",
@@ -80,15 +93,7 @@ const galleryImages=[
 "https://i.postimg.cc/3kVKQTzq/IMG-20251206-154518.jpg"
 ];
 
-// 30 CHILDREN
-const names=[
-"Faith Wanjiku","Brian Mwangi","Mercy Achieng","Kevin Otieno","Esther Njeri",
-"Peter Kimani","Lucy Wambui","John Kariuki","Ann Wanjiru","Samuel Ochieng",
-"Mary Atieno","David Kiptoo","Grace Chebet","Daniel Mutua","Ruth Wairimu",
-"Joseph Njoroge","Naomi Chebet","Paul Onyango","Rose Atieno","James Mwangi",
-"Sarah Akinyi","Michael Otieno","Beatrice Wanjiru","George Kariuki","Hannah Njeri",
-"Isaac Kiprotich","Dorcas Atieno","Elijah Mwangi","Lydia Wambui","Victor Otieno"
-];
+const names = Array.from({length:30},(_,i)=>"Child "+(i+1));
 
 function loadChildren(){
 let grid=document.getElementById("childGrid");
