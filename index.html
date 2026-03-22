@@ -1,313 +1,75 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html><html>
 <head>
 <title>Heart of Passion Foundation</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700;900&display=swap" rel="stylesheet">
-
-<style>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700;900&display=swap" rel="stylesheet"><style>
 body{margin:0;font-family:Poppins;background:linear-gradient(135deg,#ff9a9e,#fad0c4,#a1c4fd,#c2e9fb)}
-
 .nav{background:#000;padding:15px;text-align:center;position:sticky;top:0}
 .nav a{color:#fff;margin:15px;text-decoration:none;font-weight:bold}
-
 .hero{padding:80px 20px;text-align:center;color:#fff;background:linear-gradient(135deg,#ff0000,#ff8c00,#1e90ff,#6a11cb)}
-
-.hero img{
-width:420px;
-max-width:95%;
-margin-bottom:25px;
-filter:drop-shadow(0 12px 30px rgba(0,0,0,0.7));
-}
-
-.hero h1{font-size:42px;font-weight:900;text-shadow:0 4px 15px rgba(0,0,0,0.6)}
-
-.section{background:#fff;margin:20px;padding:20px;border-radius:15px;border:2px solid #ddd}
-
+.hero img{width:420px;max-width:95%;margin-bottom:25px;filter:drop-shadow(0 12px 30px rgba(0,0,0,0.7))}
+.hero h1{font-size:42px;font-weight:900}
+.section{background:#fff;margin:20px;padding:20px;border-radius:15px}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:15px}
-
 .card{background:#fff;padding:15px;border-radius:12px;border:2px solid #ccc}
-
-.badge{padding:5px 10px;border-radius:20px;color:#fff;font-size:12px;display:inline-block}
-.urgent{background:red}
-.supported{background:green}
-
-.progress{background:#eee;height:8px;border-radius:10px;margin-top:10px}
-.progress-bar{height:8px;background:green;border-radius:10px}
-
-button{width:100%;padding:10px;border:none;border-radius:8px;margin-top:10px;font-weight:bold;cursor:pointer}
-
-.floating{position:fixed;bottom:20px;right:20px;background:red;color:#fff;padding:15px;border-radius:50px;text-decoration:none;font-weight:bold}
-
-.modal{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);display:none;justify-content:center;align-items:center}
-.modal-content{background:#fff;padding:20px;border-radius:10px;width:90%;max-width:320px}
-</style>
-</head>
-
-<body>
-
-<div class="nav">
+.gallery img{width:100%;border-radius:10px;cursor:pointer;transition:0.3s}
+.gallery img:hover{transform:scale(1.05)}
+.modal{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.9);display:none;justify-content:center;align-items:center}
+.modal img{max-width:90%;max-height:90%}
+.close{position:absolute;top:20px;right:30px;color:#fff;font-size:30px;cursor:pointer}
+.floating{position:fixed;bottom:20px;right:20px;background:red;color:#fff;padding:15px;border-radius:50px}
+</style></head><body><div class="nav">
 <a href="#home">Home</a>
 <a href="#children">Children</a>
 <a href="#gallery">Gallery</a>
-</div>
-
-<div id="home" class="hero">
-
+</div><div id="home" class="hero">
 <img src="https://i.postimg.cc/7Z95tJtN/file-000000001a8871fdaf1d6e48910c57af.png">
-
 <h1>HEART OF PASSION FOUNDATION</h1>
 <p><b>Bonded in Love ♥️, Humanity, and By God</b></p>
-
-<p>Founded in 2016 by Rev. JoeFaye (Joseph Nyaga Gachoki), we support vulnerable children, GBV victims and community outreach programs including prison ministry.</p>
-
-</div>
-
-<div class="section">
-<h2>📖 Introduction</h2>
-
-<p><b>1. Founder</b></p>
-<p>My name is Rev. JoeFaye (Joseph Nyaga Gachoki). I am a man whose life has been quietly but powerfully shaped by compassion, choosing service over self and purpose over comfort.</p>
-
-<p><b>2. Children Ministry</b></p>
-<p>We care for 42 children providing Food, Shelter, Education, Clothing and love under Heart of Passion Children's Home.</p>
-
-<p><b>3. Prison Ministry</b></p>
-<p>We visit prisons across Kenya providing Technical Skills, Communication Training, Paralegal support and essential items.</p>
-
-</div>
-
-<div id="children" class="section">
+</div><div id="children" class="section">
 <h2>👶 Sponsor a Child</h2>
 <div class="grid" id="childGrid"></div>
-</div>
-
-<div id="gallery" class="section">
-<h2>📸 Gallery</h2>
-<div class="grid">
-
-<img src="https://i.postimg.cc/MnvWLT3H/FB-IMG-1766220999253.jpg" style="border-radius:10px;">
-<img src="https://i.postimg.cc/JsG1FnY3/FB-IMG-1766221003643.jpg" style="border-radius:10px;">
-<img src="https://i.postimg.cc/Sn3ybhH8/IMG-20251206-154510.jpg" style="border-radius:10px;">
-<img src="https://i.postimg.cc/w1Z6Ypn4/IMG-20251206-154512.jpg" style="border-radius:10px;">
-<img src="https://i.postimg.cc/3kVKQTzq/IMG-20251206-154518.jpg" style="border-radius:10px;">
-<img src="https://postimg.cc/SjkmhV1D][img]https://i.postimg.cc/SjkmhV1D/IMG-20250927-152612.jpg[/img][/url]
-
-<img src="https://postimg.cc/qg4pTQDY][img]https://i.postimg.cc/qg4pTQDY/IMG-20250927-152615.jpg[/img][/url]
-
-https://postimg.cc/gXqdh6rm][img]https://i.postimg.cc/gXqdh6rm/IMG-20251112-WA0011.jpg[/img][/url]
-
-[url=https://postimg.cc/zbS5hRv9][img]https://i.postimg.cc/zbS5hRv9/IMG-20251112-WA0013.jpg[/img][/url]
-
-[url=https://postimg.cc/qhd4gGJL][img]https://i.postimg.cc/qhd4gGJL/IMG-20251206-101404.jpg[/img][/url]
-
-[url=https://postimg.cc/PpzhD8JV][img]https://i.postimg.cc/PpzhD8JV/IMG-20251206-101410.jpg[/img][/url]
-
-[url=https://postimg.cc/0MqPrCkr][img]https://i.postimg.cc/0MqPrCkr/IMG-20251206-101416.jpg[/img][/url]
-
-[url=https://postimg.cc/BLG4tCSQ][img]https://i.postimg.cc/BLG4tCSQ/IMG-20251206-101418.jpg[/img][/url]
-
-[url=https://postimg.cc/G8JrDstj][img]https://i.postimg.cc/G8JrDstj/IMG-20251206-102328.jpg[/img][/url]
-
-[url=https://postimg.cc/WF6jZJzC][img]https://i.postimg.cc/WF6jZJzC/IMG-20251206-114927.jpg[/img][/url]
-
-[url=https://postimg.cc/CRzF21r4][img]https://i.postimg.cc/CRzF21r4/Snapchat-1038678885.jpg[/img][/url]
-
-[url=https://postimg.cc/gxnY7JtD][img]https://i.postimg.cc/gxnY7JtD/Snapchat-1873475586.jpg[/img][/url]
-
-[url=https://postimg.cc/Hc4HM7jT][img]https://i.postimg.cc/Hc4HM7jT/Snapchat-415552741.jpg[/img][/url]
-
-[url=https://postimg.cc/hJMRPR53][img]https://i.postimg.cc/hJMRPR53/IMG-20250906-184614.jpg[/img][/url]
-
-[url=https://postimg.cc/2qTN8NKG][img]https://i.postimg.cc/2qTN8NKG/IMG-20250906-184635.jpg[/img][/url]
-
-[url=https://postimg.cc/zyC16gSL][img]https://i.postimg.cc/zyC16gSL/IMG-20250927-143026.jpg[/img][/url]
-
-[url=https://postimg.cc/hJKqBtpb][img]https://i.postimg.cc/hJKqBtpb/IMG-20250927-143038.jpg[/img][/url]
-
-[url=https://postimg.cc/qtpdTvjc][img]https://i.postimg.cc/qtpdTvjc/IMG-20250927-143044.jpg[/img][/url]
-
-[url=https://postimg.cc/xk9S21tK][img]https://i.postimg.cc/xk9S21tK/IMG-20250927-143047.jpg[/img][/url]
-
-[url=https://postimg.cc/WDsPv1X8][img]https://i.postimg.cc/WDsPv1X8/IMG-20250927-145534.jpg[/img][/url]
-
-[url=https://postimg.cc/fVnN8KdB][img]https://i.postimg.cc/fVnN8KdB/IMG-20251112-WA0010.jpg[/img][/url]
-
-[url=https://postimg.cc/mcr1rBr7][img]https://i.postimg.cc/mcr1rBr7/1584701408643.jpg[/img][/url]
-
-[url=https://postimg.cc/qt76747h][img]https://i.postimg.cc/qt76747h/1584701408818.jpg[/img][/url]
-
-[url=https://postimg.cc/DWz4znzr][img]https://i.postimg.cc/DWz4znzr/1584701419051.jpg[/img][/url]
-
-[url=https://postimg.cc/R30J0403][img]https://i.postimg.cc/R30J0403/1584701419583.jpg[/img][/url]
-
-[url=https://postimg.cc/GBpTpdpY][img]https://i.postimg.cc/GBpTpdpY/1584701419774.jpg[/img][/url]
-
-[url=https://postimg.cc/wtbyyZtw][img]https://i.postimg.cc/wtbyyZtw/1584701420018.jpg[/img][/url]
-
-[url=https://postimg.cc/cKJtJ0Jw][img]https://i.postimg.cc/cKJtJ0Jw/1584701420361.jpg[/img][/url]
-
-[url=https://postimg.cc/2q5L5r5W][img]https://i.postimg.cc/2q5L5r5W/1584701421264.jpg[/img][/url]
-
-[url=https://postimg.cc/QBMKMhMK][img]https://i.postimg.cc/QBMKMhMK/1584701423866.jpg[/img][/url]
-
-[url=https://postimg.cc/4K3H3s3z][img]https://i.postimg.cc/4K3H3s3z/1584701426662.jpg[/img][/url]
-
-[url=https://postimg.cc/DJ9S5GPb][img]https://i.postimg.cc/DJ9S5GPb/20241226-041550.jpg[/img][/url]
-
-[url=https://postimg.cc/FfKkKNKV][img]https://i.postimg.cc/FfKkKNKV/FB-IMG-15553583991077443.jpg[/img][/url]
-
-[url=https://postimg.cc/R3b66y31][img]https://i.postimg.cc/R3b66y31/FB-IMG-15553585241323526.jpg[/img][/url]
-
-[url=https://postimg.cc/QBn99wB0][img]https://i.postimg.cc/QBn99wB0/FB-IMG-15553585307983400.jpg[/img][/url]
-
-[url=https://postimg.cc/67Q4QtQc][img]https://i.postimg.cc/67Q4QtQc/FB-IMG-15553585592876004.jpg[/img][/url]
-
-[url=https://postimg.cc/wtBRBgBW][img]https://i.postimg.cc/wtBRBgBW/FB-IMG-15553585657502697.jpg[/img][/url]
-
-[url=https://postimg.cc/Lq0YYwqQ][img]https://i.postimg.cc/Lq0YYwqQ/FB-IMG-15553585975587925.jpg[/img][/url]
-
-[url=https://postimg.cc/nsL9LpLk][img]https://i.postimg.cc/nsL9LpLk/FB-IMG-15553586034586974.jpg[/img][/url]
-
-[url=https://postimg.cc/1gzVzszM][img]https://i.postimg.cc/1gzVzszM/FB-IMG-15553586082657246.jpg[/img][/url]
-
-[url=https://postimg.cc/xkdNdnd6][img]https://i.postimg.cc/xkdNdnd6/FB-IMG-15553586201812201.jpg[/img][/url]
-
-[url=https://postimg.cc/wyC1FNQL][img]https://i.postimg.cc/wyC1FNQL/FB-IMG-1735324369944.jpg[/img][/url]
-
-[url=https://postimg.cc/xJwXgm3H][img]https://i.postimg.cc/xJwXgm3H/FB-IMG-1735324373783.jpg[/img][/url]
-
-[url=https://postimg.cc/bD7ZLn90][img]https://i.postimg.cc/bD7ZLn90/FB-IMG-1735324377612.jpg[/img][/url]
-
-[url=https://postimg.cc/XGRrx5kw][img]https://i.postimg.cc/XGRrx5kw/FB-IMG-1735324381362.jpg[/img][/url]
-
-[url=https://postimg.cc/mzvPV9yY][img]https://i.postimg.cc/mzvPV9yY/FB-IMG-1735324384913.jpg[/img][/url]
-
-[url=https://postimg.cc/jwwWzcPD][img]https://i.postimg.cc/jwwWzcPD/FB-IMG-1741877994770.jpg[/img][/url]
-
-[url=https://postimg.cc/S22XWdCC][img]https://i.postimg.cc/S22XWdCC/FB-IMG-1741877997860.jpg[/img][/url]
-
-[url=https://postimg.cc/344yg1m0][img]https://i.postimg.cc/344yg1m0/FB-IMG-1741878006565.jpg[/img][/url]
-
-[url=https://postimg.cc/vgJ4Xnt4][img]https://i.postimg.cc/vgJ4Xnt4/FB-IMG-1741878010825.jpg[/img][/url]
-
-[url=https://postimg.cc/MMMcy5VR][img]https://i.postimg.cc/MMMcy5VR/FB-IMG-1741878015456.jpg[/img][/url]
-
-[url=https://postimg.cc/cggKQhw8][img]https://i.postimg.cc/cggKQhw8/FB-IMG-1741878019065.jpg[/img][/url]
-
-[url=https://postimg.cc/jwwWzcP7][img]https://i.postimg.cc/jwwWzcP7/FB-IMG-1741878021920.jpg[/img][/url]
-
-[url=https://postimg.cc/0zPJLpRm][img]https://i.postimg.cc/0zPJLpRm/file-000000005310720887560ff488df6b1e.png[/img][/url]
-
-[url=https://postimg.cc/KRnMq0VD][img]https://i.postimg.cc/KRnMq0VD/file-0000000084a07208a60ffdfdbd0a1ec1.jpg[/img][/url]
-
-[url=https://postimg.cc/BXxKYmyL][img]https://i.postimg.cc/BXxKYmyL/file-00000000d0f472089b1ca70e7d12fff2.png[/img][/url]
-
-[url=https://postimg.cc/gxm6fvFh][img]https://i.postimg.cc/gxm6fvFh/file-00000000d7947208870bc3516002e84e.png[/img][/url]
-
-[url=https://postimg.cc/SXKYKkKn][img]https://i.postimg.cc/SXKYKkKn/images-(2)-(1).jpg[/img][/url]
-
-[url=https://postimg.cc/JDDybxZb][img]https://i.postimg.cc/JDDybxZb/images-(27).jpg[/img][/url]
-
-[url=https://postimg.cc/zbsyphFb][img]https://i.postimg.cc/zbsyphFb/images-(30).jpg[/img][/url]
-
-[url=https://postimg.cc/wyC1FNQm][img]https://i.postimg.cc/wyC1FNQm/images-(32).jpg[/img][/url]
-
-[url=https://postimg.cc/DJ9S5GPW][img]https://i.postimg.cc/DJ9S5GPW/images-(34).jpg[/img][/url]
-
-[url=https://postimg.cc/HJPccRJK][img]https://i.postimg.cc/HJPccRJK/IMG-20250405-120445.jpg[/img][/url]
-
-[url=https://postimg.cc/8FnJJ9Fx][img]https://i.postimg.cc/8FnJJ9Fx/IMG-20250405-120448.jpg[/img][/url]
-
-[url=https://postimg.cc/t1mZZwZQ][img]https://i.postimg.cc/t1mZZwZQ/IMG-20250405-120453.jpg[/img][/url]
-
-[url=https://postimg.cc/wyyth2LB][img]https://i.postimg.cc/wyyth2LB/IMG-20250405-120455.jpg[/img][/url]
-
-[url=https://postimg.cc/7CQGGdGw][img]https://i.postimg.cc/7CQGGdGw/IMG-20250405-120515.jpg[/img][/url]
-
-[url=https://postimg.cc/344yg1ps][img]https://i.postimg.cc/344yg1ps/IMG-20250405-120520.jpg[/img][/url]
-
-[url=https://postimg.cc/CBBZj7kZ][img]https://i.postimg.cc/CBBZj7kZ/IMG-20250405-120523.jpg[/img][/url]
-
-[url=https://postimg.cc/MMMcy5VZ][img]https://i.postimg.cc/MMMcy5VZ/IMG-20250405-120524.jpg[/img][/url]
-
-[url=https://postimg.cc/TLLyr0g8][img]https://i.postimg.cc/TLLyr0g8/IMG-20250405-120539.jpg[/img][/url]
-
-[url=https://postimg.cc/VrrSjgnc][img]https://i.postimg.cc/VrrSjgnc/IMG-20250405-120541.jpg[/img][/url]
-
-[url=https://postimg.cc/LYYqzDL9][img]https://i.postimg.cc/LYYqzDL9/IMG-20250405-120543.jpg[/img][/url]
-
-[url=https://postimg.cc/Y4SLSMSW][img]https://i.postimg.cc/Y4SLSMSW/IMG-20250906-184609.jpg[/img][/url]
-
-[url=https://postimg.cc/DWz4znz0][img]https://i.postimg.cc/DWz4znz0/IMG-20250906-184612.jpg[/img][/url]
-
-[url=https://postimg.cc/GBpTpdpH][img]https://i.postimg.cc/GBpTpdpH/IMG-20250906-184637.jpg[/img][/url]
-
-[url=https://postimg.cc/JyhHhMht][img]https://i.postimg.cc/JyhHhMht/IMG-20250906-184639.jpg[/img][/url]
-
-[url=https://postimg.cc/McGfGqGZ][img]https://i.postimg.cc/McGfGqGZ/IMG-20250927-142959.jpg[/img][/url]
-
-[url=https://postimg.cc/XrLy3pnp][img]https://i.postimg.cc/XrLy3pnp/IMG-20250927-143118.jpg[/img][/url]
-
-[url=https://postimg.cc/Wd8Jjhsc][img]https://i.postimg.cc/Wd8Jjhsc/IMG-20251112-215802.jpg[/img][/url]
-
-[url=https://postimg.cc/LJ2ZrzFd][img]https://i.postimg.cc/LJ2ZrzFd/IMG-20251206-114935.jpg[/img][/url]
-
-[url=https://postimg.cc/47DYwcQy][img]https://i.postimg.cc/47DYwcQy/Screenshot-2025-03-13-17-57-27-572-com-facebook-katana-edit.jpg[/img][/url]
-
-[url=https://postimg.cc/VrrSjgnX][img]https://i.postimg.cc/VrrSjgnX/Screenshot-2025-03-13-17-59-05-449-com-facebook-katana-edit.jpg[/img][/url]
-
-[url=https://postimg.cc/nX2QZCn8][img]https://i.postimg.cc/nX2QZCn8/Snapchat-799922810.jpg[/img][/url]
-
-
-</div>
-</div>
-
-<a class="floating" onclick="openDonate()">💖 Donate</a>
-
-<div id="donateModal" class="modal">
-<div class="modal-content">
-<h3>Donate Options</h3>
-<button onclick="window.open('https://www.paypal.com/paypalme/joefayeekenya')">PayPal</button>
-<button onclick="whatsapp()">MoneyGram</button>
-<button onclick="whatsapp()">Western Union</button>
-<button onclick="whatsapp()">WorldRemit</button>
-<button onclick="closeDonate()">Close</button>
-</div>
-</div>
+</div><!-- GALLERY --><div id="gallery" class="section">
+<h2>📸 Gallery</h2><h3>Children Playing</h3>
+<div class="grid gallery">
+<img src="https://i.postimg.cc/MnvWLT3H/FB-IMG-1766220999253.jpg" onclick="openImage(this)">
+<img src="https://i.postimg.cc/JsG1FnY3/FB-IMG-1766221003643.jpg" onclick="openImage(this)">
+</div><h3>Study & Bible</h3>
+<div class="grid gallery">
+<img src="https://i.postimg.cc/Sn3ybhH8/IMG-20251206-154510.jpg" onclick="openImage(this)">
+<img src="https://i.postimg.cc/w1Z6Ypn4/IMG-20251206-154512.jpg" onclick="openImage(this)">
+</div><h3>Training & Cooking</h3>
+<div class="grid gallery">
+<img src="https://i.postimg.cc/3kVKQTzq/IMG-20251206-154518.jpg" onclick="openImage(this)">
+<img src="https://i.postimg.cc/qhd4gGJL/IMG-20251206-101404.jpg" onclick="openImage(this)">
+</div><h3>Cleaning Activities</h3>
+<div class="grid gallery">
+<img src="https://i.postimg.cc/PpzhD8JV/IMG-20251206-101410.jpg" onclick="openImage(this)">
+<img src="https://i.postimg.cc/0MqPrCkr/IMG-20251206-101416.jpg" onclick="openImage(this)">
+</div></div><!-- IMAGE MODAL --><div id="imgModal" class="modal" onclick="closeImage()">
+<span class="close">×</span>
+<img id="modalImg">
+</div><a class="floating" onclick="alert('Donate via PayPal or WhatsApp')">💖 Donate</a>
 
 <script>
-const names=[
-"Faith Wanjiku","Brian Mwangi","Mercy Achieng","Kevin Otieno","Esther Njeri","Peter Kimani","Lucy Wambui","John Kariuki","Ann Wanjiru","Samuel Ochieng",
+const names=["Faith Wanjiku","Brian Mwangi","Mercy Achieng","Kevin Otieno","Esther Njeri","Peter Kimani","Lucy Wambui","John Kariuki","Ann Wanjiru","Samuel Ochieng",
 "Mary Atieno","David Kiptoo","Grace Chebet","Daniel Mutua","Ruth Wairimu","Joseph Njoroge","Naomi Chebet","Paul Onyango","Rose Atieno","James Mwangi",
-"Sarah Akinyi","Michael Otieno","Beatrice Wanjiru","George Kariuki","Hannah Njeri","Isaac Kiprotich","Dorcas Atieno","Elijah Mwangi","Lydia Wambui","Victor Otieno"
-];
+"Sarah Akinyi","Michael Otieno","Beatrice Wanjiru","George Kariuki","Hannah Njeri","Isaac Kiprotich","Dorcas Atieno","Elijah Mwangi","Lydia Wambui","Victor Otieno"];
 
 function loadChildren(){
 let grid=document.getElementById("childGrid");
-grid.innerHTML=names.map((n,i)=>{
-let age=Math.floor(Math.random()*12)+4;
-let progress=Math.floor(Math.random()*10);
-let urgent = Math.random() < 0.75;
-
-return `
-<div class='card'>
-<span class='badge ${urgent?"urgent":"supported"}'>${urgent?"URGENT":"SUPPORTED"}</span>
-<h3>${n}</h3>
-<p>Age: ${age}</p>
-<div class='progress'><div class='progress-bar' style='width:${progress}%'></div></div>
-<p>${progress}% funded</p>
-<button onclick='openDonate()'>Sponsor</button>
-</div>`;
-}).join('');
+grid.innerHTML=names.map(n=>`<div class='card'><h3>${n}</h3><button>Sponsor</button></div>`).join('');
 }
 
-function openDonate(){document.getElementById('donateModal').style.display='flex'}
-function closeDonate(){document.getElementById('donateModal').style.display='none'}
-function whatsapp(){window.open('https://wa.me/254725768628')}
+function openImage(img){
+document.getElementById("imgModal").style.display="flex";
+document.getElementById("modalImg").src=img.src;
+}
+
+function closeImage(){
+document.getElementById("imgModal").style.display="none";
+}
 
 loadChildren();
-</script>
-
-</body>
+</script></body>
 </html>
