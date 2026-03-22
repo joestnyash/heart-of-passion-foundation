@@ -1,156 +1,188 @@
-<!DOCTYPE html><html>
+<!DOCTYPE html>
+<html>
 <head>
 <title>Heart of Passion Foundation</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700;900&display=swap" rel="stylesheet"><style>
-body{margin:0;font-family:Poppins;background:linear-gradient(135deg,#ff9a9e,#fad0c4,#a1c4fd,#c2e9fb)}
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700;900&display=swap" rel="stylesheet">
+
+<style>
+body{margin:0;font-family:Poppins;background:linear-gradient(135deg,#ff9a9e,#fad0c4,#a1c4fd)}
+
 .nav{background:#000;padding:15px;text-align:center;position:sticky;top:0}
 .nav a{color:#fff;margin:15px;text-decoration:none;font-weight:bold}
+
 .hero{padding:80px 20px;text-align:center;color:#fff;background:linear-gradient(135deg,#ff0000,#ff8c00,#1e90ff,#6a11cb)}
-.hero img{width:420px;max-width:95%;margin-bottom:25px;filter:drop-shadow(0 12px 30px rgba(0,0,0,0.7))}
+.hero img{width:400px;max-width:90%}
 .hero h1{font-size:42px;font-weight:900}
-.section{background:#fff;margin:20px;padding:20px;border-radius:15px;border:2px solid #ddd}
+
+.section{background:#fff;margin:20px;padding:20px;border-radius:12px}
+
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:15px}
-.card{background:#fff;padding:15px;border-radius:12px;border:2px solid #ccc}
-.badge{padding:5px 10px;border-radius:20px;color:#fff;font-size:12px;display:inline-block}
+
+.card{background:#fff;padding:15px;border-radius:10px;border:2px solid #ddd}
+.card img{width:100%;height:200px;object-fit:cover;border-radius:10px}
+
+.badge{padding:5px 10px;border-radius:20px;color:#fff;font-size:12px}
 .urgent{background:red}
-.supported{background:green}
-.progress{background:#eee;height:8px;border-radius:10px;margin-top:10px}
-.progress-bar{height:8px;background:green;border-radius:10px}
-button{width:100%;padding:10px;border:none;border-radius:8px;margin-top:10px;font-weight:bold;cursor:pointer}
-.floating{position:fixed;bottom:20px;right:20px;background:red;color:#fff;padding:15px;border-radius:50px;text-decoration:none;font-weight:bold}
-.modal{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);display:none;justify-content:center;align-items:center}
-.modal-content{background:#fff;padding:20px;border-radius:10px;width:90%;max-width:320px}
-.gallery img{width:100%;border-radius:10px;cursor:pointer;transition:0.3s}
-.gallery img:hover{transform:scale(1.05)}
-</style></head><body><div class="nav">
+.partial{background:orange}
+.full{background:green}
+
+.progress{background:#ddd;height:8px;border-radius:10px;margin-top:10px}
+.bar{height:8px;background:green;border-radius:10px}
+
+button{width:100%;padding:10px;margin-top:10px;font-weight:bold;cursor:pointer}
+
+.gallery img{width:100%;border-radius:10px;cursor:pointer}
+
+.modal{
+display:none;
+position:fixed;
+top:0;left:0;
+width:100%;height:100%;
+background:rgba(0,0,0,0.9);
+justify-content:center;
+align-items:center;
+}
+.modal img{max-width:90%;max-height:90%}
+
+.floating{
+position:fixed;
+bottom:20px;
+right:20px;
+background:red;
+color:#fff;
+padding:15px;
+border-radius:50px;
+cursor:pointer;
+font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<div class="nav">
 <a href="#home">Home</a>
 <a href="#children">Children</a>
 <a href="#gallery">Gallery</a>
-</div><div id="home" class="hero">
+</div>
+
+<!-- HOME -->
+<div id="home" class="hero">
 <img src="https://i.postimg.cc/7Z95tJtN/file-000000001a8871fdaf1d6e48910c57af.png">
 <h1>HEART OF PASSION FOUNDATION</h1>
 <p><b>Bonded in Love ♥️, Humanity, and By God</b></p>
-</div><div id="children" class="section">
+</div>
+
+<div class="section">
+<h2>Introduction</h2>
+
+<p><b>Founder:</b> Rev JoeFaye (Joseph Nyaga Gachoki), a man devoted to compassion and service.</p>
+
+<p><b>Children Ministry:</b> Supporting 42 children with food, shelter, education and care.</p>
+
+<p><b>Prison Ministry:</b> Providing counselling, skills training, and essential support to inmates.</p>
+</div>
+
+<div class="section">
+<h2>Contact</h2>
+<p>📞 +254725768628 / +254703139012</p>
+<p>📧 heartofpassionfdn@gmail.com</p>
+</div>
+
+<!-- CHILDREN -->
+<div id="children" class="section">
 <h2>👶 Sponsor a Child</h2>
 <div class="grid" id="childGrid"></div>
-</div><div id="gallery" class="section">
-<h2>📸 Gallery</h2><!-- FILTER BUTTONS --><div style="text-align:center;margin-bottom:15px;">
-<button onclick="filterGallery('all')">All</button>
-<button onclick="filterGallery('playing')">Children Playing</button>
-<button onclick="filterGallery('cooking')">Children Cooking</button>
-<button onclick="filterGallery('extra')">Extra Curriculum</button>
-<button onclick="filterGallery('bible')">Fellowship & Bible</button>
-</div><div class="grid gallery" id="galleryGrid"></div>
-</div><a class="floating" onclick="openDonate()">💖 Donate</a>
-
-<div id="donateModal" class="modal">
-<div class="modal-content">
-<h3>Donate Options</h3>
-<button onclick="window.open('https://www.paypal.com/paypalme/joefayeekenya')">PayPal</button>
-<button onclick="whatsapp()">MoneyGram</button>
-<button onclick="whatsapp()">Western Union</button>
-<button onclick="whatsapp()">WorldRemit</button>
-<button onclick="closeDonate()">Close</button>
 </div>
-</div><div id="imgModal" class="modal" onclick="closeImage()">
-<img id="modalImg" style="max-width:90%;max-height:90%">
-</div><script>
 
-// CHILDREN
-const names=[
-"Faith Wanjiku","Brian Mwangi","Mercy Achieng","Kevin Otieno","Esther Njeri","Peter Kimani","Lucy Wambui","John Kariuki","Ann Wanjiru","Samuel Ochieng",
-"Mary Atieno","David Kiptoo","Grace Chebet","Daniel Mutua","Ruth Wairimu","Joseph Njoroge","Naomi Chebet","Paul Onyango","Rose Atieno","James Mwangi",
-"Sarah Akinyi","Michael Otieno","Beatrice Wanjiru","George Kariuki","Hannah Njeri","Isaac Kiprotich","Dorcas Atieno","Elijah Mwangi","Lydia Wambui","Victor Otieno"
+<!-- GALLERY -->
+<div id="gallery" class="section">
+<h2>📸 Gallery</h2>
+<div class="grid">
+
+<img src="https://i.postimg.cc/MnvWLT3H/FB-IMG-1766220999253.jpg" onclick="openImg(this)">
+<img src="https://i.postimg.cc/JsG1FnY3/FB-IMG-1766221003643.jpg" onclick="openImg(this)">
+<img src="https://i.postimg.cc/Sn3ybhH8/IMG-20251206-154510.jpg" onclick="openImg(this)">
+<img src="https://i.postimg.cc/w1Z6Ypn4/IMG-20251206-154512.jpg" onclick="openImg(this)">
+<img src="https://i.postimg.cc/3kVKQTzq/IMG-20251206-154518.jpg" onclick="openImg(this)">
+
+</div>
+</div>
+
+<!-- IMAGE MODAL -->
+<div id="modal" class="modal" onclick="closeImg()">
+<img id="modalImg">
+</div>
+
+<!-- FLOATING DONATE -->
+<a class="floating" onclick="donate()">💖 Donate</a>
+
+<script>
+
+// CHILDREN DATA
+const names = [
+"Faith Wanjiku","Brian Mwangi","Mercy Achieng","Kevin Otieno","Esther Njeri",
+"Peter Kimani","Lucy Wambui","John Kariuki","Ann Wanjiru","Samuel Ochieng",
+"Mary Atieno","David Kiptoo","Grace Chebet","Daniel Mutua","Ruth Wairimu",
+"Joseph Njoroge","Naomi Chebet","Paul Onyango","Rose Atieno","James Mwangi",
+"Sarah Akinyi","Michael Otieno","Beatrice Wanjiru","George Kariuki","Hannah Njeri",
+"Isaac Kiprotich","Dorcas Atieno","Elijah Mwangi","Lydia Wambui","Victor Otieno"
 ];
 
+// LOAD CHILDREN
 function loadChildren(){
 let grid=document.getElementById("childGrid");
-grid.innerHTML=names.map((n,i)=>{
-let age=Math.floor(Math.random()*12)+4;
-let progress=Math.floor(Math.random()*10);
-let urgent=Math.random()<0.75;
+
+grid.innerHTML = names.map((n,i)=>{
+let progress=Math.floor(Math.random()*10); // mostly unsponsored
+let status="urgent";
+
+if(progress>5) status="partial";
+if(progress>8) status="full";
+
 return `
-<div class='card'>
-<span class='badge ${urgent?"urgent":"supported"}'>${urgent?"URGENT":"SUPPORTED"}</span>
+<div class="card">
+<img src="https://i.postimg.cc/MnvWLT3H/FB-IMG-1766220999253.jpg">
+
+<span class="badge ${status}">
+${status=="urgent"?"URGENT":status=="partial"?"PARTIAL":"SPONSORED"}
+</span>
+
 <h3>${n}</h3>
-<p>Age: ${age}</p>
-<div class='progress'><div class='progress-bar' style='width:${progress}%'></div></div>
-<p>${progress}% funded</p>
-<button onclick='openDonate()'>Sponsor</button>
-</div>`}).join('');
-}
+<p>Age: ${4+Math.floor(Math.random()*12)}</p>
 
-// GALLERY DATA WITH CATEGORIES
-const galleryImages=[
-{src:"https://i.postimg.cc/MnvWLT3H/FB-IMG-1766220999253.jpg",cat:"playing",cap:"Children playing together"},
-{src:"https://i.postimg.cc/JsG1FnY3/FB-IMG-1766221003643.jpg",cat:"playing",cap:"Fun outdoor play"},
-{src:"https://i.postimg.cc/Sn3ybhH8/IMG-20251206-154510.jpg",cat:"bible",cap:"Bible study session"},
-{src:"https://i.postimg.cc/w1Z6Ypn4/IMG-20251206-154512.jpg",cat:"bible",cap:"Fellowship time"},
-{src:"https://i.postimg.cc/3kVKQTzq/IMG-20251206-154518.jpg",cat:"extra",cap:"Creative activities"},
-
-{src:"https://i.postimg.cc/SjkmhV1D/IMG-20250927-152612.jpg",cat:"playing",cap:"Outdoor moments"},
-{src:"https://i.postimg.cc/qg4pTQDY/IMG-20250927-152615.jpg",cat:"playing",cap:"Children bonding"},
-{src:"https://i.postimg.cc/gXqdh6rm/IMG-20251112-WA0011.jpg",cat:"extra",cap:"Group activity"},
-{src:"https://i.postimg.cc/zbS5hRv9/IMG-20251112-WA0013.jpg",cat:"extra",cap:"Learning together"},
-
-{src:"https://i.postimg.cc/qhd4gGJL/IMG-20251206-101404.jpg",cat:"cooking",cap:"Cooking lesson"},
-{src:"https://i.postimg.cc/PpzhD8JV/IMG-20251206-101410.jpg",cat:"cooking",cap:"Food preparation"},
-{src:"https://i.postimg.cc/0MqPrCkr/IMG-20251206-101416.jpg",cat:"cooking",cap:"Kitchen training"},
-{src:"https://i.postimg.cc/BLG4tCSQ/IMG-20251206-101418.jpg",cat:"cooking",cap:"Cooking skills"},
-
-{src:"https://i.postimg.cc/G8JrDstj/IMG-20251206-102328.jpg",cat:"extra",cap:"Training session"},
-{src:"https://i.postimg.cc/WF6jZJzC/IMG-20251206-114927.jpg",cat:"extra",cap:"Learning activities"},
-
-{src:"https://i.postimg.cc/CRzF21r4/Snapchat-1038678885.jpg",cat:"playing",cap:"Happy moments"},
-{src:"https://i.postimg.cc/gxnY7JtD/Snapchat-1873475586.jpg",cat:"playing",cap:"Smiles and joy"},
-{src:"https://i.postimg.cc/Hc4HM7jT/Snapchat-415552741.jpg",cat:"playing",cap:"Playtime"},
-
-{src:"https://i.postimg.cc/hJMRPR53/IMG-20250906-184614.jpg",cat:"extra",cap:"Daily activities"},
-{src:"https://i.postimg.cc/2qTN8NKG/IMG-20250906-184635.jpg",cat:"extra",cap:"Team work"},
-
-{src:"https://i.postimg.cc/zyC16gSL/IMG-20250927-143026.jpg",cat:"bible",cap:"Fellowship"},
-{src:"https://i.postimg.cc/hJKqBtpb/IMG-20250927-143038.jpg",cat:"bible",cap:"Prayer time"},
-{src:"https://i.postimg.cc/qtpdTvjc/IMG-20250927-143044.jpg",cat:"bible",cap:"Devotion"},
-{src:"https://i.postimg.cc/xk9S21tK/IMG-20250927-143047.jpg",cat:"bible",cap:"Bible reading"},
-
-{src:"https://i.postimg.cc/WDsPv1X8/IMG-20250927-145534.jpg",cat:"extra",cap:"Activities"},
-{src:"https://i.postimg.cc/fVnN8KdB/IMG-20251112-WA0010.jpg",cat:"extra",cap:"Group learning"},
-
-{src:"https://i.postimg.cc/mcr1rBr7/1584701408643.jpg",cat:"playing",cap:"Outdoor joy"},
-{src:"https://i.postimg.cc/qt76747h/1584701408818.jpg",cat:"playing",cap:"Fun time"},
-{src:"https://i.postimg.cc/DWz4znzr/1584701419051.jpg",cat:"playing",cap:"Togetherness"},
-
-{src:"https://i.postimg.cc/R30J0403/1584701419583.jpg",cat:"playing",cap:"Children moments"},
-{src:"https://i.postimg.cc/GBpTpdpY/1584701419774.jpg",cat:"playing",cap:"Play & learn"},
-{src:"https://i.postimg.cc/wtbyyZtw/1584701420018.jpg",cat:"playing",cap:"Joyful learning"}
-];
-
-function loadGallery(filter='all'){
-let grid=document.getElementById("galleryGrid");
-let data=filter==='all'?galleryImages:galleryImages.filter(i=>i.cat===filter);
-
-grid.innerHTML=data.map(i=>`
-<div>
-<img src='${i.src}' onclick='openImage(this)'>
-<p style='text-align:center;font-size:13px;'>${i.cap}</p>
+<div class="progress">
+<div class="bar" style="width:${progress}%"></div>
 </div>
-`).join('');
+
+<p>${progress}% funded</p>
+
+<button onclick="donate()">Sponsor This Child</button>
+</div>
+`;
+}).join("");
 }
 
-function filterGallery(cat){loadGallery(cat)}
-
-// slideshow auto
-let slideIndex=0;
-setInterval(()=>{
-let imgs=document.querySelectorAll('#galleryGrid img');
-if(imgs.length>0){
-slideIndex=(slideIndex+1)%imgs.length;
-imgs[slideIndex].click();
+// DONATE
+function donate(){
+window.open("https://www.paypal.com/paypalme/joefayeekenya");
 }
-},8000);
 
-loadGallery();
+// IMAGE VIEW
+function openImg(img){
+document.getElementById("modal").style.display="flex";
+document.getElementById("modalImg").src=img.src;
+}
 
-</script></body>
+function closeImg(){
+document.getElementById("modal").style.display="none";
+}
+
+loadChildren();
+
+</script>
+
+</body>
 </html>
