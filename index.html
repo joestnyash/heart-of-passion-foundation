@@ -7,11 +7,12 @@ body{margin:0;font-family:Poppins;background:linear-gradient(135deg,#ff9a9e,#fad
 .nav{background:#000;padding:15px;text-align:center;position:sticky;top:0}
 .nav a{color:#fff;margin:15px;text-decoration:none;font-weight:bold}
 .hero{padding:80px 20px;text-align:center;color:#fff;background:linear-gradient(135deg,#ff0000,#ff8c00,#1e90ff,#6a11cb)}
-.hero img{width:420px;max-width:95%;margin-bottom:25px;filter:drop-shadow(0 12px 30px rgba(0,0,0,0.7))}
+.hero img{width:420px;max-width:95%;margin-bottom:25px}
 .hero h1{font-size:44px;font-weight:900}
 .section{background:#fff;margin:20px;padding:20px;border-radius:15px;border:2px solid #ddd}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:15px}
 .card{background:#fff;padding:15px;border-radius:12px;border:2px solid #ccc}
+.card img{width:100%;height:200px;object-fit:cover;border-radius:10px}
 .badge{padding:5px 10px;border-radius:20px;color:#fff;font-size:12px}
 .urgent{background:red}
 .supported{background:green}
@@ -32,9 +33,9 @@ button{width:100%;padding:10px;border:none;border-radius:8px;margin-top:10px;fon
 <p><b>Bonded in Love ♥️, Humanity, and By God</b></p>
 </div><div class="section">
 <h2>Introduction</h2>
-<p><b>Founder:</b> My name is Rev JoeFaye (Joseph Nyaga Gachoki). I am devoted to compassion, lifting lives and restoring dignity.</p>
-<p><b>Children Ministry:</b> We care for 42 children providing food, shelter, education and clothing.</p>
-<p><b>Prison Ministry:</b> We visit prisons offering counselling, training and essential items.</p>
+<p><b>Founder:</b> My Name Rev JoeFaye (Joseph Nyaga Gachoki). I am a man devoted to compassion, bringing hope where there is despair and lifting lives through charity.</p>
+<p><b>Children Ministry:</b> We care for 42 children providing Food, Shelter, Education, Clothing and love under Heart of Passion Children's Home.</p>
+<p><b>Prison Ministry:</b> We visit prisons in Kenya providing counselling, technical training, communication skills, paralegal guidance and essential items like toiletries, soaps, toothbrushes and clothing.</p>
 </div><div class="section">
 <h2>📍 Location</h2>
 <p>Kenya, Nairobi County, Roysambu, Zimmerman Ward</p>
@@ -44,19 +45,14 @@ button{width:100%;padding:10px;border:none;border-radius:8px;margin-top:10px;fon
 <div class="grid" id="childGrid"></div>
 </div><div id="gallery" class="section">
 <h2>📸 Gallery</h2>
-<div class="grid gallery" id="galleryGrid"></div>
+<div class="grid" id="galleryGrid"></div>
 </div><a class="floating" onclick="openDonate()">💖 Donate</a>
 
 <div id="donateModal" class="modal">
 <div class="modal-content">
-<h3>Donate</h3><p>Select Amount:</p>
-<button onclick="setAmount(10)">$10</button>
-<button onclick="setAmount(50)">$50</button>
-<button onclick="setAmount(100)">$100</button>
-<button onclick="setAmount(200)">$200</button>
-<button onclick="setAmount(500)">$500</button>
-<button onclick="setAmount(1000)">$1000</button><input id="customAmount" placeholder="Other Amount" style="width:100%;padding:10px;margin-top:10px"><p>Frequency:</p>
-<select id="frequency" style="width:100%;padding:10px">
+<h3>Donate</h3><button onclick="setAmount(10)">$10</button> <button onclick="setAmount(50)">$50</button> <button onclick="setAmount(100)">$100</button> <button onclick="setAmount(200)">$200</button> <button onclick="setAmount(500)">$500</button> <button onclick="setAmount(1000)">$1000</button>
+
+<input id="customAmount" placeholder="Other Amount" style="width:100%;padding:10px;margin-top:10px"><select id="frequency" style="width:100%;padding:10px;margin-top:10px">
 <option>One Time</option>
 <option>Weekly</option>
 <option>Monthly</option>
@@ -75,6 +71,7 @@ Or Send to: +254725768628
 <img id="modalImg" style="max-width:90%;max-height:90%">
 </div><script>
 
+// 👉 ADD ALL YOUR 70+ IMAGES HERE
 const galleryImages=[
 "https://i.postimg.cc/MnvWLT3H/FB-IMG-1766220999253.jpg",
 "https://i.postimg.cc/JsG1FnY3/FB-IMG-1766221003643.jpg",
@@ -83,14 +80,24 @@ const galleryImages=[
 "https://i.postimg.cc/3kVKQTzq/IMG-20251206-154518.jpg"
 ];
 
-const names = Array.from({length:30},(_,i)=>"Child "+(i+1));
+// 30 CHILDREN
+const names=[
+"Faith Wanjiku","Brian Mwangi","Mercy Achieng","Kevin Otieno","Esther Njeri",
+"Peter Kimani","Lucy Wambui","John Kariuki","Ann Wanjiru","Samuel Ochieng",
+"Mary Atieno","David Kiptoo","Grace Chebet","Daniel Mutua","Ruth Wairimu",
+"Joseph Njoroge","Naomi Chebet","Paul Onyango","Rose Atieno","James Mwangi",
+"Sarah Akinyi","Michael Otieno","Beatrice Wanjiru","George Kariuki","Hannah Njeri",
+"Isaac Kiprotich","Dorcas Atieno","Elijah Mwangi","Lydia Wambui","Victor Otieno"
+];
 
 function loadChildren(){
 let grid=document.getElementById("childGrid");
+
 grid.innerHTML=names.map((n,i)=>{
-let img=galleryImages[i%galleryImages.length];
+let img=galleryImages[i % galleryImages.length];
 let progress=Math.floor(Math.random()*10);
-let urgent=Math.random()<0.7;
+let urgent=Math.random()<0.8;
+
 return `
 <div class='card'>
 <img src='${img}'>
@@ -100,7 +107,8 @@ return `
 <div class='progress'><div class='progress-bar' style='width:${progress}%'></div></div>
 <p>${progress}% funded</p>
 <button onclick='openDonate()'>Sponsor</button>
-</div>`}).join('');
+</div>`
+}).join('');
 }
 
 function loadGallery(){
@@ -108,7 +116,11 @@ let grid=document.getElementById("galleryGrid");
 grid.innerHTML=galleryImages.map(i=>`<img src='${i}' onclick='openImage(this)'>`).join('');
 }
 
-function openImage(img){document.getElementById('imgModal').style.display='flex';document.getElementById('modalImg').src=img.src}
+function openImage(img){
+document.getElementById('imgModal').style.display='flex';
+document.getElementById('modalImg').src=img.src;
+}
+
 function closeImage(){document.getElementById('imgModal').style.display='none'}
 
 function openDonate(){document.getElementById('donateModal').style.display='flex'}
@@ -125,12 +137,12 @@ window.open("https://www.paypal.com/paypalme/joefayeekenya");
 }
 
 function mpesa(){
-alert("Paybill: 162180
-Account: 0300327
-Or Send to +254725768628");
+alert("M-Pesa Payment:\nPaybill: 162180\nAccount: 0300327\nOr Send to: +254725768628");
 }
 
-function whatsapp(){window.open("https://wa.me/254725768628")}
+function whatsapp(){
+window.open("https://wa.me/254725768628");
+}
 
 loadChildren();
 loadGallery();
