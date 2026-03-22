@@ -15,6 +15,11 @@ button{width:100%;padding:10px;border:none;border-radius:8px;margin-top:10px;fon
 .floating{position:fixed;bottom:20px;right:20px;background:red;color:#fff;padding:15px;border-radius:50px;font-weight:bold}
 .modal{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);display:none;justify-content:center;align-items:center}
 .modal-content{background:#fff;padding:20px;border-radius:10px;width:90%;max-width:350px}
+button{border:2px solid #333}
+.btn-red{background:#ff4d4d;color:white;border-color:#cc0000}
+.btn-blue{background:#1e90ff;color:white;border-color:#0047ab}
+.btn-green{background:#28a745;color:white;border-color:#1e7e34}
+.btn-orange{background:#ff8c00;color:white;border-color:#cc7000}
 </style></head><body><div class="nav">
 <a href="#home">Home</a>
 <a href="#donation">Donate</a>
@@ -50,6 +55,12 @@ button{width:100%;padding:10px;border:none;border-radius:8px;margin-top:10px;fon
 <p><strong>Account:</strong> 0300327</p>
 <p><strong>Or Send Directly:</strong> +254725768628</p>
 <button onclick="mpesa()" style="background:green;color:white">Use M-Pesa</button>
+</div><!-- CHILDREN SPONSORSHIP --><div class="section" id="children">
+<h2>👶 Child Sponsorship</h2>
+<div class="grid" id="childGrid"></div>
+</div><!-- GALLERY --><div class="section" id="gallery">
+<h2>📸 Gallery</h2>
+<div class="grid" id="galleryGrid"></div>
 </div><!-- LOCATION --><div id="location" class="section">
 <h2>📍 Location</h2>
 <p>Kenya, Nairobi County, Roysambu, Zimmerman Ward</p>
@@ -88,6 +99,56 @@ window.open("https://wa.me/254725768628");
 
 function openDonate(){document.getElementById('donateModal').style.display='flex'}
 function closeDonate(){document.getElementById('donateModal').style.display='none'}
+
+
+
+// CHILDREN DATA
+const names=[
+"Faith Wanjiku","Brian Mwangi","Mercy Achieng","Kevin Otieno","Esther Njeri",
+"Peter Kimani","Lucy Wambui","John Kariuki","Ann Wanjiru","Samuel Ochieng",
+"Mary Atieno","David Kiptoo","Grace Chebet","Daniel Mutua","Ruth Wairimu",
+"Joseph Njoroge","Naomi Chebet","Paul Onyango","Rose Atieno","James Mwangi",
+"Sarah Akinyi","Michael Otieno","Beatrice Wanjiru","George Kariuki","Hannah Njeri",
+"Isaac Kiprotich","Dorcas Atieno","Elijah Mwangi","Lydia Wambui","Victor Otieno"
+];
+
+const galleryImages=[
+"https://i.postimg.cc/MnvWLT3H/FB-IMG-1766220999253.jpg",
+"https://i.postimg.cc/JsG1FnY3/FB-IMG-1766221003643.jpg",
+"https://i.postimg.cc/Sn3ybhH8/IMG-20251206-154510.jpg",
+"https://i.postimg.cc/w1Z6Ypn4/IMG-20251206-154512.jpg",
+"https://i.postimg.cc/3kVKQTzq/IMG-20251206-154518.jpg"
+];
+
+function loadChildren(){
+let grid=document.getElementById("childGrid");
+
+grid.innerHTML=names.map((n,i)=>{
+let img=galleryImages[i%galleryImages.length];
+let progress=Math.floor(Math.random()*10);
+let urgent=Math.random()<0.8;
+
+return `
+<div class='card'>
+<img src='${img}'>
+<span class='badge ${urgent?"urgent":"supported"}'>${urgent?"URGENT":"SUPPORTED"}</span>
+<h3>${n}</h3>
+<p>Age: ${4+Math.floor(Math.random()*12)}</p>
+<p><b>Needs:</b> School Fees, Medical, Clothing, Hygiene</p>
+<div class='progress'><div class='progress-bar' style='width:${progress}%'></div></div>
+<p>${progress}% funded</p>
+<button class='btn-blue' onclick='openDonate()'>Sponsor Child</button>
+</div>`
+}).join('');
+}
+
+function loadGallery(){
+let grid=document.getElementById("galleryGrid");
+grid.innerHTML=galleryImages.map(i=>`<img src='${i}' onclick='window.open("${i}")'>`).join('');
+}
+
+loadChildren();
+loadGallery();
 
 </script></body>
 </html>
