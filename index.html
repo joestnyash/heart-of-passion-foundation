@@ -4,129 +4,64 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700;900&display=swap" rel="stylesheet"><style>
 body{margin:0;font-family:Poppins;background:linear-gradient(135deg,#ff9a9e,#fad0c4,#a1c4fd,#c2e9fb)}
+
 .nav{background:#000;padding:15px;text-align:center;position:sticky;top:0}
 .nav a{color:#fff;margin:15px;text-decoration:none;font-weight:bold}
-.hero{
-padding:80px 20px;
-text-align:center;
-color:#fff;
-background:linear-gradient(135deg,#ff0000,#ff8c00,#1e90ff,#6a11cb);
-position:relative;
-overflow:hidden;
-}
 
-.hero::after{
-content:"";
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:radial-gradient(circle at top, rgba(255,255,255,0.2), transparent 60%);
-}
+.hero{padding:80px 20px;text-align:center;color:#fff;background:linear-gradient(135deg,#ff0000,#ff8c00,#1e90ff,#6a11cb)}
 
 .hero img{
-width:140px;
+width:300px;
+max-width:90%;
 margin-bottom:20px;
-filter:drop-shadow(0 4px 10px rgba(0,0,0,0.4));
-animation:fadeIn 2s ease-in-out;
+filter:drop-shadow(0 8px 20px rgba(0,0,0,0.5));
 }
 
-.hero h1{
-font-size:48px;
-font-weight:900;
-letter-spacing:2px;
-text-shadow:0 4px 15px rgba(0,0,0,0.6);
-animation:slideUp 1.5s ease;
-}
+.hero h1{font-size:42px;font-weight:900;text-shadow:0 4px 15px rgba(0,0,0,0.6)}
 
-.hero p{
-font-size:18px;
-max-width:700px;
-margin:10px auto;
-animation:fadeIn 2.5s ease;
-}
-
-@keyframes fadeIn{
-from{opacity:0}
-to{opacity:1}
-}
-
-@keyframes slideUp{
-from{transform:translateY(40px);opacity:0}
-to{transform:translateY(0);opacity:1}
-}
-
-.hero h1{position:relative;z-index:2;font-size:48px;font-weight:900;text-shadow:2px 2px 8px rgba(0,0,0,0.6)}
-.hero h1{font-size:42px;font-weight:900}
 .section{background:#fff;margin:20px;padding:20px;border-radius:15px;border:2px solid #ddd}
+
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:15px}
-.card{background:#fff;padding:15px;border-radius:12px;border:2px solid #ccc;position:relative}
-.face{width:100%;height:200px;background-image:url('children.jpg');background-size:800px 600px;border-radius:10px}
-.badge{position:absolute;top:10px;left:10px;padding:5px 10px;color:#fff;border-radius:20px;font-size:12px}
+
+.card{background:#fff;padding:15px;border-radius:12px;border:2px solid #ccc}
+
+.card img{width:100%;height:200px;object-fit:cover;border-radius:10px}
+
+.badge{padding:5px 10px;border-radius:20px;color:#fff;font-size:12px;display:inline-block}
 .urgent{background:red}
 .supported{background:green}
+
 .progress{background:#eee;height:8px;border-radius:10px;margin-top:10px}
 .progress-bar{height:8px;background:green;border-radius:10px}
+
 button{width:100%;padding:10px;border:none;border-radius:8px;margin-top:10px;font-weight:bold;cursor:pointer}
+
 .floating{position:fixed;bottom:20px;right:20px;background:red;color:#fff;padding:15px;border-radius:50px;text-decoration:none;font-weight:bold}
+
 .modal{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);display:none;justify-content:center;align-items:center}
 .modal-content{background:#fff;padding:20px;border-radius:10px;width:90%;max-width:320px}
+
 </style></head><body><div class="nav">
 <a href="#home">Home</a>
 <a href="#children">Children</a>
 <a href="#gallery">Gallery</a>
-</div><div id="home" class="hero">
-<!-- Embedded Logo -->
-<!-- HOPE LOGO (High Quality) -->
-<div style="width:100%;display:flex;justify-content:center;margin-bottom:20px;">
-<div style="display:flex;justify-content:center;margin-bottom:20px;">
-  <img src="https://i.postimg.cc/7Z95tJtN/file-000000001a8871fdaf1d6e48910c57af.png"
-       style="width:280px;max-width:90%;height:auto;
-       filter:drop-shadow(0 8px 20px rgba(0,0,0,0.5));">
-</div>
-<div style="display:flex;justify-content:center;margin-bottom:20px;">
-<svg width="260" height="260" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
-<defs>
-<linearGradient id="grad1" x1="0" y1="0" x2="1" y2="1">
-<stop offset="0%" stop-color="#ff0000"/>
-<stop offset="50%" stop-color="#ff8c00"/>
-<stop offset="100%" stop-color="#1e90ff"/>
-</linearGradient>
-</defs><!-- Heart --><path d="M150 260 C40 170, 40 60, 150 120 C260 60, 260 170, 150 260 Z" fill="url(#grad1)"/><!-- People Figures --><circle cx="110" cy="130" r="12" fill="#fff"/>
-<circle cx="190" cy="130" r="12" fill="#fff"/>
-<circle cx="150" cy="170" r="12" fill="#fff"/><!-- Text --><text x="50%" y="290" text-anchor="middle" font-size="20" fill="#fff" font-weight="bold">HOPF</text> </svg>
-
-</div>
-</div><h1>HEART OF PASSION FOUNDATION</h1>
-<p><b>Bonded in Love ♥️, Humanity, and By God</b></p>
-<p>Founded in 2016 by Rev. JoeFaye (Joseph Nyaga Gachoki), we support vulnerable children, GBV victims and community outreach programs including prison ministry.</p>
-</div><div class="section">
+</div><div id="home" class="hero"><!-- REAL LOGO EMBEDDED --><img src="https://i.postimg.cc/7Z95tJtN/file-000000001a8871fdaf1d6e48910c57af.png"><h1>HEART OF PASSION FOUNDATION</h1>
+<p><b>Bonded in Love ♥️, Humanity, and By God</b></p><p>Founded in 2016 by Rev. JoeFaye (Joseph Nyaga Gachoki), we support vulnerable children, GBV victims and community outreach programs including prison ministry.</p></div><div class="section">
 <h2>📖 Introduction</h2><p><b>1. Founder</b></p>
-<p>My name is Rev. JoeFaye (Joseph Nyaga Gachoki). I am a man whose life has been quietly but powerfully shaped by compassion, choosing service over self and purpose over comfort. Devoted to charity, I see beyond circumstances and recognize the dignity and worth in every person. My hands are always extended to lift others, bringing hope where there is despair, provision where there is lack, and light where there is darkness. I am not defined by what I have, but by what I give.</p><p><b>2. Children Ministry</b></p>
-<p>We care for 42 children under Heart of Passion Children's Home. We provide Food, Shelter, Education, Clothing, and a loving environment where every child is nurtured, protected, and empowered to grow into a responsible and hopeful future.</p><p><b>3. Prison Ministry</b></p>
-<p>We visit prisons across Kenya where we run programs that directly impact inmates. We provide Technical Skills such as Computer Lessons, Communication Skills to help inmates express themselves, Paralegal guidance and study materials, and support in developing career skills and talents.</p><p>We also provide essential personal items including Toiletries, Washing and Bathing Soaps, Detergents, Toothpaste and Toothbrushes, Footwear, Innerwears, and other necessities that are not provided by the government.</p></div><div class="section">
-<h2>📞 Contact</h2>
-<p>WhatsApp: +254725768628 / +254703139012</p>
-<p>Email: heartofpassionfdn@gmail.com</p>
-</div><div class="section">
-<h2>📍 Location</h2>
-<p>Nairobi, Roysambu, Zimmerman Ward</p>
-<iframe src="https://maps.google.com/maps?q=Zimmerman%20Nairobi&output=embed" width="100%" height="300"></iframe>
-</div><div id="children" class="section">
+<p>My name is Rev. JoeFaye (Joseph Nyaga Gachoki). I am a man whose life has been quietly but powerfully shaped by compassion, choosing service over self and purpose over comfort. Devoted to charity, I see beyond circumstances and recognize the dignity and worth in every person.</p><p><b>2. Children Ministry</b></p>
+<p>We care for 42 children under Heart of Passion Children's Home providing Food, Shelter, Education, Clothing and love.</p><p><b>3. Prison Ministry</b></p>
+<p>We visit prisons across Kenya providing Technical Skills, Communication Training, Paralegal support and essential items like toiletries, soaps, detergents, toothbrushes, footwear and innerwears.</p></div><div id="children" class="section">
 <h2>👶 Sponsor a Child</h2>
 <div class="grid" id="childGrid"></div>
 </div><div id="gallery" class="section">
 <h2>📸 Gallery</h2>
 <div class="grid">
-<img src="gallery1.jpg" style="width:100%;border-radius:10px;">
-<img src="gallery2.jpg" style="width:100%;border-radius:10px;">
-<img src="gallery3.jpg" style="width:100%;border-radius:10px;">
-<img src="gallery4.jpg" style="width:100%;border-radius:10px;">
-<img src="gallery5.jpg" style="width:100%;border-radius:10px;">
-<img src="gallery6.jpg" style="width:100%;border-radius:10px;">
-<img src="gallery7.jpg" style="width:100%;border-radius:10px;">
-<img src="gallery8.jpg" style="width:100%;border-radius:10px;">
+<img src="gallery1.jpg">
+<img src="gallery2.jpg">
+<img src="gallery3.jpg">
+<img src="gallery4.jpg">
+<img src="gallery5.jpg">
+<img src="gallery6.jpg">
 </div>
 </div><a class="floating" onclick="openDonate()">💖 Donate</a>
 
@@ -139,43 +74,28 @@ button{width:100%;padding:10px;border:none;border-radius:8px;margin-top:10px;fon
 <button onclick="whatsapp()">WorldRemit</button>
 <button onclick="closeDonate()">Close</button>
 </div>
-</div><div id="sponsorModal" class="modal">
-<div class="modal-content">
-<h3>Sponsor Options</h3>
-<button onclick="window.open('https://www.paypal.com/paypalme/joefayeekenya')">PayPal</button>
-<button onclick="whatsapp()">MoneyGram</button>
-<button onclick="whatsapp()">Western Union</button>
-<button onclick="whatsapp()">WorldRemit</button>
-<button onclick="closeSponsor()">Close</button>
-</div>
 </div><script>
-const names=["Faith Wanjiku","Brian Mwangi","Mercy Achieng","Kevin Otieno","Esther Njeri","Peter Kimani","Lucy Wambui","John Kariuki","Ann Wanjiru","Samuel Ochieng","Grace Atieno","Daniel Kiptoo","Mary Wairimu","James Mutua","Susan Akinyi","David Mwangi","Purity Naliaka","Joseph Otieno","Naomi Chebet","Peter Odhiambo","Joyce Njeri","Elijah Kiprotich","Hannah Wanjiku","Paul Onyango","Ruth Jepkosgei","Mark Kimani","Diana Achieng","Stephen Kariuki","Alice Wambui","Victor Otieno"];
-
-const children=names.map((n,i)=>({name:n,age:Math.floor(Math.random()*12)+4,index:i}));
+const names=["Faith Wanjiku","Brian Mwangi","Mercy Achieng","Kevin Otieno","Esther Njeri","Peter Kimani","Lucy Wambui","John Kariuki","Ann Wanjiru","Samuel Ochieng"];
 
 function loadChildren(){
 let grid=document.getElementById("childGrid");
-grid.innerHTML=children.map(c=>{
-let x=(c.index%6)*-130;
-let y=Math.floor(c.index/6)*-130;
+grid.innerHTML=names.map((n,i)=>{
+let age=Math.floor(Math.random()*12)+4;
 let progress=Math.floor(Math.random()*10);
-let urgent=c.index%5!==0;
+let urgent=i%2===0;
 return `
 <div class='card'>
-<div class='face' style='background-position:${x}px ${y}px'></div>
 <span class='badge ${urgent?"urgent":"supported"}'>${urgent?"URGENT":"SUPPORTED"}</span>
-<h3>${c.name}</h3>
-<p>Age: ${c.age}</p>
+<h3>${n}</h3>
+<p>Age: ${age}</p>
 <div class='progress'><div class='progress-bar' style='width:${progress}%'></div></div>
 <p>${progress}% funded</p>
-<button style='background:#007bff;color:white;' onclick='openSponsor()'>Sponsor</button>
+<button onclick='openDonate()'>Sponsor</button>
 </div>`}).join('');
 }
 
 function openDonate(){document.getElementById('donateModal').style.display='flex'}
 function closeDonate(){document.getElementById('donateModal').style.display='none'}
-function openSponsor(){document.getElementById('sponsorModal').style.display='flex'}
-function closeSponsor(){document.getElementById('sponsorModal').style.display='none'}
 function whatsapp(){window.open('https://wa.me/254725768628')}
 
 loadChildren();
