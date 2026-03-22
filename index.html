@@ -11,7 +11,14 @@ body{margin:0;font-family:Poppins;background:linear-gradient(135deg,#ff9a9e,#fad
 .hero h1{font-size:44px;font-weight:900}
 .section{background:#fff;margin:20px;padding:20px;border-radius:15px;border:2px solid #ddd}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:15px}
-button{width:100%;padding:10px;border:none;border-radius:8px;margin-top:10px;font-weight:bold;cursor:pointer}
+button{width:100%;padding:10px;border:3px solid #333;border-radius:8px;margin-top:10px;font-weight:bold;cursor:pointer}
+
+/* Donation Button Styles */
+.btn-red{background:#ff4d4d;color:white;border:3px solid #cc0000}
+.btn-blue{background:#1e90ff;color:white;border:3px solid #0047ab}
+.btn-green{background:#28a745;color:white;border:3px solid #1e7e34}
+.btn-orange{background:#ff8c00;color:white;border:3px solid #cc7000}
+.btn-purple{background:#6a11cb;color:white;border:3px solid #3d0a7a}
 .floating{position:fixed;bottom:20px;right:20px;background:red;color:#fff;padding:15px;border-radius:50px;font-weight:bold}
 .modal{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);display:none;justify-content:center;align-items:center}
 .modal-content{background:#fff;padding:20px;border-radius:10px;width:90%;max-width:350px}
@@ -35,11 +42,13 @@ button{border:2px solid #333}
 </div><!-- DONATION --><div id="donation" class="section">
 <h2>💖 Donation</h2><h3>Select Amount</h3>
 <div class="grid">
-<button onclick="setAmount(100)">$100</button>
-<button onclick="setAmount(200)">$200</button>
-<button onclick="setAmount(500)">$500</button>
-<button onclick="setAmount(1000)">$1000</button>
-</div><input id="customAmount" placeholder="Other Amount" style="width:100%;padding:10px;margin-top:10px"><h3>Donation Frequency</h3>
+<button class="btn-blue" onclick="setAmount(10)">$10</button>
+<button class="btn-green" onclick="setAmount(50)">$50</button>
+<button class="btn-purple" onclick="setAmount(100)">$100</button>
+<button class="btn-blue" onclick="setAmount(200)">$200</button>
+<button class="btn-orange" onclick="setAmount(500)">$500</button>
+<button class="btn-red" onclick="setAmount(1000)">$1000</button>
+</div><input id="customAmount" placeholder="Other Amount" style="width:100%;padding:10px;margin-top:10px"><input id="customAmount" placeholder="Other Amount" style="width:100%;padding:10px;margin-top:10px"><h3>Donation Frequency</h3>
 <select id="frequency" style="width:100%;padding:10px">
 <option>One Time</option>
 <option>Weekly</option>
@@ -47,14 +56,14 @@ button{border:2px solid #333}
 <option>Yearly</option>
 <option>Lifetime</option>
 </select><h3>Online Donation</h3>
-<button onclick="paypal()">PayPal</button>
-<button onclick="whatsapp()">MoneyGram</button>
-<button onclick="whatsapp()">Western Union</button>
-<button onclick="whatsapp()">WorldRemit</button><h3>M-Pesa Donation</h3>
+<button class="btn-purple" onclick="paypal()">PayPal</button>
+<button class="btn-orange" onclick="whatsapp()">MoneyGram</button>
+<button class="btn-blue" onclick="whatsapp()">Western Union</button>
+<button class="btn-green" onclick="whatsapp()">WorldRemit</button><h3>M-Pesa Donation</h3>
 <p><strong>Paybill:</strong> 162180</p>
 <p><strong>Account:</strong> 0300327</p>
 <p><strong>Or Send Directly:</strong> +254725768628</p>
-<button onclick="mpesa()" style="background:green;color:white">Use M-Pesa</button>
+<button class="btn-green" onclick="mpesa()">Use M-Pesa</button>
 </div><!-- CHILDREN SPONSORSHIP --><div class="section" id="children">
 <h2>👶 Child Sponsorship</h2>
 <div class="grid" id="childGrid"></div>
